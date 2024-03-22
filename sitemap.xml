@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://www.yuchu.codes/about/index.html</loc>
+    <loc>https://www.yuchu.codes/categories/index.html</loc>
     
     <lastmod>2024-03-22</lastmod>
     
@@ -29,7 +29,7 @@
   </url>
   
   <url>
-    <loc>https://www.yuchu.codes/categories/index.html</loc>
+    <loc>https://www.yuchu.codes/about/index.html</loc>
     
     <lastmod>2024-03-22</lastmod>
     
@@ -63,5 +63,12 @@
   </url>
   
 
+  
+  <url>
+    <loc>https://www.yuchu.codes/categories/blog/</loc>
+    <lastmod>2024-03-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
   
 </urlset>

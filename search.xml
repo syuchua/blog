@@ -2,7 +2,7 @@
 <search>
   <entry>
     <title>欢迎来到我的博客</title>
-    <url>/2023/12/08/welcome/</url>
+    <url>/posts/undefined/</url>
     <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
 <h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
 <h2 id="最新文章"><a href="#最新文章" class="headerlink" title="最新文章"></a>最新文章</h2><h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
@@ -10,11 +10,11 @@
 <li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
 </ul>
 <p>感谢您的访问，希望您喜欢我的博客！</p>
-<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=2127807476&auto=1&height=66"></iframe>]]></content>
+]]></content>
   </entry>
   <entry>
     <title>极简markdown语法</title>
-    <url>/2024/03/22/%E6%9E%81%E7%AE%80markdown%E8%AF%AD%E6%B3%95/</url>
+    <url>/posts/f33f/</url>
     <content><![CDATA[<h1 id="极简markdown语法"><a href="#极简markdown语法" class="headerlink" title="极简markdown语法"></a>极简markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>要创建标题，请在单词或短语前面添加井号 (#) 。# 的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (&lt;\h3&gt;) (例如：### My Header)</p>
 <h3 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h3><p>还可以在文本下方添加任意数量的 &#x3D;&#x3D; 号来标识一级标题，或者 – 号来标识二级标题。</p>
 <h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>

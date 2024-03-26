@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yuchu.codes/posts/f82e/</loc>
+    
+    <lastmod>2024-03-26</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yuchu.codes/posts/undefined/</loc>
     
     <lastmod>2024-03-25</lastmod>
@@ -49,15 +58,29 @@
 
   <url>
     <loc>https://www.yuchu.codes/</loc>
-    <lastmod>2024-03-25</lastmod>
+    <lastmod>2024-03-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>https://www.yuchu.codes/tags/vscode/</loc>
+    <lastmod>2024-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yuchu.codes/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <lastmod>2024-03-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yuchu.codes/tags/markdown/</loc>
-    <lastmod>2024-03-25</lastmod>
+    <lastmod>2024-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -66,7 +89,7 @@
   
   <url>
     <loc>https://www.yuchu.codes/categories/blog/</loc>
-    <lastmod>2024-03-25</lastmod>
+    <lastmod>2024-03-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

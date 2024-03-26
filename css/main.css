@@ -1293,7 +1293,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #280b39;
+  background: #a3eeb3;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2690,7 +2690,6 @@ body {
   background-position: center;
 }
 .main-inner > .sub-menu,
-.main-inner > .post-block,
 .main-inner > .tabs-comment,
 .main-inner > .comments,
 .main-inner > .pagination {
@@ -2717,4 +2716,11 @@ body {
 .main-inner {
   background-color: rgba(255,255,255,0);
   padding: 0px 40px 40px 40px;
+}
+.post-block {
+  background-color: rgba(255,255,255,0);
+  margin-bottom: 24px;
+  padding: 20px;
+  border-radius: 30px 30px 30px 30px;
+  box-shaow: 8px 7px 2px 0 rgba(0,0,0,0.12), 7px 4px 1px -2px rgba(0,0,0,0.06), 0 1px 5px 0 rgba(0,0,0,0.12);
 }

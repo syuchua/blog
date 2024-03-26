@@ -13,6 +13,8 @@
 <li><p> 多行注释：<code>/**</code></p>
 </li>
 </ul>
+<span id="more"></span>
+
 <h2 id="移动行"><a href="#移动行" class="headerlink" title="移动行"></a>移动行</h2><p><code>alt+up/down</code></p>
 <h2 id="显示-隐藏左侧目录栏"><a href="#显示-隐藏左侧目录栏" class="headerlink" title="显示&#x2F;隐藏左侧目录栏"></a>显示&#x2F;隐藏左侧目录栏</h2><p><code>Ctrl+b</code></p>
 <h2 id="复制当前行"><a href="#复制当前行" class="headerlink" title="复制当前行"></a>复制当前行</h2><p><code>shift + alt +up/down</code></p>
@@ -85,11 +87,27 @@
       </tags>
   </entry>
   <entry>
+    <title>欢迎来到我的博客</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
+
+<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
+<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
+</ul>
+<p>感谢您的访问，希望您喜欢我的博客！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>极简markdown语法</title>
     <url>/posts/f33f/</url>
     <content><![CDATA[<h1 id="极简markdown语法"><a href="#极简markdown语法" class="headerlink" title="极简markdown语法"></a>极简markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>要创建标题，请在单词或短语前面添加井号 (#) 。# 的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (&lt;\h3&gt;) (例如：### My Header)</p>
 <h3 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h3><p>还可以在文本下方添加任意数量的 &#x3D;&#x3D; 号来标识一级标题，或者 – 号来标识二级标题。</p>
 <h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>
+<span id="more"></span>
+
 <h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(或使用HTML语法的<br>)。</p>
 <h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>要加粗文本，请在单词或短语的前后各添加两个星号（**内容**）或下划线（__内容__）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（这**是内**容）。</p>
 <h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>要用斜体显示文本，请在单词或短语前后添加一个星号（*内容*）或下划线（_内容_）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
@@ -138,17 +156,5 @@
       <tags>
         <tag>markdown</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>欢迎来到我的博客</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
-<h2 id="最新文章"><a href="#最新文章" class="headerlink" title="最新文章"></a>最新文章</h2><h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
-<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
-</ul>
-<p>感谢您的访问，希望您喜欢我的博客！</p>
-]]></content>
   </entry>
 </search>

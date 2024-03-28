@@ -1,3 +1,4 @@
+https://www.yuchu.codes/posts/4883/
 https://www.yuchu.codes/posts/8eff/
 https://www.yuchu.codes/posts/f33f/
 https://www.yuchu.codes/posts/f82e/
@@ -8,7 +9,10 @@ https://www.yuchu.codes/about/index.html
 https://www.yuchu.codes/
 https://www.yuchu.codes/tags/vscode/
 https://www.yuchu.codes/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/
-https://www.yuchu.codes/tags/markdown/
 https://www.yuchu.codes/tags/winget/
 https://www.yuchu.codes/tags/windows%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/
+https://www.yuchu.codes/tags/markdown/
+https://www.yuchu.codes/tags/hexo/
+https://www.yuchu.codes/tags/github-page/
+https://www.yuchu.codes/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/
 https://www.yuchu.codes/categories/blog/

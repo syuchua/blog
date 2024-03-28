@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://www.yuchu.codes/posts/4883/</loc>
+    
+    <lastmod>2024-03-28</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://www.yuchu.codes/posts/8eff/</loc>
     
     <lastmod>2024-03-26</lastmod>
@@ -67,7 +76,7 @@
 
   <url>
     <loc>https://www.yuchu.codes/</loc>
-    <lastmod>2024-03-27</lastmod>
+    <lastmod>2024-03-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -75,35 +84,56 @@
   
   <url>
     <loc>https://www.yuchu.codes/tags/vscode/</loc>
-    <lastmod>2024-03-27</lastmod>
+    <lastmod>2024-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.yuchu.codes/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    <lastmod>2024-03-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://www.yuchu.codes/tags/markdown/</loc>
-    <lastmod>2024-03-27</lastmod>
+    <lastmod>2024-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.yuchu.codes/tags/winget/</loc>
-    <lastmod>2024-03-27</lastmod>
+    <lastmod>2024-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://www.yuchu.codes/tags/windows%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2024-03-27</lastmod>
+    <lastmod>2024-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yuchu.codes/tags/markdown/</loc>
+    <lastmod>2024-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yuchu.codes/tags/hexo/</loc>
+    <lastmod>2024-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yuchu.codes/tags/github-page/</loc>
+    <lastmod>2024-03-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://www.yuchu.codes/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2024-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -112,7 +142,7 @@
   
   <url>
     <loc>https://www.yuchu.codes/categories/blog/</loc>
-    <lastmod>2024-03-27</lastmod>
+    <lastmod>2024-03-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

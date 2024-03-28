@@ -231,7 +231,7 @@
   <entry>
     <title>基于hexo和GitHub page搭建个人博客</title>
     <url>/posts/4883/</url>
-    <content><![CDATA[<p><img src="https://cloud.yuchu.me/f/x2ux/my_blog.png" alt="成品展示"></p>
+    <content><![CDATA[<h3 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h3><p><img src="https://cloud.yuchu.me/f/x2ux/my_blog.png" alt="成品展示"></p>
 <h2 id="使用工具："><a href="#使用工具：" class="headerlink" title="使用工具："></a>使用工具：</h2><ul>
 <li>git</li>
 <li>github</li>
@@ -239,9 +239,9 @@
 <li>vscode( 任意具备markdown编辑能力的工具均可)</li>
 </ul>
 <h2 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h2><p><a href="https://git-scm.com/download/win">git官网下载</a><br>选择电脑对应版本安装即可（一般为64位）</p>
-<h2 id="node、npm安装"><a href="#node、npm安装" class="headerlink" title="node、npm安装"></a>node、npm安装</h2><p><a href="https://nodejs.org/en/download/">node.js官网</a></p>
 <span id="more"></span>
 
+<h2 id="node、npm安装"><a href="#node、npm安装" class="headerlink" title="node、npm安装"></a>node、npm安装</h2><p><a href="https://nodejs.org/en/download/">node.js官网</a></p>
 <h1 id="hexo创建个人博客"><a href="#hexo创建个人博客" class="headerlink" title="hexo创建个人博客"></a>hexo创建个人博客</h1><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="1-在任意目录下新建hexo文件夹"><a href="#1-在任意目录下新建hexo文件夹" class="headerlink" title="1.在任意目录下新建hexo文件夹"></a>1.在任意目录下新建hexo文件夹</h3><ul>
 <li>打开该文件夹，空白处单击鼠标右键:Git Bash Here</li>
 <li>在打开的git bash 窗口中依次输入以下命令：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>

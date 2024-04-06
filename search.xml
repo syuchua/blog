@@ -173,63 +173,6 @@
       </tags>
   </entry>
   <entry>
-    <title>极简markdown语法</title>
-    <url>/posts/f33f/</url>
-    <content><![CDATA[<h1 id="极简markdown语法"><a href="#极简markdown语法" class="headerlink" title="极简markdown语法"></a>极简markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>要创建标题，请在单词或短语前面添加井号 (#) 。# 的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (&lt;\h3&gt;) (例如：### My Header)</p>
-<h3 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h3><p>还可以在文本下方添加任意数量的 &#x3D;&#x3D; 号来标识一级标题，或者 – 号来标识二级标题。</p>
-<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>
-<span id="more"></span>
-
-<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(或使用HTML语法的<br>)。</p>
-<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>要加粗文本，请在单词或短语的前后各添加两个星号（**内容**）或下划线（__内容__）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（这**是内**容）。</p>
-<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>要用斜体显示文本，请在单词或短语前后添加一个星号（*内容*）或下划线（_内容_）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
-<h3 id="粗体-斜体"><a href="#粗体-斜体" class="headerlink" title="粗体&amp;斜体"></a>粗体&amp;斜体</h3><p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>要创建块引用，请在段落前添加一个 &gt; 符号</p>
-<h3 id="多个段落的块引用"><a href="#多个段落的块引用" class="headerlink" title="多个段落的块引用"></a>多个段落的块引用</h3><p>块引用可以包含多个段落。为段落之间的空白行添加一个 &gt; 符号。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 第一段</span><br><span class="line">&gt;</span><br><span class="line">&gt; 第二段</span><br></pre></td></tr></table></figure>
-
-<h3 id="嵌套块引用"><a href="#嵌套块引用" class="headerlink" title="嵌套块引用"></a>嵌套块引用</h3><p>块引用可以嵌套。在要嵌套的段落前添加一个 &gt;&gt; 符号</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 一层引用</span><br><span class="line">&gt;</span><br><span class="line">&gt;&gt; 二层引用</span><br></pre></td></tr></table></figure>
-<h2 id="带有其它元素的块引用"><a href="#带有其它元素的块引用" class="headerlink" title="带有其它元素的块引用"></a>带有其它元素的块引用</h2><p>块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; #### The quarterly results look great!</span><br><span class="line">&gt;</span><br><span class="line">&gt; - Revenue was off the chart.</span><br><span class="line">&gt; - Profits were higher than ever.</span><br><span class="line">&gt;</span><br><span class="line">&gt;  *Everything* is going according to **plan**.</span><br></pre></td></tr></table></figure>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>有序列表<br>要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。数字不必按数学顺序排列，但是列表应当以数字 1 起始。</p>
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>无序列表<br>要创建无序列表，请在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+) 。缩进一个或多个列表项可创建嵌套列表</p>
-<h3 id="在列表中嵌套其他元素"><a href="#在列表中嵌套其他元素" class="headerlink" title="在列表中嵌套其他元素"></a>在列表中嵌套其他元素</h3><p>要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符。</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>要添加表，请使用三个或多个连字符（—）创建每列的标题，并使用管道（|）分隔每列。您可以选择在表的任一端添加管道。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| Syntax      | Description |</span><br><span class="line">| ----------- | ----------- |</span><br><span class="line">| Header      | Title       |</span><br><span class="line">| Paragraph   | Text        |</span><br></pre></td></tr></table></figure>
-<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>您可以通过在标题行中的连字符的左侧，右侧或两侧添加冒号（:），将列中的文本对齐到左侧，右侧或中心</p>
-<h2 id="分隔线语法"><a href="#分隔线语法" class="headerlink" title="分隔线语法"></a>分隔线语法</h2><p>要创建分隔线，请在单独一行上使用三个或多个星号 (***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。</p>
-<h2 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a>链接语法</h2><p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
-<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></p>
-<p>对应的HTML代码：<code>&lt;a href=&quot;超链接地址&quot; title=&quot;超链接title&quot;&gt;超链接显示名&lt;/a&gt;</code></p>
-<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn)</code>。</p>
-<h3 id="给链接增加-Title"><a href="#给链接增加-Title" class="headerlink" title="给链接增加 Title"></a>给链接增加 Title</h3><p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
-<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)</code></p>
-<h3 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h3><p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="引用类型链接"><a href="#引用类型链接" class="headerlink" title="引用类型链接"></a>引用类型链接</h3><p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
-<h4 id="链接的第一部分格式"><a href="#链接的第一部分格式" class="headerlink" title="链接的第一部分格式"></a>链接的第一部分格式</h4><p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
-<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
-<p>以下示例格式对于链接的第一部分效果相同：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[hobbit-hole][1]</span><br><span class="line">[hobbit-hole] [1]</span><br></pre></td></tr></table></figure>
-<h4 id="链接的第二部分格式"><a href="#链接的第二部分格式" class="headerlink" title="链接的第二部分格式"></a>链接的第二部分格式</h4><p>引用类型链接的第二部分使用以下属性设置格式：</p>
-<p>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如[label]:）。<br>链接的URL，可以选择将其括在尖括号中。<br>链接的可选标题，可以将其括在双引号，单引号或括号中。<br>以下示例格式对于链接的第二部分效果相同：</p>
-<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
-<h2 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h2><p>要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
-<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 &quot;图片title&quot;)</code>。</p>
-<p>对应的HTML代码：<code>&lt;img src=&quot;图片链接&quot; alt=&quot;图片alt&quot; title=&quot;图片title&quot;&gt;</code></p>
-<h3 id="链接图片"><a href="#链接图片" class="headerlink" title="链接图片"></a>链接图片</h3><p>给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。</p>
-<h2 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h2><p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于hexo和GitHub page搭建个人博客</title>
     <url>/posts/4883/</url>
     <content><![CDATA[<h3 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h3><p><img src="https://cloud.yuchu.me/f/x2ux/my_blog.png" alt="成品展示"></p>
@@ -292,6 +235,114 @@
         <tag>hexo</tag>
         <tag>github page</tag>
         <tag>个人博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>极简markdown语法</title>
+    <url>/posts/f33f/</url>
+    <content><![CDATA[<h1 id="极简markdown语法"><a href="#极简markdown语法" class="headerlink" title="极简markdown语法"></a>极简markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>要创建标题，请在单词或短语前面添加井号 (#) 。# 的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (&lt;\h3&gt;) (例如：### My Header)</p>
+<h3 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h3><p>还可以在文本下方添加任意数量的 &#x3D;&#x3D; 号来标识一级标题，或者 – 号来标识二级标题。</p>
+<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>
+<span id="more"></span>
+
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(或使用HTML语法的<br>)。</p>
+<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>要加粗文本，请在单词或短语的前后各添加两个星号（**内容**）或下划线（__内容__）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（这**是内**容）。</p>
+<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>要用斜体显示文本，请在单词或短语前后添加一个星号（*内容*）或下划线（_内容_）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
+<h3 id="粗体-斜体"><a href="#粗体-斜体" class="headerlink" title="粗体&amp;斜体"></a>粗体&amp;斜体</h3><p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>要创建块引用，请在段落前添加一个 &gt; 符号</p>
+<h3 id="多个段落的块引用"><a href="#多个段落的块引用" class="headerlink" title="多个段落的块引用"></a>多个段落的块引用</h3><p>块引用可以包含多个段落。为段落之间的空白行添加一个 &gt; 符号。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 第一段</span><br><span class="line">&gt;</span><br><span class="line">&gt; 第二段</span><br></pre></td></tr></table></figure>
+
+<h3 id="嵌套块引用"><a href="#嵌套块引用" class="headerlink" title="嵌套块引用"></a>嵌套块引用</h3><p>块引用可以嵌套。在要嵌套的段落前添加一个 &gt;&gt; 符号</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 一层引用</span><br><span class="line">&gt;</span><br><span class="line">&gt;&gt; 二层引用</span><br></pre></td></tr></table></figure>
+<h2 id="带有其它元素的块引用"><a href="#带有其它元素的块引用" class="headerlink" title="带有其它元素的块引用"></a>带有其它元素的块引用</h2><p>块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; #### The quarterly results look great!</span><br><span class="line">&gt;</span><br><span class="line">&gt; - Revenue was off the chart.</span><br><span class="line">&gt; - Profits were higher than ever.</span><br><span class="line">&gt;</span><br><span class="line">&gt;  *Everything* is going according to **plan**.</span><br></pre></td></tr></table></figure>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>有序列表<br>要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。数字不必按数学顺序排列，但是列表应当以数字 1 起始。</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>无序列表<br>要创建无序列表，请在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+) 。缩进一个或多个列表项可创建嵌套列表</p>
+<h3 id="在列表中嵌套其他元素"><a href="#在列表中嵌套其他元素" class="headerlink" title="在列表中嵌套其他元素"></a>在列表中嵌套其他元素</h3><p>要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符。</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>要添加表，请使用三个或多个连字符（—）创建每列的标题，并使用管道（|）分隔每列。您可以选择在表的任一端添加管道。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| Syntax      | Description |</span><br><span class="line">| ----------- | ----------- |</span><br><span class="line">| Header      | Title       |</span><br><span class="line">| Paragraph   | Text        |</span><br></pre></td></tr></table></figure>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>您可以通过在标题行中的连字符的左侧，右侧或两侧添加冒号（:），将列中的文本对齐到左侧，右侧或中心</p>
+<h2 id="分隔线语法"><a href="#分隔线语法" class="headerlink" title="分隔线语法"></a>分隔线语法</h2><p>要创建分隔线，请在单独一行上使用三个或多个星号 (***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。</p>
+<h2 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a>链接语法</h2><p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
+<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></p>
+<p>对应的HTML代码：<code>&lt;a href=&quot;超链接地址&quot; title=&quot;超链接title&quot;&gt;超链接显示名&lt;/a&gt;</code></p>
+<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn)</code>。</p>
+<h3 id="给链接增加-Title"><a href="#给链接增加-Title" class="headerlink" title="给链接增加 Title"></a>给链接增加 Title</h3><p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
+<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)</code></p>
+<h3 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h3><p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="引用类型链接"><a href="#引用类型链接" class="headerlink" title="引用类型链接"></a>引用类型链接</h3><p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
+<h4 id="链接的第一部分格式"><a href="#链接的第一部分格式" class="headerlink" title="链接的第一部分格式"></a>链接的第一部分格式</h4><p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
+<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
+<p>以下示例格式对于链接的第一部分效果相同：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[hobbit-hole][1]</span><br><span class="line">[hobbit-hole] [1]</span><br></pre></td></tr></table></figure>
+<h4 id="链接的第二部分格式"><a href="#链接的第二部分格式" class="headerlink" title="链接的第二部分格式"></a>链接的第二部分格式</h4><p>引用类型链接的第二部分使用以下属性设置格式：</p>
+<p>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如[label]:）。<br>链接的URL，可以选择将其括在尖括号中。<br>链接的可选标题，可以将其括在双引号，单引号或括号中。<br>以下示例格式对于链接的第二部分效果相同：</p>
+<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
+<h2 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h2><p>要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
+<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 &quot;图片title&quot;)</code>。</p>
+<p>对应的HTML代码：<code>&lt;img src=&quot;图片链接&quot; alt=&quot;图片alt&quot; title=&quot;图片title&quot;&gt;</code></p>
+<h3 id="链接图片"><a href="#链接图片" class="headerlink" title="链接图片"></a>链接图片</h3><p>给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。</p>
+<h2 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h2><p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用docker搭建cloudreve个人网盘系统</title>
+    <url>/posts/cf51/</url>
+    <content><![CDATA[<h2 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h2><p><img src="https://cloud.yuchu.me/f/JWcK/cloudreve.jpg"></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>一台vps（若只是个人使用的话也可以是任意一台手机或电脑）</li>
+<li>安装docker和docker-compose</li>
+<li>一个域名（同第一条，仅个人使用可忽略，但你也不想每次登录都先输一大串IP地址吧）</li>
+</ul>
+<p> vps的话，国内推荐阿里云和腾讯云，都有学生优惠，能白嫖几个月，其他诸如雨云等没试过，不做推荐。国外有微软的azure，学生免费一年，亚马逊（容易被封且需要绑信用卡，有被反撸的可能），还有谷歌云，但也是需要信用卡，有被反撸的风险，digitalorcean通过GitHub学生包可以白嫖200美元额度，还有老牌付费vps厂家如vultr，新晋便宜vps商nackhard等，就不一一列举了。</p>
+<p> 域名注册国内可以用阿里腾讯，国外namesilo,name.com,cloudflare等都还不错，便宜的域名一年十块左右就能搞定了（tips：纯数字域名，尤其是6位及以上的，一般会比字母域名便宜很多） </p>
+<h2 id="新机到手，更新环境"><a href="#新机到手，更新环境" class="headerlink" title="新机到手，更新环境"></a>新机到手，更新环境</h2><p><code>apt update -y  &amp;&amp; apt upgrade -y &amp;&amp; apt install -y curl wget sudo socat vim</code></p>
+<h2 id="安装docker和docker-compose"><a href="#安装docker和docker-compose" class="headerlink" title="安装docker和docker-compose"></a>安装docker和docker-compose</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | sh      # 下载最新的官方脚本</span><br><span class="line"></span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">chmod +x /usr/local/bin/docker-compose      #给予对应目录权限</span><br></pre></td></tr></table></figure>
+
+<h1 id="Cloudreve和离线下载构建"><a href="#Cloudreve和离线下载构建" class="headerlink" title="Cloudreve和离线下载构建"></a>Cloudreve和离线下载构建</h1><h2 id="创建目录，创建文件"><a href="#创建目录，创建文件" class="headerlink" title="创建目录，创建文件"></a>创建目录，创建文件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /home/ &amp;&amp; mkdir cloud &amp;&amp; cd cloud &amp;&amp; mkdir -vp cloudreve/&#123;uploads,avatar&#125; &amp;&amp; touch cloudreve/conf.ini &amp;&amp; touch cloudreve/cloudreve.db &amp;&amp; mkdir -p aria2/config &amp;&amp; mkdir -p data/aria2 &amp;&amp; chmod -R 777 data/aria2</span><br><span class="line"># cloud即根目录，aira2为离线下载工具，可按需求酌情考虑是否创建</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建compose配置文件"><a href="#创建compose配置文件" class="headerlink" title="创建compose配置文件"></a>创建compose配置文件</h2><p><code>cd /home/cloud/ &amp;&amp; vim docker-compose.yml</code></p>
+<h2 id="在docker-compose中配置Cloudreve代码"><a href="#在docker-compose中配置Cloudreve代码" class="headerlink" title="在docker-compose中配置Cloudreve代码"></a>在docker-compose中配置Cloudreve代码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &quot;3.8&quot;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line"></span><br><span class="line">  cloudreve:</span><br><span class="line"></span><br><span class="line">    container_name: cloudreve</span><br><span class="line"></span><br><span class="line">    image: cloudreve/cloudreve:latest</span><br><span class="line"></span><br><span class="line">    restart: unless-stopped</span><br><span class="line"></span><br><span class="line">    ports:</span><br><span class="line"></span><br><span class="line">      - &quot;5212:5212&quot;</span><br><span class="line"></span><br><span class="line">    volumes:</span><br><span class="line"></span><br><span class="line">      - temp_data:/data</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/uploads:/cloudreve/uploads</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/conf.ini:/cloudreve/conf.ini</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/cloudreve.db:/cloudreve/cloudreve.db</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/avatar:/cloudreve/avatar</span><br><span class="line"></span><br><span class="line">    depends_on:</span><br><span class="line"></span><br><span class="line">      - aria2</span><br><span class="line"></span><br><span class="line">   aria2:</span><br><span class="line"></span><br><span class="line">    container_name: aria2</span><br><span class="line"></span><br><span class="line">    image: p3terx/aria2-pro</span><br><span class="line"></span><br><span class="line">    restart: unless-stopped</span><br><span class="line"></span><br><span class="line">    environment:</span><br><span class="line"></span><br><span class="line">      - RPC_SECRET= DOWNLOAD</span><br><span class="line"></span><br><span class="line">      - RPC_PORT=6800</span><br><span class="line"></span><br><span class="line">    volumes:</span><br><span class="line"></span><br><span class="line">      - ./aria2/config:/config</span><br><span class="line"></span><br><span class="line">      - temp_data:/data </span><br><span class="line"></span><br><span class="line">volumes:</span><br><span class="line"></span><br><span class="line">  temp_data:</span><br><span class="line"></span><br><span class="line">    driver: local</span><br><span class="line"></span><br><span class="line">    driver_opts:</span><br><span class="line"></span><br><span class="line">      type: none</span><br><span class="line"></span><br><span class="line">      device: $PWD/data</span><br><span class="line"></span><br><span class="line">      o: bind</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p><code>cd /home/cloud &amp;&amp; docker-compose up -d</code></p>
+<p>容器正常启动后就可以用服务器IP+端口号5212进入网盘设置界面了</p>
+<p><img src="https://cloud.yuchu.me/f/cloudreve_login.jpg"></p>
+<h2 id="查询初始登录账号密码"><a href="#查询初始登录账号密码" class="headerlink" title="查询初始登录账号密码"></a>查询初始登录账号密码</h2><p><code>docker-compose logs cloudreve</code></p>
+<p>一般初始账号为<code>admin@cloudreve.org </code>，密码为<code>admin</code></p>
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><p>点击头像-管理面板，找到用户组&#x2F;用户,点右边的编辑，可以进行一些基础的配置，包括但不限于分配空间，更改账号密码等。<br><img src="https://cloud.yuchu.me/f/L1hQ/cloudreve_edit.jpg"><br><img src="https://cloud.yuchu.me/f/MXiz/cloudreve_user.jpg"></p>
+<p>添加存储策略，有详细的文档，这里就不赘述了，个人推荐onedrive，主要是免费。当然如果你的vps空间足够或者不打算存太多东西的话，默认的本机存储也可以。</p>
+<h3 id="离线下载节点配置"><a href="#离线下载节点配置" class="headerlink" title="离线下载节点配置"></a>离线下载节点配置</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RPC 服务器地址 =&gt; http://aria2:6800</span><br><span class="line">RPC 授权令牌 =&gt; DOWNLOAD</span><br><span class="line">节点下载目录 =&gt; /data</span><br></pre></td></tr></table></figure>
+
+<h1 id="NGINX反向代理到域名"><a href="#NGINX反向代理到域名" class="headerlink" title="NGINX反向代理到域名"></a>NGINX反向代理到域名</h1><p>配置dns解析：<img src="https://cloud.yuchu.me/f/Njsj/dns.jpg"></p>
+<h2 id="创建nginx目录结构"><a href="#创建nginx目录结构" class="headerlink" title="创建nginx目录结构"></a>创建nginx目录结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /home/nginx</span><br><span class="line"></span><br><span class="line">touch /home/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line">mkdir -p /home/nginx/certs</span><br></pre></td></tr></table></figure>
+
+<h2 id="申请证书"><a href="#申请证书" class="headerlink" title="申请证书"></a>申请证书</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://get.acme.sh | sh</span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --register-account -m xxxx@gmail.com   #随便一个邮箱就行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --issue -d yourip.com --standalone     # yourip.com改为你的域名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="下载证书到本地"><a href="#下载证书到本地" class="headerlink" title="下载证书到本地"></a>下载证书到本地</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d yourip.com --key-file /home/nginx/certs/key.pem --fullchain-file /home/nginx/certs/cert.pem</span><br></pre></td></tr></table></figure>
+
+<h2 id="进入目录配置nginx"><a href="#进入目录配置nginx" class="headerlink" title="进入目录配置nginx"></a>进入目录配置nginx</h2><p><code>cd /home/nginx/ &amp;&amp; nano nginx.conf</code></p>
+<h2 id="反向代理配置，代理指定IP加端口"><a href="#反向代理配置，代理指定IP加端口" class="headerlink" title="反向代理配置，代理指定IP加端口"></a>反向代理配置，代理指定IP加端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">events &#123;</span><br><span class="line"></span><br><span class="line">    worker_connections  1024;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  client_max_body_size 1000m;  </span><br><span class="line"></span><br><span class="line">  #上传限制参数1G以内文件可上传</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 同理，替换为你的域名</span><br><span class="line"></span><br><span class="line">    return 301 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 替换域名</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:5212;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="下载部署容器"><a href="#下载部署容器" class="headerlink" title="下载部署容器"></a>下载部署容器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 -p 443:443 -v /home/nginx/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/certs:/etc/nginx/certs -v /home/nginx/html:/usr/share/nginx/html nginx:latest</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="查看运行状态"><a href="#查看运行状态" class="headerlink" title="查看运行状态"></a>查看运行状态</h2><p><code>docker ps -a</code><br><img src="https://cloud.yuchu.me/f/Ootv/mirrors.jpg"><br>可以看到容器都是正常运行的</p>
+<p>之后就可以用域名访问你的cloudreve网盘了！</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>个人网盘</tag>
+        <tag>cloudreve</tag>
       </tags>
   </entry>
 </search>

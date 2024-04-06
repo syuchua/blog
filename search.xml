@@ -87,6 +87,21 @@
       </tags>
   </entry>
   <entry>
+    <title>欢迎来到我的博客</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4135110247015469" crossorigin="anonymous"></script>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
+
+<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
+<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
+</ul>
+<p>感谢您的访问，希望您喜欢我的博客！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>winget的基础配置与使用</title>
     <url>/posts/8eff/</url>
     <content><![CDATA[<h1 id="1-什么是winget"><a href="#1-什么是winget" class="headerlink" title="1.什么是winget"></a>1.什么是winget</h1><p>微软公司在 2020 年 5 月 Microsoft Build 开发者大会上发布了用于 Windows 系统的官方支持的软件包管理器 —— Windows 软件包管理器（Windows Package Manager），也就是 WinGet 软件包管理器。经过 3 年的发展，越来越多的软件厂商在这个平台上发布自家软件。WinGet 除了支持 exe、msi 等传统的 Win32 安装包格式外，还支持用于新版 Windows 的 msix&#x2F;msixbundle 格式所打包的软件。</p>
@@ -158,83 +173,6 @@
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到我的博客</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4135110247015469" crossorigin="anonymous"></script>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
-
-<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
-<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
-</ul>
-<p>感谢您的访问，希望您喜欢我的博客！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>基于hexo和GitHub page搭建个人博客</title>
-    <url>/posts/4883/</url>
-    <content><![CDATA[<h3 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h3><p><img src="https://cloud.yuchu.me/f/x2ux/my_blog.png" alt="成品展示"></p>
-<h2 id="使用工具："><a href="#使用工具：" class="headerlink" title="使用工具："></a>使用工具：</h2><ul>
-<li>git</li>
-<li>github</li>
-<li>hexo</li>
-<li>vscode( 任意具备markdown编辑能力的工具均可)</li>
-</ul>
-<h2 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h2><p><a href="https://git-scm.com/download/win">git官网下载</a><br>选择电脑对应版本安装即可（一般为64位）</p>
-<span id="more"></span>
-
-<h2 id="node、npm安装"><a href="#node、npm安装" class="headerlink" title="node、npm安装"></a>node、npm安装</h2><p><a href="https://nodejs.org/en/download/">node.js官网</a></p>
-<h1 id="hexo创建个人博客"><a href="#hexo创建个人博客" class="headerlink" title="hexo创建个人博客"></a>hexo创建个人博客</h1><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="1-在任意目录下新建hexo文件夹"><a href="#1-在任意目录下新建hexo文件夹" class="headerlink" title="1.在任意目录下新建hexo文件夹"></a>1.在任意目录下新建hexo文件夹</h3><ul>
-<li>打开该文件夹，空白处单击鼠标右键:Git Bash Here</li>
-<li>在打开的git bash 窗口中依次输入以下命令：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-全部执行完成后，hexo目录下会出现一个新的blog文件夹，里面就是存放博客的地方</li>
-<li>然后输入这两条命令 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-完成后若显示诸如<code>http://localhost:4000</code>的内容，则说明配置成功。<br>打开浏览器，地址栏输入上面的地址，即可进入初始博客的预览界面，它长这样：</li>
-</ul>
-<p><img src="https://cloud.yuchu.me/f/yXCL/hexo_test.png"></p>
-<p>为什么说是预览界面呢，因为她现在仅仅只是部署在你电脑本地的一个离线版本，只能在你自己的电脑上看见，想要正式发布公开，你需要一台拥有公网IP的服务器，但还有一个更简单的方法，即借助GitHub page的ssh功能实现对外访问。</p>
-<h2 id="GitHub创建仓库"><a href="#GitHub创建仓库" class="headerlink" title="GitHub创建仓库"></a>GitHub创建仓库</h2><ul>
-<li>首先创建一个GitHub账号，然后在个人主页新建仓库，仓库名为username.github.io,username即你的用户名。</li>
-<li>回到gitbash窗口，按<code>Ctrl+C</code> 关闭4000端口的预览，输入以下命令：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;    # yourname改为GitHub用户名</span><br><span class="line">git config --global user.email &quot;youremail&quot;  #youremail改为注册GitHub所用的邮箱</span><br><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;            #创建ssh连接</span><br></pre></td></tr></table></figure></li>
-<li>之后会提示你已经完成ssh创建，接着找到该路径下的这两个文件：</li>
-</ul>
-<p>  <img src="https://cloud.yuchu.me/f/znF4/git_config.png"></p>
-<p>  把id_rsa.pub里的内容复制下来，打开GitHub的设置界面（点击头像-setting），找到SSH and GPG keys,x新建一个ssh key，粘贴进key中，title随便填一个就行，保存。</p>
-<p>  <img src="https://cloud.yuchu.me/f/AQHE/github_ssh.png"></p>
-<h2 id="hexo部署到GitHub"><a href="#hexo部署到GitHub" class="headerlink" title="hexo部署到GitHub"></a>hexo部署到GitHub</h2><ul>
-<li><p>在blog文件夹下找到_config.yml,这是博客的配置文件,在这里可以修改博客的一些基本信息，打开它，找到下面这段内容,在最底下：</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
-<p>  修改deploy部分：</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/username/username.github.io.git   #username改为用户名</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li>
-<li><p>另外找到第十六行，修改url为 <code>https://username.github.io</code></p>
-</li>
-<li><p>完成后保存文件并退出，在gitbash中输入：<code>npm install hexo-deployer-git --save</code>,安装git部署工具。</p>
-</li>
-<li><p>最后输入以下三行命令：</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean           #清除缓存</span><br><span class="line">hexo g               #生产静态文章（博客）</span><br><span class="line">hexo d               #部署</span><br></pre></td></tr></table></figure></li>
-<li><p>当然，如果仅是在本地查看效果，第三行命令也可以换成hexo s<br>  部署过程中可能会出现warning警告，但不要紧，只要最后呈现这样的内容，就表示成功了：<br>  <img src="https://cloud.yuchu.me/f/B1I8/hexo-d.png"><br>  之后，你就可以 <code>username.github.io</code>访问到你的博客了，且可以被任何人访问到。</p>
-</li>
-</ul>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>在根目录打开gitbash：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;博客名称&quot;  #新建博客</span><br><span class="line">hexo clean          #清除缓存和静态文件</span><br><span class="line">hexo g              #生产静态文件</span><br><span class="line">hexo s              #生成离线版本</span><br><span class="line">hexo d              #部署</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h2><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p>我使用的是next，一款简洁美观的主题，功能强大，可拓展性强，在gitbash中下载：<br><code>git clone https://github.com/next-theme/hexo-theme-next themes/next</code><br>下载完成后，在blog下找到themes文件夹-next,打开主题的_config.yml文件，找到如下部分，大概在100行左右：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
-<p>这代表了四种不同风格的next主题，任选一个取消注释即可。<br>之后回到根目录的_config.yml文件，找到theme选项，输入next<br><img src="https://cloud.yuchu.me/f/DJS3/hexo_theme.png"></p>
-<h2 id="博客基本信息"><a href="#博客基本信息" class="headerlink" title="博客基本信息"></a>博客基本信息</h2><p>在blog下找到_config.yml并打开，配置站点信息<br><img src="https://cloud.yuchu.me/f/EGTp/hexo_site.png"><br>注意，语言要改成中文：zh-CN,其他的可以按个人喜好更改。</p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>github page</tag>
-        <tag>个人博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>极简markdown语法</title>
     <url>/posts/f33f/</url>
     <content><![CDATA[<h1 id="极简markdown语法"><a href="#极简markdown语法" class="headerlink" title="极简markdown语法"></a>极简markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>要创建标题，请在单词或短语前面添加井号 (#) 。# 的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (&lt;\h3&gt;) (例如：### My Header)</p>
@@ -289,6 +227,71 @@
       </categories>
       <tags>
         <tag>markdown</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于hexo和GitHub page搭建个人博客</title>
+    <url>/posts/4883/</url>
+    <content><![CDATA[<h3 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h3><p><img src="https://cloud.yuchu.me/f/x2ux/my_blog.png" alt="成品展示"></p>
+<h2 id="使用工具："><a href="#使用工具：" class="headerlink" title="使用工具："></a>使用工具：</h2><ul>
+<li>git</li>
+<li>github</li>
+<li>hexo</li>
+<li>vscode( 任意具备markdown编辑能力的工具均可)</li>
+</ul>
+<h2 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h2><p><a href="https://git-scm.com/download/win">git官网下载</a><br>选择电脑对应版本安装即可（一般为64位）</p>
+<span id="more"></span>
+
+<h2 id="node、npm安装"><a href="#node、npm安装" class="headerlink" title="node、npm安装"></a>node、npm安装</h2><p><a href="https://nodejs.org/en/download/">node.js官网</a></p>
+<h2 id="当然，你也可以直接用winget安装，省的去官网下载"><a href="#当然，你也可以直接用winget安装，省的去官网下载" class="headerlink" title="当然，你也可以直接用winget安装，省的去官网下载"></a>当然，你也可以直接用winget安装，省的去官网下载</h2><p>关于winget的使用，可以看完另一篇博客：<a href="https://blog.yuchu.me/posts/8eff/">winget的基础配置与使用</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">winget install Git.Git</span><br><span class="line">winget install OpenJS.NodeJS.LTS</span><br></pre></td></tr></table></figure>
+
+<h1 id="hexo创建个人博客"><a href="#hexo创建个人博客" class="headerlink" title="hexo创建个人博客"></a>hexo创建个人博客</h1><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="1-在任意目录下新建hexo文件夹"><a href="#1-在任意目录下新建hexo文件夹" class="headerlink" title="1.在任意目录下新建hexo文件夹"></a>1.在任意目录下新建hexo文件夹</h3><ul>
+<li>打开该文件夹，空白处单击鼠标右键:Git Bash Here</li>
+<li>在打开的git bash 窗口中依次输入以下命令：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+全部执行完成后，hexo目录下会出现一个新的blog文件夹，里面就是存放博客的地方</li>
+<li>然后输入这两条命令 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+完成后若显示诸如<code>http://localhost:4000</code>的内容，则说明配置成功。<br>打开浏览器，地址栏输入上面的地址，即可进入初始博客的预览界面，它长这样：</li>
+</ul>
+<p><img src="https://cloud.yuchu.me/f/yXCL/hexo_test.png"></p>
+<p>为什么说是预览界面呢，因为她现在仅仅只是部署在你电脑本地的一个离线版本，只能在你自己的电脑上看见，想要正式发布公开，你需要一台拥有公网IP的服务器，但还有一个更简单的方法，即借助GitHub page的ssh功能实现对外访问。</p>
+<h2 id="GitHub创建仓库"><a href="#GitHub创建仓库" class="headerlink" title="GitHub创建仓库"></a>GitHub创建仓库</h2><ul>
+<li>首先创建一个GitHub账号，然后在个人主页新建仓库，仓库名为username.github.io,username即你的用户名。</li>
+<li>回到gitbash窗口，按<code>Ctrl+C</code> 关闭4000端口的预览，输入以下命令：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;    # yourname改为GitHub用户名</span><br><span class="line">git config --global user.email &quot;youremail&quot;  #youremail改为注册GitHub所用的邮箱</span><br><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;            #创建ssh连接</span><br></pre></td></tr></table></figure></li>
+<li>之后会提示你已经完成ssh创建，接着找到该路径下的这两个文件：</li>
+</ul>
+<p>  <img src="https://cloud.yuchu.me/f/znF4/git_config.png"></p>
+<p>  把id_rsa.pub里的内容复制下来，打开GitHub的设置界面（点击头像-setting），找到SSH and GPG keys,x新建一个ssh key，粘贴进key中，title随便填一个就行，保存。</p>
+<p>  <img src="https://cloud.yuchu.me/f/AQHE/github_ssh.png"></p>
+<h2 id="hexo部署到GitHub"><a href="#hexo部署到GitHub" class="headerlink" title="hexo部署到GitHub"></a>hexo部署到GitHub</h2><ul>
+<li><p>在blog文件夹下找到_config.yml,这是博客的配置文件,在这里可以修改博客的一些基本信息，打开它，找到下面这段内容,在最底下：</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
+<p>  修改deploy部分：</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/username/username.github.io.git   #username改为用户名</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li>
+<li><p>另外找到第十六行，修改url为 <code>https://username.github.io</code></p>
+</li>
+<li><p>完成后保存文件并退出，在gitbash中输入：<code>npm install hexo-deployer-git --save</code>,安装git部署工具。</p>
+</li>
+<li><p>最后输入以下三行命令：</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean           #清除缓存</span><br><span class="line">hexo g               #生产静态文章（博客）</span><br><span class="line">hexo d               #部署</span><br></pre></td></tr></table></figure></li>
+<li><p>当然，如果仅是在本地查看效果，第三行命令也可以换成hexo s<br>  部署过程中可能会出现warning警告，但不要紧，只要最后呈现这样的内容，就表示成功了：<br>  <img src="https://cloud.yuchu.me/f/B1I8/hexo-d.png"><br>  之后，你就可以 <code>username.github.io</code>访问到你的博客了，且可以被任何人访问到。</p>
+</li>
+</ul>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>在根目录打开gitbash：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;博客名称&quot;  #新建博客</span><br><span class="line">hexo clean          #清除缓存和静态文件</span><br><span class="line">hexo g              #生产静态文件</span><br><span class="line">hexo s              #生成离线版本</span><br><span class="line">hexo d              #部署</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h2><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p>我使用的是next，一款简洁美观的主题，功能强大，可拓展性强，在gitbash中下载：<br><code>git clone https://github.com/next-theme/hexo-theme-next themes/next</code><br>下载完成后，在blog下找到themes文件夹-next,打开主题的_config.yml文件，找到如下部分，大概在100行左右：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
+<p>这代表了四种不同风格的next主题，任选一个取消注释即可。<br>之后回到根目录的_config.yml文件，找到theme选项，输入next<br><img src="https://cloud.yuchu.me/f/DJS3/hexo_theme.png"></p>
+<h2 id="博客基本信息"><a href="#博客基本信息" class="headerlink" title="博客基本信息"></a>博客基本信息</h2><p>在blog下找到_config.yml并打开，配置站点信息<br><img src="https://cloud.yuchu.me/f/EGTp/hexo_site.png"><br>注意，语言要改成中文：zh-CN,其他的可以按个人喜好更改。</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>github page</tag>
+        <tag>个人博客</tag>
       </tags>
   </entry>
 </search>

@@ -2,6 +2,15 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.yuchu.me/posts/b2f3/</loc>
+    
+    <lastmod>2024-04-14</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.yuchu.me/posts/48fd/</loc>
     
     <lastmod>2024-04-10</lastmod>
@@ -94,106 +103,113 @@
 
   <url>
     <loc>https://blog.yuchu.me/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   
   <url>
+    <loc>https://blog.yuchu.me/tags/chatgpt%E9%95%9C%E5%83%8F%E7%AB%99/</loc>
+    <lastmod>2024-04-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.yuchu.me/tags/vscode/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/winget/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/windows%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/hexo/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/github-page/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/markdown/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/alist/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/raidrive/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/webdav/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/docker/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
     <loc>https://blog.yuchu.me/tags/cloudreve/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
@@ -202,7 +218,7 @@
   
   <url>
     <loc>https://blog.yuchu.me/categories/blog/</loc>
-    <lastmod>2024-04-10</lastmod>
+    <lastmod>2024-04-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>

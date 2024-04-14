@@ -1,3 +1,4 @@
+https://blog.yuchu.me/posts/b2f3/
 https://blog.yuchu.me/posts/48fd/
 https://blog.yuchu.me/posts/8eff/
 https://blog.yuchu.me/posts/undefined/
@@ -9,6 +10,7 @@ https://blog.yuchu.me/categories/index.html
 https://blog.yuchu.me/tags/index.html
 https://blog.yuchu.me/about/index.html
 https://blog.yuchu.me/
+https://blog.yuchu.me/tags/chatgpt%E9%95%9C%E5%83%8F%E7%AB%99/
 https://blog.yuchu.me/tags/vscode/
 https://blog.yuchu.me/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/
 https://blog.yuchu.me/tags/winget/

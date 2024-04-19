@@ -1,3 +1,4 @@
+https://blog.yuchu.me/posts/b91d/
 https://blog.yuchu.me/posts/b2f3/
 https://blog.yuchu.me/posts/48fd/
 https://blog.yuchu.me/posts/8eff/
@@ -13,15 +14,17 @@ https://blog.yuchu.me/
 https://blog.yuchu.me/tags/chatgpt%E9%95%9C%E5%83%8F%E7%AB%99/
 https://blog.yuchu.me/tags/vscode/
 https://blog.yuchu.me/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/
-https://blog.yuchu.me/tags/winget/
-https://blog.yuchu.me/tags/windows%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/
 https://blog.yuchu.me/tags/hexo/
 https://blog.yuchu.me/tags/github-page/
 https://blog.yuchu.me/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/
+https://blog.yuchu.me/tags/winget/
+https://blog.yuchu.me/tags/windows%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/
 https://blog.yuchu.me/tags/markdown/
 https://blog.yuchu.me/tags/alist/
 https://blog.yuchu.me/tags/raidrive/
 https://blog.yuchu.me/tags/webdav/
+https://blog.yuchu.me/tags/%E9%81%97%E4%BC%A0%E7%AE%97%E6%B3%95/
+https://blog.yuchu.me/tags/python/
 https://blog.yuchu.me/tags/docker/
 https://blog.yuchu.me/tags/%E4%B8%AA%E4%BA%BA%E7%BD%91%E7%9B%98/
 https://blog.yuchu.me/tags/cloudreve/

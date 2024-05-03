@@ -100,57 +100,6 @@
       </tags>
   </entry>
   <entry>
-    <title>不是，钉钉什么时候这么强了？</title>
-    <url>/posts/588e/</url>
-    <content><![CDATA[<p>最近一段时间对AI大模型以及各种衍生的生产力工具比较感兴趣，就特别希望有一个all-in-one的产品出现，虽说网上也能各种导航站，但一来信息更新不一定及时，二来还经常有各种广告，且站长们有时候更换域名都不通知一下的，导致过期的域名往往被一些不合法的小网站注册。另外一点是现在国产软件大都臃肿，各种弹窗广告催你贷款，下载某某软件不说，你美团往软件里塞个原神是什么原神，不是，真有人在美团玩原神吗？</p>
-<p>话说回来，现在其实我是比较抗拒在手机上下载一款新软件的，毕竟存储真不太够用了。其他一下纯工具类软件，比方说<code>一个木函</code>之类的，下载似乎也没多大必要，因为实现的都是一些小众的功能，很久才能用上一次，何况大部分还都能被小程序代替。<br>相反，要是一款本来就是为工作而生，没有那么多花里胡哨的功能和广告的应用，以不大的内存增长为代价，可以实现继承各种有助于提高生产力的功能，那就再好不过了。</p>
-<p>说来也巧，最近刚好在捣鼓阿里开源的Qwen1.5大模型，想办法让它跑在本地而非云端，进而拿自己的数据集和知识库进行训练，但效果并不是太好。突然想起来，大概是去年十月份左右吧，阿里曾说自家的通义千问将会接入钉钉，当时也没太在意，一晃都半年多了。何况这半年来我也几乎没怎么使用过它。于是，昨天试着久违的更新了一下钉钉，发现真的多了不少让人眼前一亮的新特性，一起来看看吧。</p>
-<h1 id="新增钉钉个人版"><a href="#新增钉钉个人版" class="headerlink" title="新增钉钉个人版"></a>新增钉钉个人版</h1><p>进入钉钉，点击左上角头像<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076875_origin_IMG_20240421_123639.jpg"></p>
-<p>点击钉钉个人版</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076880_origin_IMG_20240421_124548.jpg"></p>
-<p>首先映入眼帘的就是这一列AI助理了，都接入了通义千问的大模型，不光文字交流，还能生成图片和视频，感觉还是挺实用的</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076884_origin_IMG_20240421_124703.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076891_origin_Screenshot_2024-04-21-21-04-51-29_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076892_origin_Screenshot_2024-04-21-21-04-57-45_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076893_origin_Screenshot_2024-04-21-21-05-05-04_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076894_origin_Screenshot_2024-04-21-21-05-15-21_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076895_origin_Screenshot_2024-04-21-21-05-21-96_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076896_origin_Screenshot_2024-04-21-21-05-31-10_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076897_origin_Screenshot_2024-04-21-21-05-47-40_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p>左边<code>云盘</code>对接的是你的阿里云盘</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076881_origin_IMG_20240421_124602.jpg"></p>
-<p><code>空间</code>这里可以放一下笔记之类的，也可以自己编辑，实测，支持html和markdown语法，感觉有点类似于国外的Notion，Obsidian，Typora，国内的语雀，思源笔记等。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076882_origin_IMG_20240421_124629.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076879_origin_Screenshot_2024-04-21-12-40-00-40_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><code>发现</code>这里有一些有用的小程序</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076890_origin_Screenshot_2024-04-21-20-56-30-96_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1><p>具体好不好用另说，毕竟我也还没怎么体验，但作为一个ALL-in-One的生产力工具，我还是很喜欢的。</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>钉钉</tag>
-        <tag>生产力工具</tag>
-        <tag>all-in-one工具</tag>
-        <tag>通义千问</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>欢迎来到我的博客</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
-
-<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
-<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
-</ul>
-<p>感谢您的访问，希望您喜欢我的博客！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>VSCode常用快捷键及插件</title>
     <url>/posts/f82e/</url>
     <content><![CDATA[<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
@@ -237,6 +186,65 @@
       </tags>
   </entry>
   <entry>
+    <title>termux折腾日记之安装jupyter、numpy、pandas和matplotlib</title>
+    <url>/posts/baa2/</url>
+    <content><![CDATA[<p>前几天因为课程需要折腾了一下遗传算法，因为担心老师课上提问，带电脑又不方便，变突发奇想程序能不能在手机上运行，毕竟手机上也是有终端环境——termux的。但是termux毕竟只是终端，无法生成函数图像。你说x11？算了吧，还不如直接上电脑呢。</p>
+<p>于是想到了jupyter——一款支持图像输出的在线强大工具，只需要浏览器就能运行。话不多说，直接上手安装:<br><code>pip install jupyter</code><br>毫无疑问报错了，报的错还看不懂，说是缺了依赖，那我用pkg安装依赖呢？还报错，一会儿说是这个依赖还需要某某依赖，一会又是早轮子报错……没办法，上网找教程吧。</p>
+<p>现实是，网上安装jupyter的教程是不少，可大都是PC端的，termux少得可怜，即便有，也大都是三四年前的，不同的人甚至有不同的解决办法，可这些方法都试过一遍后，也都无一例外的失败了。但功夫不负有心人，最后还是在CSDN上找到一篇接近成功的方法，这里贴出原文链接，以供参考:<br><a href="http://t.csdnimg.cn/r7K6y">http://t.csdnimg.cn/r7K6y</a></p>
+<p>但这篇博客终究还是有一些瑕疵，索性问题都不是很大，只是一些版本兼容性问题，比方说在安装numpy，matplotlib，pandas，jupyter等的时候因为不同的版本之间不一定兼容，动不动会出现一大堆的报错，解决方法也简单，就是把pip换成pkg安装，因为pip安装往往需要经过编译，而编译又需要某些特定的工具和库，大都是termux环境中没有的，pkg安装则是直接安装pkg中预编译好的二进制文件，早已跳过了通过工具链编译这一步。举个简单的例子，比方说我要安装numpy和pandas，就不必使用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy pandas</span><br></pre></td></tr></table></figure>
+
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MATHLIB=&quot;m&quot; pip install pandas</span><br><span class="line">MATHLIB=&quot;m&quot; pip install numpy</span><br></pre></td></tr></table></figure>
+
+<p>而是换成</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y python-numpy python-pandas</span><br></pre></td></tr></table></figure>
+
+<p>包括在安装jupyter时经常编译出错的pyzmq，也可以这样安装，后面跟上<code>==25.1.1</code>指的是版本，因为pkg和pip总是默认安装最新的，但测试发现目前最新的26.0.2版本(2024年4月底)有兼容问题，遂换成25.1.1版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y libzmq libcrypt pkg-config  # 先安装一些必要的依赖库</span><br><span class="line"></span><br><span class="line"># 再通过pkg安装pyzmq</span><br><span class="line"></span><br><span class="line">pkg install -y python-pyzmq==25.1.1</span><br><span class="line"></span><br><span class="line"># 或者</span><br><span class="line">pip install pyzmq==25.1.1</span><br></pre></td></tr></table></figure>
+
+<p>安装jupyter中还有一个经常出现的依赖报错是maturin，这是一个rust里的文件，同样是因为一些版本兼容问题，在Python3.11的环境下是无法正常编译安装的，这个时候就只能先安装rust环境，再用cargo安装了:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install rust  #安装rust</span><br><span class="line">pkg install binutils-is-llvm</span><br><span class="line">cargo install maturin</span><br><span class="line">pkg install -y libzmq libcrypt pkg-config</span><br><span class="line">pip install clang fftw make freetype # 一些编译有关依赖</span><br><span class="line">pip install ipython  # jupyter依赖ipython</span><br></pre></td></tr></table></figure>
+
+<p>之后再安装jupyter应该就不会报错了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install jupyter</span><br></pre></td></tr></table></figure>
+
+<p>安装matplotlib的过程也是常常因为一些依赖报错，但比起jupyter还是简单不少的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y libjpeg-turbo libtiff</span><br><span class="line">pkg install python-pillow</span><br><span class="line">pkg install -y libpng</span><br><span class="line">pkg install matplotlib</span><br></pre></td></tr></table></figure>
+
+<p>总的来说，在termux里折腾jupyter说难不难，说简单也不简单吧，毕竟也是花了我几个小时的时间，最后，我把上面的过程都写成了一个脚本，方便大家自动化安装，地址如下:<br><a href="https://github.com/syuchua/termux-jupyter">https://github.com/syuchua/termux-jupyter</a></p>
+<p>如果是直接使用的话可以使用wget下载到本地:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/syuchua/termux-jupyter/master/install.sh -O install.sh</span><br><span class="line">chmod +x install.sh</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/termux-jupyter.jpg"></p>
+<p>最后，如果觉得本教程或者这个脚本还可以的话，麻烦给我一个star，谢谢！</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>Termux</tag>
+        <tag>jupyter</tag>
+        <tag>numpy</tag>
+        <tag>python</tag>
+        <tag>pandas</tag>
+        <tag>matplotlib</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欢迎来到我的博客</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
+
+<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
+<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
+</ul>
+<p>感谢您的访问，希望您喜欢我的博客！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>winget的基础配置与使用</title>
     <url>/posts/8eff/</url>
     <content><![CDATA[<h1 id="1-什么是winget"><a href="#1-什么是winget" class="headerlink" title="1.什么是winget"></a>1.什么是winget</h1><p>微软公司在 2020 年 5 月 Microsoft Build 开发者大会上发布了用于 Windows 系统的官方支持的软件包管理器 —— Windows 软件包管理器（Windows Package Manager），也就是 WinGet 软件包管理器。经过 3 年的发展，越来越多的软件厂商在这个平台上发布自家软件。WinGet 除了支持 exe、msi 等传统的 Win32 安装包格式外，还支持用于新版 Windows 的 msix&#x2F;msixbundle 格式所打包的软件。</p>
@@ -308,45 +316,97 @@
       </tags>
   </entry>
   <entry>
-    <title>基于github+jsdelivr实现免费图床</title>
-    <url>/posts/d21b/</url>
-    <content><![CDATA[<p>图床想必大家都不陌生了，无论是个人搭建博客或是其他站点、APP、小程序，还是企业级的应用，想要加速网站的访问，都离不开图床，但一款稳定好用的图床又往往要么是收费的，要么需要实名注册等各种流程，那有没有什么免费且方便的代替方案呢？</p>
-<p>答案是显而易见的，使用GitHub的仓库作为图床，再经由jsdelivr的免费cdn加速，一款稳定方便的图床就诞生了，下面开始本期教程。</p>
-<h1 id="新建GitHub仓库"><a href="#新建GitHub仓库" class="headerlink" title="新建GitHub仓库"></a>新建GitHub仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E4%BB%93%E5%BA%93.jpg"></p>
-<h1 id="生成一个token"><a href="#生成一个token" class="headerlink" title="生成一个token"></a>生成一个token</h1><ul>
-<li><p>点击右上角用户头像-&gt; 设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/token.jpg"></p>
-</li>
-<li><p>点击开发者设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/develop.jpg"></p>
-</li>
-<li><p>点击Personal acess tokens -&gt; Generate new token<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/newtoken.jpg"><br>  填写token描述，勾选repo即可，过期时间可以选择永不</p>
-</li>
-<li><p>获取token秘钥<br>  注意，该秘钥仅显示一次，建议保存到一个找得到的地方，或者云盘，后面还会用到。</p>
-</li>
-</ul>
-<h1 id="配置PicGo并使用jsdelivr的免费cdn加速"><a href="#配置PicGo并使用jsdelivr的免费cdn加速" class="headerlink" title="配置PicGo并使用jsdelivr的免费cdn加速"></a>配置PicGo并使用jsdelivr的免费cdn加速</h1><p><a href="https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6-x64.exe">下载PicGo</a>，安装好后开始对接图床</p>
-<ul>
-<li><p>设定仓库名：username&#x2F;repositoies(username为github用户名，repositoies为仓库名，比方说用户名zhangsan，仓库名为jsdelivr，就填写zhangsan&#x2F;jsdelivr)</p>
-</li>
-<li><p>设定分支名：main</p>
-</li>
-<li><p>设定token：刚刚复制的token</p>
-</li>
-<li><p>指定存储路径：填写打算存放图片的位置，比方说img&#x2F;，代表在该仓库下创建一个铭文img的文件夹，图片将保存在这个文件夹中。</p>
-</li>
-<li><p>设定自定义域名：它的的作用是，在图片上传后，PicGo 会按照自定义域名+上传的图片名的方式生成访问链接，放到粘贴板上，因为我们要使用 jsDelivr 加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E5%9B%BE%E5%BA%8A%E4%BB%93%E5%BA%93%E5%90%8D@%E5%88%86%E6%94%AF">https://cdn.jsdelivr.net/gh/用户名/图床仓库名@分支</a> #默认是main</p>
-</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/picgo.jpg"></p>
-<p>接下来就可以愉快的使用免费图床啦！</p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
+    <title>不是，钉钉什么时候这么强了？</title>
+    <url>/posts/588e/</url>
+    <content><![CDATA[<p>最近一段时间对AI大模型以及各种衍生的生产力工具比较感兴趣，就特别希望有一个all-in-one的产品出现，虽说网上也能各种导航站，但一来信息更新不一定及时，二来还经常有各种广告，且站长们有时候更换域名都不通知一下的，导致过期的域名往往被一些不合法的小网站注册。另外一点是现在国产软件大都臃肿，各种弹窗广告催你贷款，下载某某软件不说，你美团往软件里塞个原神是什么原神，不是，真有人在美团玩原神吗？</p>
+<p>话说回来，现在其实我是比较抗拒在手机上下载一款新软件的，毕竟存储真不太够用了。其他一下纯工具类软件，比方说<code>一个木函</code>之类的，下载似乎也没多大必要，因为实现的都是一些小众的功能，很久才能用上一次，何况大部分还都能被小程序代替。<br>相反，要是一款本来就是为工作而生，没有那么多花里胡哨的功能和广告的应用，以不大的内存增长为代价，可以实现继承各种有助于提高生产力的功能，那就再好不过了。</p>
+<p>说来也巧，最近刚好在捣鼓阿里开源的Qwen1.5大模型，想办法让它跑在本地而非云端，进而拿自己的数据集和知识库进行训练，但效果并不是太好。突然想起来，大概是去年十月份左右吧，阿里曾说自家的通义千问将会接入钉钉，当时也没太在意，一晃都半年多了。何况这半年来我也几乎没怎么使用过它。于是，昨天试着久违的更新了一下钉钉，发现真的多了不少让人眼前一亮的新特性，一起来看看吧。</p>
+<h1 id="新增钉钉个人版"><a href="#新增钉钉个人版" class="headerlink" title="新增钉钉个人版"></a>新增钉钉个人版</h1><p>进入钉钉，点击左上角头像<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076875_origin_IMG_20240421_123639.jpg"></p>
+<p>点击钉钉个人版</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076880_origin_IMG_20240421_124548.jpg"></p>
+<p>首先映入眼帘的就是这一列AI助理了，都接入了通义千问的大模型，不光文字交流，还能生成图片和视频，感觉还是挺实用的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076884_origin_IMG_20240421_124703.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076891_origin_Screenshot_2024-04-21-21-04-51-29_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076892_origin_Screenshot_2024-04-21-21-04-57-45_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076893_origin_Screenshot_2024-04-21-21-05-05-04_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076894_origin_Screenshot_2024-04-21-21-05-15-21_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076895_origin_Screenshot_2024-04-21-21-05-21-96_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076896_origin_Screenshot_2024-04-21-21-05-31-10_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076897_origin_Screenshot_2024-04-21-21-05-47-40_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p>左边<code>云盘</code>对接的是你的阿里云盘</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076881_origin_IMG_20240421_124602.jpg"></p>
+<p><code>空间</code>这里可以放一下笔记之类的，也可以自己编辑，实测，支持html和markdown语法，感觉有点类似于国外的Notion，Obsidian，Typora，国内的语雀，思源笔记等。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076882_origin_IMG_20240421_124629.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076879_origin_Screenshot_2024-04-21-12-40-00-40_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><code>发现</code>这里有一些有用的小程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076890_origin_Screenshot_2024-04-21-20-56-30-96_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1><p>具体好不好用另说，毕竟我也还没怎么体验，但作为一个ALL-in-One的生产力工具，我还是很喜欢的。</p>
+]]></content>
       <categories>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>GitHub图床</tag>
-        <tag>jsdelivr CDN加速</tag>
-        <tag>免费图床</tag>
+        <tag>钉钉</tag>
+        <tag>生产力工具</tag>
+        <tag>all-in-one工具</tag>
+        <tag>通义千问</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>极简markdown语法</title>
+    <url>/posts/f33f/</url>
+    <content><![CDATA[<h1 id="极简markdown语法"><a href="#极简markdown语法" class="headerlink" title="极简markdown语法"></a>极简markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>要创建标题，请在单词或短语前面添加井号 (#) 。# 的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (&lt;\h3&gt;) (例如：### My Header)</p>
+<h3 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h3><p>还可以在文本下方添加任意数量的 &#x3D;&#x3D; 号来标识一级标题，或者 – 号来标识二级标题。</p>
+<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>
+<span id="more"></span>
+
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(或使用HTML语法的<br>)。</p>
+<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>要加粗文本，请在单词或短语的前后各添加两个星号（**内容**）或下划线（__内容__）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（这**是内**容）。</p>
+<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>要用斜体显示文本，请在单词或短语前后添加一个星号（*内容*）或下划线（_内容_）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
+<h3 id="粗体-斜体"><a href="#粗体-斜体" class="headerlink" title="粗体&amp;斜体"></a>粗体&amp;斜体</h3><p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>要创建块引用，请在段落前添加一个 &gt; 符号</p>
+<h3 id="多个段落的块引用"><a href="#多个段落的块引用" class="headerlink" title="多个段落的块引用"></a>多个段落的块引用</h3><p>块引用可以包含多个段落。为段落之间的空白行添加一个 &gt; 符号。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 第一段</span><br><span class="line">&gt;</span><br><span class="line">&gt; 第二段</span><br></pre></td></tr></table></figure>
+
+<h3 id="嵌套块引用"><a href="#嵌套块引用" class="headerlink" title="嵌套块引用"></a>嵌套块引用</h3><p>块引用可以嵌套。在要嵌套的段落前添加一个 &gt;&gt; 符号</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 一层引用</span><br><span class="line">&gt;</span><br><span class="line">&gt;&gt; 二层引用</span><br></pre></td></tr></table></figure>
+<h2 id="带有其它元素的块引用"><a href="#带有其它元素的块引用" class="headerlink" title="带有其它元素的块引用"></a>带有其它元素的块引用</h2><p>块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; #### The quarterly results look great!</span><br><span class="line">&gt;</span><br><span class="line">&gt; - Revenue was off the chart.</span><br><span class="line">&gt; - Profits were higher than ever.</span><br><span class="line">&gt;</span><br><span class="line">&gt;  *Everything* is going according to **plan**.</span><br></pre></td></tr></table></figure>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>有序列表<br>要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。数字不必按数学顺序排列，但是列表应当以数字 1 起始。</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>无序列表<br>要创建无序列表，请在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+) 。缩进一个或多个列表项可创建嵌套列表</p>
+<h3 id="在列表中嵌套其他元素"><a href="#在列表中嵌套其他元素" class="headerlink" title="在列表中嵌套其他元素"></a>在列表中嵌套其他元素</h3><p>要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符。</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>要添加表，请使用三个或多个连字符（—）创建每列的标题，并使用管道（|）分隔每列。您可以选择在表的任一端添加管道。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| Syntax      | Description |</span><br><span class="line">| ----------- | ----------- |</span><br><span class="line">| Header      | Title       |</span><br><span class="line">| Paragraph   | Text        |</span><br></pre></td></tr></table></figure>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>您可以通过在标题行中的连字符的左侧，右侧或两侧添加冒号（:），将列中的文本对齐到左侧，右侧或中心</p>
+<h2 id="分隔线语法"><a href="#分隔线语法" class="headerlink" title="分隔线语法"></a>分隔线语法</h2><p>要创建分隔线，请在单独一行上使用三个或多个星号 (***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。</p>
+<h2 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a>链接语法</h2><p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
+<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></p>
+<p>对应的HTML代码：<code>&lt;a href=&quot;超链接地址&quot; title=&quot;超链接title&quot;&gt;超链接显示名&lt;/a&gt;</code></p>
+<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn)</code>。</p>
+<h3 id="给链接增加-Title"><a href="#给链接增加-Title" class="headerlink" title="给链接增加 Title"></a>给链接增加 Title</h3><p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
+<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)</code></p>
+<h3 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h3><p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="引用类型链接"><a href="#引用类型链接" class="headerlink" title="引用类型链接"></a>引用类型链接</h3><p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
+<h4 id="链接的第一部分格式"><a href="#链接的第一部分格式" class="headerlink" title="链接的第一部分格式"></a>链接的第一部分格式</h4><p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
+<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
+<p>以下示例格式对于链接的第一部分效果相同：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[hobbit-hole][1]</span><br><span class="line">[hobbit-hole] [1]</span><br></pre></td></tr></table></figure>
+<h4 id="链接的第二部分格式"><a href="#链接的第二部分格式" class="headerlink" title="链接的第二部分格式"></a>链接的第二部分格式</h4><p>引用类型链接的第二部分使用以下属性设置格式：</p>
+<p>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如[label]:）。<br>链接的URL，可以选择将其括在尖括号中。<br>链接的可选标题，可以将其括在双引号，单引号或括号中。<br>以下示例格式对于链接的第二部分效果相同：</p>
+<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
+<h2 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h2><p>要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
+<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 &quot;图片title&quot;)</code>。</p>
+<p>对应的HTML代码：<code>&lt;img src=&quot;图片链接&quot; alt=&quot;图片alt&quot; title=&quot;图片title&quot;&gt;</code></p>
+<h3 id="链接图片"><a href="#链接图片" class="headerlink" title="链接图片"></a>链接图片</h3><p>给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。</p>
+<h2 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h2><p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
@@ -415,60 +475,45 @@
       </tags>
   </entry>
   <entry>
-    <title>极简markdown语法</title>
-    <url>/posts/f33f/</url>
-    <content><![CDATA[<h1 id="极简markdown语法"><a href="#极简markdown语法" class="headerlink" title="极简markdown语法"></a>极简markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>要创建标题，请在单词或短语前面添加井号 (#) 。# 的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (&lt;\h3&gt;) (例如：### My Header)</p>
-<h3 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h3><p>还可以在文本下方添加任意数量的 &#x3D;&#x3D; 号来标识一级标题，或者 – 号来标识二级标题。</p>
-<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>
-<span id="more"></span>
-
-<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(或使用HTML语法的<br>)。</p>
-<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>要加粗文本，请在单词或短语的前后各添加两个星号（**内容**）或下划线（__内容__）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（这**是内**容）。</p>
-<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>要用斜体显示文本，请在单词或短语前后添加一个星号（*内容*）或下划线（_内容_）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
-<h3 id="粗体-斜体"><a href="#粗体-斜体" class="headerlink" title="粗体&amp;斜体"></a>粗体&amp;斜体</h3><p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>要创建块引用，请在段落前添加一个 &gt; 符号</p>
-<h3 id="多个段落的块引用"><a href="#多个段落的块引用" class="headerlink" title="多个段落的块引用"></a>多个段落的块引用</h3><p>块引用可以包含多个段落。为段落之间的空白行添加一个 &gt; 符号。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 第一段</span><br><span class="line">&gt;</span><br><span class="line">&gt; 第二段</span><br></pre></td></tr></table></figure>
-
-<h3 id="嵌套块引用"><a href="#嵌套块引用" class="headerlink" title="嵌套块引用"></a>嵌套块引用</h3><p>块引用可以嵌套。在要嵌套的段落前添加一个 &gt;&gt; 符号</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 一层引用</span><br><span class="line">&gt;</span><br><span class="line">&gt;&gt; 二层引用</span><br></pre></td></tr></table></figure>
-<h2 id="带有其它元素的块引用"><a href="#带有其它元素的块引用" class="headerlink" title="带有其它元素的块引用"></a>带有其它元素的块引用</h2><p>块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; #### The quarterly results look great!</span><br><span class="line">&gt;</span><br><span class="line">&gt; - Revenue was off the chart.</span><br><span class="line">&gt; - Profits were higher than ever.</span><br><span class="line">&gt;</span><br><span class="line">&gt;  *Everything* is going according to **plan**.</span><br></pre></td></tr></table></figure>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>有序列表<br>要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。数字不必按数学顺序排列，但是列表应当以数字 1 起始。</p>
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>无序列表<br>要创建无序列表，请在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+) 。缩进一个或多个列表项可创建嵌套列表</p>
-<h3 id="在列表中嵌套其他元素"><a href="#在列表中嵌套其他元素" class="headerlink" title="在列表中嵌套其他元素"></a>在列表中嵌套其他元素</h3><p>要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符。</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>要添加表，请使用三个或多个连字符（—）创建每列的标题，并使用管道（|）分隔每列。您可以选择在表的任一端添加管道。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| Syntax      | Description |</span><br><span class="line">| ----------- | ----------- |</span><br><span class="line">| Header      | Title       |</span><br><span class="line">| Paragraph   | Text        |</span><br></pre></td></tr></table></figure>
-<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>您可以通过在标题行中的连字符的左侧，右侧或两侧添加冒号（:），将列中的文本对齐到左侧，右侧或中心</p>
-<h2 id="分隔线语法"><a href="#分隔线语法" class="headerlink" title="分隔线语法"></a>分隔线语法</h2><p>要创建分隔线，请在单独一行上使用三个或多个星号 (***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。</p>
-<h2 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a>链接语法</h2><p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
-<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></p>
-<p>对应的HTML代码：<code>&lt;a href=&quot;超链接地址&quot; title=&quot;超链接title&quot;&gt;超链接显示名&lt;/a&gt;</code></p>
-<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn)</code>。</p>
-<h3 id="给链接增加-Title"><a href="#给链接增加-Title" class="headerlink" title="给链接增加 Title"></a>给链接增加 Title</h3><p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
-<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)</code></p>
-<h3 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h3><p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="引用类型链接"><a href="#引用类型链接" class="headerlink" title="引用类型链接"></a>引用类型链接</h3><p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
-<h4 id="链接的第一部分格式"><a href="#链接的第一部分格式" class="headerlink" title="链接的第一部分格式"></a>链接的第一部分格式</h4><p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
-<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
-<p>以下示例格式对于链接的第一部分效果相同：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[hobbit-hole][1]</span><br><span class="line">[hobbit-hole] [1]</span><br></pre></td></tr></table></figure>
-<h4 id="链接的第二部分格式"><a href="#链接的第二部分格式" class="headerlink" title="链接的第二部分格式"></a>链接的第二部分格式</h4><p>引用类型链接的第二部分使用以下属性设置格式：</p>
-<p>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如[label]:）。<br>链接的URL，可以选择将其括在尖括号中。<br>链接的可选标题，可以将其括在双引号，单引号或括号中。<br>以下示例格式对于链接的第二部分效果相同：</p>
-<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
-<h2 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h2><p>要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
-<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 &quot;图片title&quot;)</code>。</p>
-<p>对应的HTML代码：<code>&lt;img src=&quot;图片链接&quot; alt=&quot;图片alt&quot; title=&quot;图片title&quot;&gt;</code></p>
-<h3 id="链接图片"><a href="#链接图片" class="headerlink" title="链接图片"></a>链接图片</h3><p>给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。</p>
-<h2 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h2><p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。</p>
-]]></content>
+    <title>基于github+jsdelivr实现免费图床</title>
+    <url>/posts/d21b/</url>
+    <content><![CDATA[<p>图床想必大家都不陌生了，无论是个人搭建博客或是其他站点、APP、小程序，还是企业级的应用，想要加速网站的访问，都离不开图床，但一款稳定好用的图床又往往要么是收费的，要么需要实名注册等各种流程，那有没有什么免费且方便的代替方案呢？</p>
+<p>答案是显而易见的，使用GitHub的仓库作为图床，再经由jsdelivr的免费cdn加速，一款稳定方便的图床就诞生了，下面开始本期教程。</p>
+<h1 id="新建GitHub仓库"><a href="#新建GitHub仓库" class="headerlink" title="新建GitHub仓库"></a>新建GitHub仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E4%BB%93%E5%BA%93.jpg"></p>
+<h1 id="生成一个token"><a href="#生成一个token" class="headerlink" title="生成一个token"></a>生成一个token</h1><ul>
+<li><p>点击右上角用户头像-&gt; 设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/token.jpg"></p>
+</li>
+<li><p>点击开发者设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/develop.jpg"></p>
+</li>
+<li><p>点击Personal acess tokens -&gt; Generate new token<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/newtoken.jpg"><br>  填写token描述，勾选repo即可，过期时间可以选择永不</p>
+</li>
+<li><p>获取token秘钥<br>  注意，该秘钥仅显示一次，建议保存到一个找得到的地方，或者云盘，后面还会用到。</p>
+</li>
+</ul>
+<h1 id="配置PicGo并使用jsdelivr的免费cdn加速"><a href="#配置PicGo并使用jsdelivr的免费cdn加速" class="headerlink" title="配置PicGo并使用jsdelivr的免费cdn加速"></a>配置PicGo并使用jsdelivr的免费cdn加速</h1><p><a href="https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6-x64.exe">下载PicGo</a>，安装好后开始对接图床</p>
+<ul>
+<li><p>设定仓库名：username&#x2F;repositoies(username为github用户名，repositoies为仓库名，比方说用户名zhangsan，仓库名为jsdelivr，就填写zhangsan&#x2F;jsdelivr)</p>
+</li>
+<li><p>设定分支名：main</p>
+</li>
+<li><p>设定token：刚刚复制的token</p>
+</li>
+<li><p>指定存储路径：填写打算存放图片的位置，比方说img&#x2F;，代表在该仓库下创建一个铭文img的文件夹，图片将保存在这个文件夹中。</p>
+</li>
+<li><p>设定自定义域名：它的的作用是，在图片上传后，PicGo 会按照自定义域名+上传的图片名的方式生成访问链接，放到粘贴板上，因为我们要使用 jsDelivr 加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E5%9B%BE%E5%BA%8A%E4%BB%93%E5%BA%93%E5%90%8D@%E5%88%86%E6%94%AF">https://cdn.jsdelivr.net/gh/用户名/图床仓库名@分支</a> #默认是main</p>
+</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/picgo.jpg"></p>
+<p>接下来就可以愉快的使用免费图床啦！</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
       <categories>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>markdown</tag>
+        <tag>GitHub图床</tag>
+        <tag>jsdelivr CDN加速</tag>
+        <tag>免费图床</tag>
       </tags>
   </entry>
   <entry>
@@ -792,8 +837,8 @@
         <category>blog</category>
       </categories>
       <tags>
-        <tag>遗传算法</tag>
         <tag>python</tag>
+        <tag>遗传算法</tag>
       </tags>
   </entry>
 </search>

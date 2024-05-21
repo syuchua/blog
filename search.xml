@@ -1,51 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>3分钟搭建一个ChatGPT镜像站，非api，支持官网账号登录</title>
-    <url>/posts/b2f3/</url>
-    <content><![CDATA[<p>本篇基于github上的开源项目<a href="https://github.com/xyhelper/chatgpt-mirror-server">https://github.com/xyhelper/chatgpt-mirror-server</a>旨在通过简单的操作搭建一个ChatGPT的个人镜像，绕过cloudflare，提升访问速度，且没有烦人的机器人验证步骤，可本地搭建，也可部署在服务器上，通过登录官网账号的方式，非api模式，提高回答准确性。同时，基于共享账号的普遍存在，可以实现成本远低于api模式的GPT4和GPTs使用。</p>
-<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><ul>
-<li>一台至少 2 核 2G 内存的服务器,推荐使用香港、新加坡、日本地区的服务器,可以 兼顾国内访问。(本地搭建的话可忽略)</li>
-<li>安装了 docker 和 docker-compose</li>
-<li>安装了 git</li>
-<li>有官网直登账号(不支持谷歌、微软、苹果等第三方登陆账号)</li>
-<li>一个域名（用于反代，可忽略）</li>
-</ul>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>打开服务器，输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update -y &amp;&amp; apt upgrade -y &amp;&amp; apt install -y vim wget curl   #出现报错可能是权限问题，用`sudo su`提权至root用户</span><br></pre></td></tr></table></figure>
-<h1 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h1><p>直接下载执行官方的一键部署脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -sSfL https://raw.githubusercontent.com/xyhelper/chatgpt-mirror-server-deploy/master/quick-install.sh | bash</span><br></pre></td></tr></table></figure>
-
-<h1 id="手动部署"><a href="#手动部署" class="headerlink" title="手动部署"></a>手动部署</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone --depth=1 https://github.com/xyhelper/chatgpt-mirror-server-deploy.git chatgpt-mirror                 # 克隆项目地址</span><br><span class="line">cd chatgpt-mirror              #进入根目录</span><br><span class="line">./deploy.sh                    #启动部署脚本，等待拉取docker镜像</span><br></pre></td></tr></table></figure>
-
-<h1 id="进入管理后台进行基础配置"><a href="#进入管理后台进行基础配置" class="headerlink" title="进入管理后台进行基础配置"></a>进入管理后台进行基础配置</h1><p>访问<code>http://服务器ip地址:8200/xyhelper</code></p>
-<p>默认用户名<code>admin</code>，密码<code>123456</code><br><img src="https://cloud.yuchu.me/f/8QCY/chat-mirror.jpg"></p>
-<p>进入后台左边点击工作台-账号管理，添加自己的ChatGPT官网账号勾选启用（plus用户切记勾选plus），再进入用户管理，添加一个用户，过期日期和user-token都可以自定义，保存。复制user-token，返回首页，粘贴。</p>
-<h3 id="一个小细节"><a href="#一个小细节" class="headerlink" title="一个小细节"></a>一个小细节</h3><p>如果你是plus用户，或者使用的是共享账号，想把这个镜像站分享给其他人，又想省去每次都输入token的麻烦，不妨自定义ygusertoken，比方说我设置的是<code>1145141919810hhhhaaa</code>，然后把这个链接：<code>http://yourip:8200/login_token?access_token=1145141919810hhhhaaa</code>分享出去，这样就·不用·每次都登录了。</p>
-<h1 id="配置nginx反代"><a href="#配置nginx反代" class="headerlink" title="配置nginx反代"></a>配置nginx反代</h1><p>新建nginx配置目录：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /home/nginx</span><br><span class="line"></span><br><span class="line">touch /home/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line">mkdir -p /home/nginx/certs</span><br></pre></td></tr></table></figure>
-
-<p>申请证书</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://get.acme.sh | sh</span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --register-account -m xxxx@gmail.com   #随便一个邮箱就行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --issue -d yourip.com --standalone     # yourip.com改为你的域名</span><br></pre></td></tr></table></figure>
-
-<p>下载证书到本地</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d yourip.com --key-file /home/nginx/certs/key.pem --fullchain-file /home/nginx/certs/cert.pem</span><br></pre></td></tr></table></figure>
-<p>填写nginx配置文件<br><code>cd /home/nginx/ &amp;&amp; vim nginx.conf</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">events &#123;</span><br><span class="line"></span><br><span class="line">    worker_connections  1024;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  client_max_body_size 1000m;  </span><br><span class="line"></span><br><span class="line">  #上传限制参数1G以内文件可上传</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 同理，替换为你的域名</span><br><span class="line"></span><br><span class="line">    return 301 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 替换域名</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:8200;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>拉取部署nginx容器</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 -p 443:443 -v /home/nginx/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/certs:/etc/nginx/certs -v /home/nginx/html:/usr/share/nginx/html nginx:latest</span><br></pre></td></tr></table></figure>
-
-<p>之后就可以用域名访问啦！</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>chatgpt镜像站</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>VSCode常用快捷键及插件</title>
     <url>/posts/f82e/</url>
     <content><![CDATA[<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
@@ -132,57 +87,48 @@
       </tags>
   </entry>
   <entry>
-    <title>shizuku:安卓玩机入门指南</title>
-    <url>/posts/30e5/</url>
-    <content><![CDATA[<h1 id="shizuku是什么？"><a href="#shizuku是什么？" class="headerlink" title="shizuku是什么？"></a>shizuku是什么？</h1><p><code>Shizuku</code> 是一款开源的 ADB（Android Debug Briage）权限管理器。由于现阶段大部分安卓手机都无法解锁获取 ROOT 高级权限，但是用户又需要高级权限对系统进行一些操作，恰好这些功能可以通过 ADB 权限进行解决，比如冻结应用、卸载不想要的系统应用（只有少部分能通过adb卸载，更多的还是建议root）。这种情况下，<code>Shizuku</code> 就是一个非常好的解决方案。</p>
-<p>具体关于shizuku是什么，官网已经给出了很明确的解释：<code>Shizuku</code> 可以帮助普通应用借助一个由 app_process 启动的 Java 进程直接以 adb 或 root 特权使用系统 API。简单来说，root权限&gt;<code>shizuku</code>的权限&gt;普通用户，利用这一聊胜于无的权限，我们就已经可以做很多事了。</p>
-<h1 id="安装shizuku"><a href="#安装shizuku" class="headerlink" title="安装shizuku"></a>安装shizuku</h1><p>酷安的<code>shizuku</code>下载地址似乎已经被ban了，那就只能用<a href="https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api&pli=1">Google play</a>或者<a href="https://github.com/RikkaApps/Shizuku/releases/download/v13.5.4/shizuku-v13.5.4.r1049.0e53409-release.apk">github</a>下载了，国内用户访问这两个地址不方便的，也可以使用我的<a href="https://cloud.yuchu.me/s/mOsK">cloudreve</a></p>
-<h1 id="激活shizuku"><a href="#激活shizuku" class="headerlink" title="激活shizuku"></a>激活shizuku</h1><ul>
-<li><p><code>shizuku</code>官方提供了三种激活方式，root激活，连接电脑通过adb激活和无线调试激活。root激活就不提了，我都root了还折腾<code>shizuku</code>干嘛（笑），adb激活需要手边有电脑，总归是不太方便，而且后面我们还会介绍一种更好的方法。现在我们先演示用无线调试激活。</p>
-</li>
-<li><p>打开手机设置-我的设备（也可能是我的手机或其他类似的选项），找到版本号，连续点击至少5次，直到弹出“您已处于开发者模式”的提示。<br>  返回设置-更多设置-开发者选项，启用无线调试。在 <code>Shizuku</code> 软件内开始配对- 点按“无线调试”中的“使用配对码配对设备”- 在下来菜单的<code>Shizuku</code>的通知中填入配对码</p>
-</li>
+    <title>3分钟搭建一个ChatGPT镜像站，非api，支持官网账号登录</title>
+    <url>/posts/b2f3/</url>
+    <content><![CDATA[<p>本篇基于github上的开源项目<a href="https://github.com/xyhelper/chatgpt-mirror-server">https://github.com/xyhelper/chatgpt-mirror-server</a>旨在通过简单的操作搭建一个ChatGPT的个人镜像，绕过cloudflare，提升访问速度，且没有烦人的机器人验证步骤，可本地搭建，也可部署在服务器上，通过登录官网账号的方式，非api模式，提高回答准确性。同时，基于共享账号的普遍存在，可以实现成本远低于api模式的GPT4和GPTs使用。</p>
+<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><ul>
+<li>一台至少 2 核 2G 内存的服务器,推荐使用香港、新加坡、日本地区的服务器,可以 兼顾国内访问。(本地搭建的话可忽略)</li>
+<li>安装了 docker 和 docker-compose</li>
+<li>安装了 git</li>
+<li>有官网直登账号(不支持谷歌、微软、苹果等第三方登陆账号)</li>
+<li>一个域名（用于反代，可忽略）</li>
 </ul>
-<p>  <img src="https://pic2.zhimg.com/80/v2-939e9ad3fc44143e564d816506713e7d_720w.webp"></p>
-<p>  <img src="https://pic4.zhimg.com/80/v2-22abc729f625f8298928f79dc53ccbf3_720w.webp"></p>
-<ul>
-<li>无效调试激活方案注意事项: 如果无法输入配对码，请在系统-通知样式选项中，将默认通知样式改为 原生样式- 启用无线调试的过程中，部分系统会提示「某个应用遮挡了权限请求界面」，可以尝试关闭系统的侧边栏功能或者关闭掉所有允获取了悬浮窗权限的应用</li>
-</ul>
-<h2 id="通过黑阈激活"><a href="#通过黑阈激活" class="headerlink" title="通过黑阈激活"></a>通过黑阈激活</h2><p>黑阈是一款不需要root就能待机或强行停止应用的工具，它可以配合shizuku实现对一些流氓应用的限制。但这里我们要用到的是它的另一个功能—指令。</p>
-<h3 id="下载安装黑阈"><a href="#下载安装黑阈" class="headerlink" title="下载安装黑阈"></a>下载安装黑阈</h3><p>酷安可以直接下载：<a href="https://www.coolapk.com/apk/me.piebridge.brevent">https://www.coolapk.com/apk/me.piebridge.brevent</a></p>
-<p>安装完成后照着上面无线调试激活shizuku的步骤，无线激活黑阈就好了</p>
-<p>激活后点击左上角-执行指令<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000077394_origin_IMG_20240429_220943.jpg"></p>
-<p>输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh</span><br></pre></td></tr></table></figure>
-<p>即可激活<code>shizuku</code>这一步的原理其实与adb激活shizuku类似，不过不需要电脑，好处是适配性更好，也比较方便，仅此更推荐用这种方式激活shizuku。</p>
-<h1 id="shizuku常见用法"><a href="#shizuku常见用法" class="headerlink" title="shizuku常见用法"></a>shizuku常见用法</h1><ol>
-<li><p><a href="https://www.coolapk.com/apk/com.catchingnow.icebox">使用冰箱冻结应用</a></p>
-</li>
-<li><p><a href="https://www.coolapk.com/apk/bin.mt.plus">给mt管理器提权，使之能访问Android&#x2F;data目录</a></p>
-</li>
-<li><p><a href="https://cloud.yuchu.me/s/nRtq">给scene提权，查看CPU运行状态和检测游戏帧率</a></p>
-</li>
-<li><p><a href="https://cloud.yuchu.me/s/ojuL">给APP Ops提权，更好地监控和管理app权限，对抗摇一摇广告的神！</a></p>
-</li>
-<li><p><a href="https://cloud.yuchu.me/s/p2CN">给GKD提权，反开屏广告地神！</a></p>
-</li>
-<li><p><a href="https://cloud.yuchu.me/s/q2FP">给termux提权，在termux里也能访问Android&#x2F;data目录</a></p>
-</li>
-</ol>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>打开服务器，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update -y &amp;&amp; apt upgrade -y &amp;&amp; apt install -y vim wget curl   #出现报错可能是权限问题，用`sudo su`提权至root用户</span><br></pre></td></tr></table></figure>
+<h1 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h1><p>直接下载执行官方的一键部署脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -sSfL https://raw.githubusercontent.com/xyhelper/chatgpt-mirror-server-deploy/master/quick-install.sh | bash</span><br></pre></td></tr></table></figure>
+
+<h1 id="手动部署"><a href="#手动部署" class="headerlink" title="手动部署"></a>手动部署</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone --depth=1 https://github.com/xyhelper/chatgpt-mirror-server-deploy.git chatgpt-mirror                 # 克隆项目地址</span><br><span class="line">cd chatgpt-mirror              #进入根目录</span><br><span class="line">./deploy.sh                    #启动部署脚本，等待拉取docker镜像</span><br></pre></td></tr></table></figure>
+
+<h1 id="进入管理后台进行基础配置"><a href="#进入管理后台进行基础配置" class="headerlink" title="进入管理后台进行基础配置"></a>进入管理后台进行基础配置</h1><p>访问<code>http://服务器ip地址:8200/xyhelper</code></p>
+<p>默认用户名<code>admin</code>，密码<code>123456</code><br><img src="https://cloud.yuchu.me/f/8QCY/chat-mirror.jpg"></p>
+<p>进入后台左边点击工作台-账号管理，添加自己的ChatGPT官网账号勾选启用（plus用户切记勾选plus），再进入用户管理，添加一个用户，过期日期和user-token都可以自定义，保存。复制user-token，返回首页，粘贴。</p>
+<h3 id="一个小细节"><a href="#一个小细节" class="headerlink" title="一个小细节"></a>一个小细节</h3><p>如果你是plus用户，或者使用的是共享账号，想把这个镜像站分享给其他人，又想省去每次都输入token的麻烦，不妨自定义ygusertoken，比方说我设置的是<code>1145141919810hhhhaaa</code>，然后把这个链接：<code>http://yourip:8200/login_token?access_token=1145141919810hhhhaaa</code>分享出去，这样就·不用·每次都登录了。</p>
+<h1 id="配置nginx反代"><a href="#配置nginx反代" class="headerlink" title="配置nginx反代"></a>配置nginx反代</h1><p>新建nginx配置目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /home/nginx</span><br><span class="line"></span><br><span class="line">touch /home/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line">mkdir -p /home/nginx/certs</span><br></pre></td></tr></table></figure>
+
+<p>申请证书</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://get.acme.sh | sh</span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --register-account -m xxxx@gmail.com   #随便一个邮箱就行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --issue -d yourip.com --standalone     # yourip.com改为你的域名</span><br></pre></td></tr></table></figure>
+
+<p>下载证书到本地</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d yourip.com --key-file /home/nginx/certs/key.pem --fullchain-file /home/nginx/certs/cert.pem</span><br></pre></td></tr></table></figure>
+<p>填写nginx配置文件<br><code>cd /home/nginx/ &amp;&amp; vim nginx.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">events &#123;</span><br><span class="line"></span><br><span class="line">    worker_connections  1024;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  client_max_body_size 1000m;  </span><br><span class="line"></span><br><span class="line">  #上传限制参数1G以内文件可上传</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 同理，替换为你的域名</span><br><span class="line"></span><br><span class="line">    return 301 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 替换域名</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:8200;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>拉取部署nginx容器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 -p 443:443 -v /home/nginx/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/certs:/etc/nginx/certs -v /home/nginx/html:/usr/share/nginx/html nginx:latest</span><br></pre></td></tr></table></figure>
+
+<p>之后就可以用域名访问啦！</p>
 ]]></content>
       <categories>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>shizuku</tag>
-        <tag>安卓玩机</tag>
-        <tag>免root框架</tag>
-        <tag>黑阈</tag>
-        <tag>mt管理器</tag>
-        <tag>scene</tag>
-        <tag>APP Ops</tag>
-        <tag>GKD</tag>
-        <tag>Termux</tag>
+        <tag>chatgpt镜像站</tag>
       </tags>
   </entry>
   <entry>
@@ -283,6 +229,74 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>pandas</tag>
         <tag>matplotlib</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>shizuku:安卓玩机入门指南</title>
+    <url>/posts/30e5/</url>
+    <content><![CDATA[<h1 id="shizuku是什么？"><a href="#shizuku是什么？" class="headerlink" title="shizuku是什么？"></a>shizuku是什么？</h1><p><code>Shizuku</code> 是一款开源的 ADB（Android Debug Briage）权限管理器。由于现阶段大部分安卓手机都无法解锁获取 ROOT 高级权限，但是用户又需要高级权限对系统进行一些操作，恰好这些功能可以通过 ADB 权限进行解决，比如冻结应用、卸载不想要的系统应用（只有少部分能通过adb卸载，更多的还是建议root）。这种情况下，<code>Shizuku</code> 就是一个非常好的解决方案。</p>
+<p>具体关于shizuku是什么，官网已经给出了很明确的解释：<code>Shizuku</code> 可以帮助普通应用借助一个由 app_process 启动的 Java 进程直接以 adb 或 root 特权使用系统 API。简单来说，root权限&gt;<code>shizuku</code>的权限&gt;普通用户，利用这一聊胜于无的权限，我们就已经可以做很多事了。</p>
+<h1 id="安装shizuku"><a href="#安装shizuku" class="headerlink" title="安装shizuku"></a>安装shizuku</h1><p>酷安的<code>shizuku</code>下载地址似乎已经被ban了，那就只能用<a href="https://play.google.com/store/apps/details?id=moe.shizuku.privileged.api&pli=1">Google play</a>或者<a href="https://github.com/RikkaApps/Shizuku/releases/download/v13.5.4/shizuku-v13.5.4.r1049.0e53409-release.apk">github</a>下载了，国内用户访问这两个地址不方便的，也可以使用我的<a href="https://cloud.yuchu.me/s/mOsK">cloudreve</a></p>
+<h1 id="激活shizuku"><a href="#激活shizuku" class="headerlink" title="激活shizuku"></a>激活shizuku</h1><ul>
+<li><p><code>shizuku</code>官方提供了三种激活方式，root激活，连接电脑通过adb激活和无线调试激活。root激活就不提了，我都root了还折腾<code>shizuku</code>干嘛（笑），adb激活需要手边有电脑，总归是不太方便，而且后面我们还会介绍一种更好的方法。现在我们先演示用无线调试激活。</p>
+</li>
+<li><p>打开手机设置-我的设备（也可能是我的手机或其他类似的选项），找到版本号，连续点击至少5次，直到弹出“您已处于开发者模式”的提示。<br>  返回设置-更多设置-开发者选项，启用无线调试。在 <code>Shizuku</code> 软件内开始配对- 点按“无线调试”中的“使用配对码配对设备”- 在下来菜单的<code>Shizuku</code>的通知中填入配对码</p>
+</li>
+</ul>
+<p>  <img src="https://pic2.zhimg.com/80/v2-939e9ad3fc44143e564d816506713e7d_720w.webp"></p>
+<p>  <img src="https://pic4.zhimg.com/80/v2-22abc729f625f8298928f79dc53ccbf3_720w.webp"></p>
+<ul>
+<li>无效调试激活方案注意事项: 如果无法输入配对码，请在系统-通知样式选项中，将默认通知样式改为 原生样式- 启用无线调试的过程中，部分系统会提示「某个应用遮挡了权限请求界面」，可以尝试关闭系统的侧边栏功能或者关闭掉所有允获取了悬浮窗权限的应用</li>
+</ul>
+<h2 id="通过黑阈激活"><a href="#通过黑阈激活" class="headerlink" title="通过黑阈激活"></a>通过黑阈激活</h2><p>黑阈是一款不需要root就能待机或强行停止应用的工具，它可以配合shizuku实现对一些流氓应用的限制。但这里我们要用到的是它的另一个功能—指令。</p>
+<h3 id="下载安装黑阈"><a href="#下载安装黑阈" class="headerlink" title="下载安装黑阈"></a>下载安装黑阈</h3><p>酷安可以直接下载：<a href="https://www.coolapk.com/apk/me.piebridge.brevent">https://www.coolapk.com/apk/me.piebridge.brevent</a></p>
+<p>安装完成后照着上面无线调试激活shizuku的步骤，无线激活黑阈就好了</p>
+<p>激活后点击左上角-执行指令<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000077394_origin_IMG_20240429_220943.jpg"></p>
+<p>输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">sh /storage/emulated/0/Android/data/moe.shizuku.privileged.api/start.sh</span><br></pre></td></tr></table></figure>
+<p>即可激活<code>shizuku</code>这一步的原理其实与adb激活shizuku类似，不过不需要电脑，好处是适配性更好，也比较方便，仅此更推荐用这种方式激活shizuku。</p>
+<h1 id="shizuku常见用法"><a href="#shizuku常见用法" class="headerlink" title="shizuku常见用法"></a>shizuku常见用法</h1><ol>
+<li><p><a href="https://www.coolapk.com/apk/com.catchingnow.icebox">使用冰箱冻结应用</a></p>
+</li>
+<li><p><a href="https://www.coolapk.com/apk/bin.mt.plus">给mt管理器提权，使之能访问Android&#x2F;data目录</a></p>
+</li>
+<li><p><a href="https://cloud.yuchu.me/s/nRtq">给scene提权，查看CPU运行状态和检测游戏帧率</a></p>
+</li>
+<li><p><a href="https://cloud.yuchu.me/s/ojuL">给APP Ops提权，更好地监控和管理app权限，对抗摇一摇广告的神！</a></p>
+</li>
+<li><p><a href="https://cloud.yuchu.me/s/p2CN">给GKD提权，反开屏广告地神！</a></p>
+</li>
+<li><p><a href="https://cloud.yuchu.me/s/q2FP">给termux提权，在termux里也能访问Android&#x2F;data目录</a></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>Termux</tag>
+        <tag>shizuku</tag>
+        <tag>安卓玩机</tag>
+        <tag>免root框架</tag>
+        <tag>黑阈</tag>
+        <tag>mt管理器</tag>
+        <tag>scene</tag>
+        <tag>APP Ops</tag>
+        <tag>GKD</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>欢迎来到我的博客</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
+
+<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
+<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
+</ul>
+<p>感谢您的访问，希望您喜欢我的博客！</p>
+]]></content>
   </entry>
   <entry>
     <title>winget的基础配置与使用</title>
@@ -398,10 +412,10 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
     <content><![CDATA[<p>事情是这样的，前几天逛b站的时候无意间刷到一个关于芙宁娜AI桌宠的视频，原以为又要高配显卡才能玩，我这连独显都没有的轻薄本压根不敢想，不过点进去才发现原来训练和推理都是在服务端完成的，由up主及赞助商支持，不需要高配电脑，于是本芙厨直接原地垂直入坑！</p>
 <p>原视频链接贴在这里，希望大家多支持下up主:<br><a href="https://b23.tv/zjFhc99">【大二自研Agent桌宠】一句话，把简单的电脑任务交给芙宁娜完成吧！-哔哩哔哩</a></p>
 <p>本文一来是对这么好的项目做一个分享(有芙就是好!)，二来是打算当做一个尽可能详细的教程，毕竟加群的时候也遇到过不少电脑小白，甚至连最基本的解压都不会。索性为爱发电的群友也不少，不仅有支援服务器的，支援网盘的，还有帮忙做整合包、写文档、录制视频教程的，鄙人不才，也根据大佬们的整合包写了一个小脚本，用来简化安装。链接如下：</p>
-<p><a href="https://cloud.yuchu.me/s/x9T4">https://cloud.yuchu.me/s/x9T4</a> （由于网盘直链有效期问题，此链接随时可能更换，建议选择手动安装，如果有不会的问题可以加QQ群832210028寻求帮助）</p>
+<p><a href="https://cloud.yuchu.me/s/y7Uz">https://cloud.yuchu.me/s/y7Uz</a> （由于网盘直链有效期问题，此链接随时可能更换，建议选择手动安装，如果有不会的问题可以加QQ群832210028寻求帮助）</p>
 <h1 id="使用一键脚本自动化安装"><a href="#使用一键脚本自动化安装" class="headerlink" title="使用一键脚本自动化安装"></a>使用一键脚本自动化安装</h1><p>该脚本适合电脑闲置空间充裕，有独立显卡的用户，下载之后双击即可运行，过程中可能会弹出要登录智谱清言的界面，直接注册登录就行，其他操作基本全自动。另外还有两点需要注意：</p>
 <ol>
-<li><p>更换本地tts：下载的整合包默认是包含本地语言包的，这个语言包本质上是利用本地的算力进行推理生成语音，如果有好一点的显卡的话语音生成速度会比默认的服务端快不少。要使用的话，只需在软件根目录，即AI桌宠.exe所在目录下(找不到的可以右键桌面的快捷方式，点击”打开文件所在位置“)，找到<code>setting.json</code>，没有<code>.json</code>后缀也不要紧，只要认准这个<code>setting</code>就行，右键记事本打开，找到<code>&quot;tts_location&quot;</code>这一项，把后边引号里的<code>server</code> 改成 <code>local</code>就行。<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235246.png"></p>
+<li><p>更换本地tts：下载的整合包默认是包含本地语言包的，这个语言包本质上是利用本地的算力进行推理生成语音，如果有好一点的显卡的话语音生成速度会比默认的服务端快不少。要使用的话，只需在软件根目录，即AI桌宠.exe所在目录下(找不到的可以右键桌面的快捷方式，点击”打开文件所在位置“)，找到<code>setting.json</code>，没有<code>.json</code>后缀也不要紧，只要认准这个<code>setting</code>就行，右键记事本打开，找到<code>&quot;tts_location&quot;</code>这一项，把后边引号里的<code>server</code> 改成 <code>local</code>就行。<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235246.png"><br>  之后再双击运行根目录下的starttts.bat文件，即可运行本地tts</p>
 </li>
 <li><p>更换皮肤包：整合包里同样包含里芙芙全身版的皮肤包，但默认是卡通类的，要更换的话，同样是打开<code>setting</code>，找到<code>&quot;gif&quot;</code>这一项，把引号里的<code>fufu</code> 改成 <code>fufu2</code>即可</p>
 </li>
@@ -409,6 +423,7 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
 <p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235807.png"></p>
 <h1 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h1><p>手动安装这部分适合没有高配显卡、爱折腾、电脑空间不足或者只是安装在容量较小的U盘作为娱乐的朋友，语音等都跑在服务端，本地几乎没有什么占用</p>
 <p>  分别下载<a href="https://taycraft.cn:5213/s/QMeIG">安装包</a>和<a href="https://cloud.yuchu.me/s/rEH0">皮肤包</a></p>
+<p>  配置足够且想用本地tts的也可以下载<a href="https://www.123pan.com/s/SLRbjv-p38AH.html">整合包</a></p>
 <p>  双击安装包开始安装，安装完成后先在浏览器打开<a href="https://chatglm.cn/">智谱清言官网</a>注册并登录，之后按下键盘的F12(笔记本同时按下左下角的fn和F12)，打开浏览器的开发者工具，再依次点击<code>应用程序</code>，<code>cookie</code>，找到<code>chatglm_refresh_token</code>，点击，全选复制下方<code>Cookie Value</code>里的内容，打开<code>setting</code>，找到<code>&quot;user_token&quot;</code>，把刚刚复制好的内容粘贴到后面的引号里。</p>
 <p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520001600.png"></p>
 <p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520001929.png"></p>
@@ -448,18 +463,46 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到我的博客</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
-
-<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
-<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
+    <title>基于github+jsdelivr实现免费图床</title>
+    <url>/posts/d21b/</url>
+    <content><![CDATA[<p>图床想必大家都不陌生了，无论是个人搭建博客或是其他站点、APP、小程序，还是企业级的应用，想要加速网站的访问，都离不开图床，但一款稳定好用的图床又往往要么是收费的，要么需要实名注册等各种流程，那有没有什么免费且方便的代替方案呢？</p>
+<p>答案是显而易见的，使用GitHub的仓库作为图床，再经由jsdelivr的免费cdn加速，一款稳定方便的图床就诞生了，下面开始本期教程。</p>
+<h1 id="新建GitHub仓库"><a href="#新建GitHub仓库" class="headerlink" title="新建GitHub仓库"></a>新建GitHub仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E4%BB%93%E5%BA%93.jpg"></p>
+<h1 id="生成一个token"><a href="#生成一个token" class="headerlink" title="生成一个token"></a>生成一个token</h1><ul>
+<li><p>点击右上角用户头像-&gt; 设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/token.jpg"></p>
+</li>
+<li><p>点击开发者设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/develop.jpg"></p>
+</li>
+<li><p>点击Personal acess tokens -&gt; Generate new token<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/newtoken.jpg"><br>  填写token描述，勾选repo即可，过期时间可以选择永不</p>
+</li>
+<li><p>获取token秘钥<br>  注意，该秘钥仅显示一次，建议保存到一个找得到的地方，或者云盘，后面还会用到。</p>
+</li>
 </ul>
-<p>感谢您的访问，希望您喜欢我的博客！</p>
-]]></content>
+<h1 id="配置PicGo并使用jsdelivr的免费cdn加速"><a href="#配置PicGo并使用jsdelivr的免费cdn加速" class="headerlink" title="配置PicGo并使用jsdelivr的免费cdn加速"></a>配置PicGo并使用jsdelivr的免费cdn加速</h1><p><a href="https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6-x64.exe">下载PicGo</a>，安装好后开始对接图床</p>
+<ul>
+<li><p>设定仓库名：username&#x2F;repositoies(username为github用户名，repositoies为仓库名，比方说用户名zhangsan，仓库名为jsdelivr，就填写zhangsan&#x2F;jsdelivr)</p>
+</li>
+<li><p>设定分支名：main</p>
+</li>
+<li><p>设定token：刚刚复制的token</p>
+</li>
+<li><p>指定存储路径：填写打算存放图片的位置，比方说img&#x2F;，代表在该仓库下创建一个铭文img的文件夹，图片将保存在这个文件夹中。</p>
+</li>
+<li><p>设定自定义域名：它的的作用是，在图片上传后，PicGo 会按照自定义域名+上传的图片名的方式生成访问链接，放到粘贴板上，因为我们要使用 jsDelivr 加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E5%9B%BE%E5%BA%8A%E4%BB%93%E5%BA%93%E5%90%8D@%E5%88%86%E6%94%AF">https://cdn.jsdelivr.net/gh/用户名/图床仓库名@分支</a> #默认是main</p>
+</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/picgo.jpg"></p>
+<p>接下来就可以愉快的使用免费图床啦！</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>GitHub图床</tag>
+        <tag>jsdelivr CDN加速</tag>
+        <tag>免费图床</tag>
+      </tags>
   </entry>
   <entry>
     <title>基于hexo和GitHub page搭建个人博客</title>
@@ -524,48 +567,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>hexo</tag>
         <tag>github page</tag>
         <tag>个人博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于github+jsdelivr实现免费图床</title>
-    <url>/posts/d21b/</url>
-    <content><![CDATA[<p>图床想必大家都不陌生了，无论是个人搭建博客或是其他站点、APP、小程序，还是企业级的应用，想要加速网站的访问，都离不开图床，但一款稳定好用的图床又往往要么是收费的，要么需要实名注册等各种流程，那有没有什么免费且方便的代替方案呢？</p>
-<p>答案是显而易见的，使用GitHub的仓库作为图床，再经由jsdelivr的免费cdn加速，一款稳定方便的图床就诞生了，下面开始本期教程。</p>
-<h1 id="新建GitHub仓库"><a href="#新建GitHub仓库" class="headerlink" title="新建GitHub仓库"></a>新建GitHub仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E4%BB%93%E5%BA%93.jpg"></p>
-<h1 id="生成一个token"><a href="#生成一个token" class="headerlink" title="生成一个token"></a>生成一个token</h1><ul>
-<li><p>点击右上角用户头像-&gt; 设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/token.jpg"></p>
-</li>
-<li><p>点击开发者设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/develop.jpg"></p>
-</li>
-<li><p>点击Personal acess tokens -&gt; Generate new token<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/newtoken.jpg"><br>  填写token描述，勾选repo即可，过期时间可以选择永不</p>
-</li>
-<li><p>获取token秘钥<br>  注意，该秘钥仅显示一次，建议保存到一个找得到的地方，或者云盘，后面还会用到。</p>
-</li>
-</ul>
-<h1 id="配置PicGo并使用jsdelivr的免费cdn加速"><a href="#配置PicGo并使用jsdelivr的免费cdn加速" class="headerlink" title="配置PicGo并使用jsdelivr的免费cdn加速"></a>配置PicGo并使用jsdelivr的免费cdn加速</h1><p><a href="https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6-x64.exe">下载PicGo</a>，安装好后开始对接图床</p>
-<ul>
-<li><p>设定仓库名：username&#x2F;repositoies(username为github用户名，repositoies为仓库名，比方说用户名zhangsan，仓库名为jsdelivr，就填写zhangsan&#x2F;jsdelivr)</p>
-</li>
-<li><p>设定分支名：main</p>
-</li>
-<li><p>设定token：刚刚复制的token</p>
-</li>
-<li><p>指定存储路径：填写打算存放图片的位置，比方说img&#x2F;，代表在该仓库下创建一个铭文img的文件夹，图片将保存在这个文件夹中。</p>
-</li>
-<li><p>设定自定义域名：它的的作用是，在图片上传后，PicGo 会按照自定义域名+上传的图片名的方式生成访问链接，放到粘贴板上，因为我们要使用 jsDelivr 加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E5%9B%BE%E5%BA%8A%E4%BB%93%E5%BA%93%E5%90%8D@%E5%88%86%E6%94%AF">https://cdn.jsdelivr.net/gh/用户名/图床仓库名@分支</a> #默认是main</p>
-</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/picgo.jpg"></p>
-<p>接下来就可以愉快的使用免费图床啦！</p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>GitHub图床</tag>
-        <tag>jsdelivr CDN加速</tag>
-        <tag>免费图床</tag>
       </tags>
   </entry>
   <entry>

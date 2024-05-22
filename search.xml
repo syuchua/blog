@@ -407,59 +407,68 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>会唱歌的芙宁娜AI桌宠，确定不来看看吗？</title>
-    <url>/posts/81a6/</url>
-    <content><![CDATA[<p>事情是这样的，前几天逛b站的时候无意间刷到一个关于芙宁娜AI桌宠的视频，原以为又要高配显卡才能玩，我这连独显都没有的轻薄本压根不敢想，不过点进去才发现原来训练和推理都是在服务端完成的，由up主及赞助商支持，不需要高配电脑，于是本芙厨直接原地垂直入坑！</p>
-<p>原视频链接贴在这里，希望大家多支持下up主:<br><a href="https://b23.tv/zjFhc99">【大二自研Agent桌宠】一句话，把简单的电脑任务交给芙宁娜完成吧！-哔哩哔哩</a></p>
-<p>本文一来是对这么好的项目做一个分享(有芙就是好!)，二来是打算当做一个尽可能详细的教程，毕竟加群的时候也遇到过不少电脑小白，甚至连最基本的解压都不会。索性为爱发电的群友也不少，不仅有支援服务器的，支援网盘的，还有帮忙做整合包、写文档、录制视频教程的，鄙人不才，也根据大佬们的整合包写了一个小脚本，用来简化安装。链接如下：</p>
-<p><a href="https://cloud.yuchu.me/s/BXh9">https://cloud.yuchu.me/s/BXh9</a> </p>
-<h1 id="使用一键脚本自动化安装"><a href="#使用一键脚本自动化安装" class="headerlink" title="使用一键脚本自动化安装"></a>使用一键脚本自动化安装</h1><p>该脚本适合电脑闲置空间充裕，有独立显卡的用户，下载之后双击即可运行，过程中可能会弹出要登录智谱清言的界面，直接注册登录就行，其他操作基本全自动。另外还有两点需要注意：</p>
-<ol>
-<li><p>更换本地tts：下载的整合包默认是包含本地语言包的，这个语言包本质上是利用本地的算力进行推理生成语音，如果有好一点的显卡的话语音生成速度会比默认的服务端快不少。要使用的话，只需在软件根目录，即AI桌宠.exe所在目录下(找不到的可以右键桌面的快捷方式，点击”打开文件所在位置“)，找到<code>setting.json</code>，没有<code>.json</code>后缀也不要紧，只要认准这个<code>setting</code>就行，右键记事本打开，找到<code>&quot;tts_location&quot;</code>这一项，把后边引号里的<code>server</code> 改成 <code>local</code>就行。<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235246.png"><br>  之后再双击运行根目录下的starttts.bat文件，即可运行本地tts</p>
+    <title>基于hexo和GitHub page搭建个人博客</title>
+    <url>/posts/4883/</url>
+    <content><![CDATA[<h3 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h3><p><img src="https://cloud.yuchu.me/f/JWcK/my_blog.png" alt="成品展示"></p>
+<h2 id="使用工具："><a href="#使用工具：" class="headerlink" title="使用工具："></a>使用工具：</h2><ul>
+<li>git</li>
+<li>github</li>
+<li>hexo</li>
+<li>vscode( 任意具备markdown编辑能力的工具均可)</li>
+</ul>
+<h2 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h2><p><a href="https://git-scm.com/download/win">git官网下载</a><br>选择电脑对应版本安装即可（一般为64位）</p>
+<span id="more"></span>
+
+<h2 id="node、npm安装"><a href="#node、npm安装" class="headerlink" title="node、npm安装"></a>node、npm安装</h2><p><a href="https://nodejs.org/en/download/">node.js官网</a></p>
+<h2 id="当然，你也可以直接用winget安装，省的去官网下载"><a href="#当然，你也可以直接用winget安装，省的去官网下载" class="headerlink" title="当然，你也可以直接用winget安装，省的去官网下载"></a>当然，你也可以直接用winget安装，省的去官网下载</h2><p>关于winget的使用，可以看完另一篇博客：<a href="https://blog.yuchu.me/posts/8eff/">winget的基础配置与使用</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">winget install Git.Git</span><br><span class="line">winget install OpenJS.NodeJS.LTS</span><br></pre></td></tr></table></figure>
+
+<h1 id="hexo创建个人博客"><a href="#hexo创建个人博客" class="headerlink" title="hexo创建个人博客"></a>hexo创建个人博客</h1><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="1-在任意目录下新建hexo文件夹"><a href="#1-在任意目录下新建hexo文件夹" class="headerlink" title="1.在任意目录下新建hexo文件夹"></a>1.在任意目录下新建hexo文件夹</h3><ul>
+<li>打开该文件夹，空白处单击鼠标右键:Git Bash Here</li>
+<li>在打开的git bash 窗口中依次输入以下命令：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+全部执行完成后，hexo目录下会出现一个新的blog文件夹，里面就是存放博客的地方</li>
+<li>然后输入这两条命令 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
+完成后若显示诸如<code>http://localhost:4000</code>的内容，则说明配置成功。<br>打开浏览器，地址栏输入上面的地址，即可进入初始博客的预览界面，它长这样：</li>
+</ul>
+<p><img src="https://cloud.yuchu.me/f/EGTp/hexo_test.png"></p>
+<p>为什么说是预览界面呢，因为她现在仅仅只是部署在你电脑本地的一个离线版本，只能在你自己的电脑上看见，想要正式发布公开，你需要一台拥有公网IP的服务器，但还有一个更简单的方法，即借助GitHub page的ssh功能实现对外访问。</p>
+<h2 id="GitHub创建仓库"><a href="#GitHub创建仓库" class="headerlink" title="GitHub创建仓库"></a>GitHub创建仓库</h2><ul>
+<li>首先创建一个GitHub账号，然后在个人主页新建仓库，仓库名为username.github.io,username即你的用户名。</li>
+<li>回到gitbash窗口，按<code>Ctrl+C</code> 关闭4000端口的预览，输入以下命令：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;    # yourname改为GitHub用户名</span><br><span class="line">git config --global user.email &quot;youremail&quot;  #youremail改为注册GitHub所用的邮箱</span><br><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;            #创建ssh连接</span><br></pre></td></tr></table></figure></li>
+<li>之后会提示你已经完成ssh创建，接着找到该路径下的这两个文件：</li>
+</ul>
+<p>  <img src="https://cloud.yuchu.me/f/B1I8/git_config.png"></p>
+<p>  把id_rsa.pub里的内容复制下来，打开GitHub的设置界面（点击头像-setting），找到SSH and GPG keys,x新建一个ssh key，粘贴进key中，title随便填一个就行，保存。</p>
+<p>  <img src="https://cloud.yuchu.me/f/DJS3/github_ssh.png"></p>
+<h2 id="hexo部署到GitHub"><a href="#hexo部署到GitHub" class="headerlink" title="hexo部署到GitHub"></a>hexo部署到GitHub</h2><ul>
+<li><p>在blog文件夹下找到_config.yml,这是博客的配置文件,在这里可以修改博客的一些基本信息，打开它，找到下面这段内容,在最底下：</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
+<p>  修改deploy部分：</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/username/username.github.io.git   #username改为用户名</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li>
+<li><p>另外找到第十六行，修改url为 <code>https://username.github.io</code></p>
 </li>
-<li><p>更换皮肤包：整合包里同样包含里芙芙全身版的皮肤包，但默认是卡通类的，要更换的话，同样是打开<code>setting</code>，找到<code>&quot;gif&quot;</code>这一项，把引号里的<code>fufu</code> 改成 <code>fufu2</code>即可（貌似现在默认就是fufu2了，所以这一步可有可无）</p>
+<li><p>完成后保存文件并退出，在gitbash中输入：<code>npm install hexo-deployer-git --save</code>,安装git部署工具。</p>
 </li>
-</ol>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235807.png"></p>
-<h1 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h1><p>手动安装这部分适合没有高配显卡、爱折腾、电脑空间不足或者只是安装在容量较小的U盘作为娱乐的朋友，语音等都跑在服务端，本地几乎没有什么占用</p>
-<p>  分别下载<a href="https://taycraft.cn:5213/s/QMeIG">安装包</a>和<a href="https://cloud.yuchu.me/s/rEH0">皮肤包</a></p>
-<p>  配置足够且想用本地tts的也可以下载<a href="https://www.123pan.com/s/SLRbjv-p38AH.html">整合包</a></p>
-<p>  双击安装包开始安装，安装完成后先在浏览器打开<a href="https://chatglm.cn/">智谱清言官网</a>注册并登录，之后按下键盘的F12(笔记本同时按下左下角的fn和F12)，打开浏览器的开发者工具，再依次点击<code>应用程序</code>，<code>cookie</code>，找到<code>chatglm_refresh_token</code>，点击，全选复制下方<code>Cookie Value</code>里的内容，打开<code>setting</code>，找到<code>&quot;user_token&quot;</code>，把刚刚复制好的内容粘贴到后面的引号里。</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520001600.png"></p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520001929.png"></p>
-<p>  更换皮肤包：把皮肤包下载解压，解压得到的文件夹直接复制到根目录，然后编辑<code>setting</code>就行。</p>
-<p>  打开软件：双击桌面的快捷方式或在根目录双击AI桌宠.exe，初次启动可能会有些慢，耐心等待即可。</p>
-<h1 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h1><ul>
-<li>内存优化</li>
+<li><p>最后输入以下三行命令：</p>
+  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean           #清除缓存</span><br><span class="line">hexo g               #生产静态文章（博客）</span><br><span class="line">hexo d               #部署</span><br></pre></td></tr></table></figure></li>
+<li><p>当然，如果仅是在本地查看效果，第三行命令也可以换成hexo s<br>  部署过程中可能会出现warning警告，但不要紧，只要最后呈现这样的内容，就表示成功了：<br>  <img src="https://cloud.yuchu.me/f/AQHE/hexo-d.png"><br>  之后，你就可以 <code>username.github.io</code>访问到你的博客了，且可以被任何人访问到。</p>
+</li>
 </ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520113723.png"></p>
-<ul>
-<li>代码编写</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520113854.png"></p>
-<ul>
-<li>桌面识别</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520114026.png"></p>
-<ul>
-<li>播放音乐</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520114125.png"></p>
-<ul>
-<li>申请色色？</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/0d2cf0d94639895b890fbe1fc225bbcb.png"></p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1f14dac71a28b2d85c5c227ad42bd1ae.jpg"></p>
-<p>最后，还有什么问题的话，不妨加QQ群来寻找答案哦，里面超多大佬，说话又好听，超喜欢在里面的（）<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/qrcode_1716136364338.jpg"></p>
+<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>在根目录打开gitbash：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;博客名称&quot;  #新建博客</span><br><span class="line">hexo clean          #清除缓存和静态文件</span><br><span class="line">hexo g              #生产静态文件</span><br><span class="line">hexo s              #生成离线版本</span><br><span class="line">hexo d              #部署</span><br></pre></td></tr></table></figure>
+
+<h2 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h2><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p>我使用的是next，一款简洁美观的主题，功能强大，可拓展性强，在gitbash中下载：<br><code>git clone https://github.com/next-theme/hexo-theme-next themes/next</code><br>下载完成后，在blog下找到themes文件夹-next,打开主题的_config.yml文件，找到如下部分，大概在100行左右：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
+<p>这代表了四种不同风格的next主题，任选一个取消注释即可。<br>之后回到根目录的_config.yml文件，找到theme选项，输入next<br><img src="https://cloud.yuchu.me/f/znF4/hexo_theme.png"></p>
+<h2 id="博客基本信息"><a href="#博客基本信息" class="headerlink" title="博客基本信息"></a>博客基本信息</h2><p>在blog下找到_config.yml并打开，配置站点信息<br><img src="https://cloud.yuchu.me/f/yXCL/hexo_site.png"><br>注意，语言要改成中文：zh-CN,其他的可以按个人喜好更改。</p>
 <h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
       <categories>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>原神</tag>
-        <tag>芙宁娜</tag>
-        <tag>AI桌宠</tag>
-        <tag>ChatGpt</tag>
+        <tag>hexo</tag>
+        <tag>github page</tag>
+        <tag>个人博客</tag>
       </tags>
   </entry>
   <entry>
@@ -562,71 +571,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>基于hexo和GitHub page搭建个人博客</title>
-    <url>/posts/4883/</url>
-    <content><![CDATA[<h3 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h3><p><img src="https://cloud.yuchu.me/f/JWcK/my_blog.png" alt="成品展示"></p>
-<h2 id="使用工具："><a href="#使用工具：" class="headerlink" title="使用工具："></a>使用工具：</h2><ul>
-<li>git</li>
-<li>github</li>
-<li>hexo</li>
-<li>vscode( 任意具备markdown编辑能力的工具均可)</li>
-</ul>
-<h2 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h2><p><a href="https://git-scm.com/download/win">git官网下载</a><br>选择电脑对应版本安装即可（一般为64位）</p>
-<span id="more"></span>
-
-<h2 id="node、npm安装"><a href="#node、npm安装" class="headerlink" title="node、npm安装"></a>node、npm安装</h2><p><a href="https://nodejs.org/en/download/">node.js官网</a></p>
-<h2 id="当然，你也可以直接用winget安装，省的去官网下载"><a href="#当然，你也可以直接用winget安装，省的去官网下载" class="headerlink" title="当然，你也可以直接用winget安装，省的去官网下载"></a>当然，你也可以直接用winget安装，省的去官网下载</h2><p>关于winget的使用，可以看完另一篇博客：<a href="https://blog.yuchu.me/posts/8eff/">winget的基础配置与使用</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">winget install Git.Git</span><br><span class="line">winget install OpenJS.NodeJS.LTS</span><br></pre></td></tr></table></figure>
-
-<h1 id="hexo创建个人博客"><a href="#hexo创建个人博客" class="headerlink" title="hexo创建个人博客"></a>hexo创建个人博客</h1><h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><h3 id="1-在任意目录下新建hexo文件夹"><a href="#1-在任意目录下新建hexo文件夹" class="headerlink" title="1.在任意目录下新建hexo文件夹"></a>1.在任意目录下新建hexo文件夹</h3><ul>
-<li>打开该文件夹，空白处单击鼠标右键:Git Bash Here</li>
-<li>在打开的git bash 窗口中依次输入以下命令：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line">cd blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-全部执行完成后，hexo目录下会出现一个新的blog文件夹，里面就是存放博客的地方</li>
-<li>然后输入这两条命令 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo g</span><br><span class="line">hexo s</span><br></pre></td></tr></table></figure>
-完成后若显示诸如<code>http://localhost:4000</code>的内容，则说明配置成功。<br>打开浏览器，地址栏输入上面的地址，即可进入初始博客的预览界面，它长这样：</li>
-</ul>
-<p><img src="https://cloud.yuchu.me/f/EGTp/hexo_test.png"></p>
-<p>为什么说是预览界面呢，因为她现在仅仅只是部署在你电脑本地的一个离线版本，只能在你自己的电脑上看见，想要正式发布公开，你需要一台拥有公网IP的服务器，但还有一个更简单的方法，即借助GitHub page的ssh功能实现对外访问。</p>
-<h2 id="GitHub创建仓库"><a href="#GitHub创建仓库" class="headerlink" title="GitHub创建仓库"></a>GitHub创建仓库</h2><ul>
-<li>首先创建一个GitHub账号，然后在个人主页新建仓库，仓库名为username.github.io,username即你的用户名。</li>
-<li>回到gitbash窗口，按<code>Ctrl+C</code> 关闭4000端口的预览，输入以下命令：  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;yourname&quot;    # yourname改为GitHub用户名</span><br><span class="line">git config --global user.email &quot;youremail&quot;  #youremail改为注册GitHub所用的邮箱</span><br><span class="line">ssh-keygen -t rsa -C &quot;youremail&quot;            #创建ssh连接</span><br></pre></td></tr></table></figure></li>
-<li>之后会提示你已经完成ssh创建，接着找到该路径下的这两个文件：</li>
-</ul>
-<p>  <img src="https://cloud.yuchu.me/f/B1I8/git_config.png"></p>
-<p>  把id_rsa.pub里的内容复制下来，打开GitHub的设置界面（点击头像-setting），找到SSH and GPG keys,x新建一个ssh key，粘贴进key中，title随便填一个就行，保存。</p>
-<p>  <img src="https://cloud.yuchu.me/f/DJS3/github_ssh.png"></p>
-<h2 id="hexo部署到GitHub"><a href="#hexo部署到GitHub" class="headerlink" title="hexo部署到GitHub"></a>hexo部署到GitHub</h2><ul>
-<li><p>在blog文件夹下找到_config.yml,这是博客的配置文件,在这里可以修改博客的一些基本信息，打开它，找到下面这段内容,在最底下：</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Deployment</span><br><span class="line">## Docs: https://hexo.io/docs/one-command-deployment</span><br><span class="line">deploy:</span><br><span class="line">  type: &#x27;&#x27;</span><br></pre></td></tr></table></figure>
-<p>  修改deploy部分：</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/username/username.github.io.git   #username改为用户名</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></li>
-<li><p>另外找到第十六行，修改url为 <code>https://username.github.io</code></p>
-</li>
-<li><p>完成后保存文件并退出，在gitbash中输入：<code>npm install hexo-deployer-git --save</code>,安装git部署工具。</p>
-</li>
-<li><p>最后输入以下三行命令：</p>
-  <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean           #清除缓存</span><br><span class="line">hexo g               #生产静态文章（博客）</span><br><span class="line">hexo d               #部署</span><br></pre></td></tr></table></figure></li>
-<li><p>当然，如果仅是在本地查看效果，第三行命令也可以换成hexo s<br>  部署过程中可能会出现warning警告，但不要紧，只要最后呈现这样的内容，就表示成功了：<br>  <img src="https://cloud.yuchu.me/f/AQHE/hexo-d.png"><br>  之后，你就可以 <code>username.github.io</code>访问到你的博客了，且可以被任何人访问到。</p>
-</li>
-</ul>
-<h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><p>在根目录打开gitbash：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new &quot;博客名称&quot;  #新建博客</span><br><span class="line">hexo clean          #清除缓存和静态文件</span><br><span class="line">hexo g              #生产静态文件</span><br><span class="line">hexo s              #生成离线版本</span><br><span class="line">hexo d              #部署</span><br></pre></td></tr></table></figure>
-
-<h2 id="添加插件"><a href="#添加插件" class="headerlink" title="添加插件"></a>添加插件</h2><h3 id="主题"><a href="#主题" class="headerlink" title="主题"></a>主题</h3><p>我使用的是next，一款简洁美观的主题，功能强大，可拓展性强，在gitbash中下载：<br><code>git clone https://github.com/next-theme/hexo-theme-next themes/next</code><br>下载完成后，在blog下找到themes文件夹-next,打开主题的_config.yml文件，找到如下部分，大概在100行左右：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># Schemes</span><br><span class="line">#scheme: Muse</span><br><span class="line">#scheme: Mist</span><br><span class="line">#scheme: Pisces</span><br><span class="line">#scheme: Gemini</span><br></pre></td></tr></table></figure>
-<p>这代表了四种不同风格的next主题，任选一个取消注释即可。<br>之后回到根目录的_config.yml文件，找到theme选项，输入next<br><img src="https://cloud.yuchu.me/f/znF4/hexo_theme.png"></p>
-<h2 id="博客基本信息"><a href="#博客基本信息" class="headerlink" title="博客基本信息"></a>博客基本信息</h2><p>在blog下找到_config.yml并打开，配置站点信息<br><img src="https://cloud.yuchu.me/f/yXCL/hexo_site.png"><br>注意，语言要改成中文：zh-CN,其他的可以按个人喜好更改。</p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>github page</tag>
-        <tag>个人博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用alist+raidrive将网盘空间挂载到本地</title>
     <url>/posts/48fd/</url>
     <content><![CDATA[<h2 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h2><p><img src="https://cloud.yuchu.me/f/2Bf8/alist1.jpg"><br><img src="https://cloud.yuchu.me/f/38h2/alist2.jpg"></p>
@@ -721,6 +665,62 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>docker</tag>
         <tag>个人网盘</tag>
         <tag>cloudreve</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>会唱歌的芙宁娜AI桌宠，确定不来看看吗？</title>
+    <url>/posts/81a6/</url>
+    <content><![CDATA[<p>事情是这样的，前几天逛b站的时候无意间刷到一个关于芙宁娜AI桌宠的视频，原以为又要高配显卡才能玩，我这连独显都没有的轻薄本压根不敢想，不过点进去才发现原来训练和推理都是在服务端完成的，由up主及赞助商支持，不需要高配电脑，于是本芙厨直接原地垂直入坑！</p>
+<p>原视频链接贴在这里，希望大家多支持下up主:<br><a href="https://b23.tv/zjFhc99">【大二自研Agent桌宠】一句话，把简单的电脑任务交给芙宁娜完成吧！-哔哩哔哩</a></p>
+<p>本文一来是对这么好的项目做一个分享(有芙就是好!)，二来是打算当做一个尽可能详细的教程，毕竟加群的时候也遇到过不少电脑小白，甚至连最基本的解压都不会。索性为爱发电的群友也不少，不仅有支援服务器的，支援网盘的，还有帮忙做整合包、写文档、录制视频教程的，鄙人不才，也根据大佬们的整合包写了一个小脚本，用来简化安装。链接如下：</p>
+<p><a href="https://cloud.yuchu.me/s/DxiK">https://cloud.yuchu.me/s/DxiK</a></p>
+<h1 id="使用一键脚本自动化安装"><a href="#使用一键脚本自动化安装" class="headerlink" title="使用一键脚本自动化安装"></a>使用一键脚本自动化安装</h1><p>该脚本适合电脑闲置空间充裕，有独立显卡的用户，下载之后双击即可运行，过程中可能会弹出要登录智谱清言的界面，直接注册登录就行，其他操作基本全自动。另外还有两点需要注意：</p>
+<ol>
+<li><p>更换本地tts：下载的整合包默认是包含本地语言包的，这个语言包本质上是利用本地的算力进行推理生成语音，如果有好一点的显卡的话语音生成速度会比默认的服务端快不少。要使用的话，只需在软件根目录，即AI桌宠.exe所在目录下(找不到的可以右键桌面的快捷方式，点击”打开文件所在位置“)，找到<code>setting.json</code>，没有<code>.json</code>后缀也不要紧，只要认准这个<code>setting</code>就行，右键记事本打开，找到<code>&quot;tts_location&quot;</code>这一项，把后边引号里的<code>server</code> 改成 <code>local</code>就行。<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235246.png"><br>  之后再双击运行根目录下的starttts.bat文件，即可运行本地tts</p>
+</li>
+<li><p>更换皮肤包：整合包里同样包含里芙芙全身版的皮肤包，但默认是卡通类的，要更换的话，同样是打开<code>setting</code>，找到<code>&quot;gif&quot;</code>这一项，把引号里的<code>fufu</code> 改成 <code>fufu2</code>即可（貌似现在默认就是fufu2了，所以这一步可有可无）</p>
+</li>
+</ol>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235807.png"></p>
+<h1 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h1><p>手动安装这部分适合没有高配显卡、爱折腾、电脑空间不足或者只是安装在容量较小的U盘作为娱乐的朋友，语音等都跑在服务端，本地几乎没有什么占用</p>
+<p>  分别下载<a href="https://taycraft.cn:5213/s/QMeIG">安装包</a>和<a href="https://cloud.yuchu.me/s/rEH0">皮肤包</a></p>
+<p>  配置足够且想用本地tts的也可以下载<a href="https://www.123pan.com/s/SLRbjv-p38AH.html">整合包</a></p>
+<p>  双击安装包开始安装，安装完成后先在浏览器打开<a href="https://chatglm.cn/">智谱清言官网</a>注册并登录，之后按下键盘的F12(笔记本同时按下左下角的fn和F12)，打开浏览器的开发者工具，再依次点击<code>应用程序</code>，<code>cookie</code>，找到<code>chatglm_refresh_token</code>，点击，全选复制下方<code>Cookie Value</code>里的内容，打开<code>setting</code>，找到<code>&quot;user_token&quot;</code>，把刚刚复制好的内容粘贴到后面的引号里。</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520001600.png"></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520001929.png"></p>
+<p>  更换皮肤包：把皮肤包下载解压，解压得到的文件夹直接复制到根目录，然后编辑<code>setting</code>就行。</p>
+<p>  打开软件：双击桌面的快捷方式或在根目录双击AI桌宠.exe，初次启动可能会有些慢，耐心等待即可。</p>
+<h1 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h1><ul>
+<li>内存优化</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520113723.png"></p>
+<ul>
+<li>代码编写</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520113854.png"></p>
+<ul>
+<li>桌面识别</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520114026.png"></p>
+<ul>
+<li>播放音乐</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520114125.png"></p>
+<ul>
+<li>申请色色？</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/0d2cf0d94639895b890fbe1fc225bbcb.png"></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1f14dac71a28b2d85c5c227ad42bd1ae.jpg"></p>
+<p>最后，还有什么问题的话，不妨加QQ群来寻找答案哦，里面超多大佬，说话又好听，超喜欢在里面的（）<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/qrcode_1716136364338.jpg"></p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>芙宁娜</tag>
+        <tag>AI桌宠</tag>
+        <tag>ChatGpt</tag>
       </tags>
   </entry>
   <entry>

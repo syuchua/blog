@@ -407,6 +407,104 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
+    <title>会唱歌的芙宁娜AI桌宠，确定不来看看吗？</title>
+    <url>/posts/81a6/</url>
+    <content><![CDATA[<p>事情是这样的，前几天逛b站的时候无意间刷到一个关于芙宁娜AI桌宠的视频，原以为又要高配显卡才能玩，我这连独显都没有的轻薄本压根不敢想，不过点进去才发现原来训练和推理都是在服务端完成的，由up主及赞助商支持，不需要高配电脑，于是本芙厨直接原地垂直入坑！</p>
+<p>原视频链接贴在这里，希望大家多支持下up主:<br><a href="https://b23.tv/zjFhc99">【大二自研Agent桌宠】一句话，把简单的电脑任务交给芙宁娜完成吧！-哔哩哔哩</a></p>
+<p>本文一来是对这么好的项目做一个分享(有芙就是好!)，二来是打算当做一个尽可能详细的教程，毕竟加群的时候也遇到过不少电脑小白，甚至连最基本的解压都不会。索性为爱发电的群友也不少，不仅有支援服务器的，支援网盘的，还有帮忙做整合包、写文档、录制视频教程的，鄙人不才，也根据大佬们的整合包写了一个小脚本，用来简化安装。链接如下：</p>
+<p><a href="https://cloud.yuchu.me/s/DxiK">https://cloud.yuchu.me/s/DxiK</a></p>
+<h1 id="使用一键脚本自动化安装"><a href="#使用一键脚本自动化安装" class="headerlink" title="使用一键脚本自动化安装"></a>使用一键脚本自动化安装</h1><p>该脚本适合电脑闲置空间充裕，有独立显卡的用户，下载之后双击即可运行，过程中可能会弹出要登录智谱清言的界面，直接注册登录就行，其他操作基本全自动。另外还有两点需要注意：</p>
+<ol>
+<li><p>更换本地tts：下载的整合包默认是包含本地语言包的，这个语言包本质上是利用本地的算力进行推理生成语音，如果有好一点的显卡的话语音生成速度会比默认的服务端快不少。要使用的话，只需在软件根目录，即AI桌宠.exe所在目录下(找不到的可以右键桌面的快捷方式，点击”打开文件所在位置“)，找到<code>setting.json</code>，没有<code>.json</code>后缀也不要紧，只要认准这个<code>setting</code>就行，右键记事本打开，找到<code>&quot;tts_location&quot;</code>这一项，把后边引号里的<code>server</code> 改成 <code>local</code>就行。<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235246.png"><br>  之后再双击运行根目录下的starttts.bat文件，即可运行本地tts</p>
+</li>
+<li><p>更换皮肤包：整合包里同样包含里芙芙全身版的皮肤包，但默认是卡通类的，要更换的话，同样是打开<code>setting</code>，找到<code>&quot;gif&quot;</code>这一项，把引号里的<code>fufu</code> 改成 <code>fufu2</code>即可（貌似现在默认就是fufu2了，所以这一步可有可无）</p>
+</li>
+</ol>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235807.png"></p>
+<h1 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h1><p>手动安装这部分适合没有高配显卡、爱折腾、电脑空间不足或者只是安装在容量较小的U盘作为娱乐的朋友，语音等都跑在服务端，本地几乎没有什么占用</p>
+<p>  分别下载<a href="https://taycraft.cn:5213/s/QMeIG">安装包</a>和<a href="https://cloud.yuchu.me/s/rEH0">皮肤包</a></p>
+<p>  配置足够且想用本地tts的也可以下载<a href="https://www.123pan.com/s/SLRbjv-p38AH.html">整合包</a></p>
+<p>  双击安装包开始安装，安装完成后先在浏览器打开<a href="https://chatglm.cn/">智谱清言官网</a>注册并登录，之后按下键盘的F12(笔记本同时按下左下角的fn和F12)，打开浏览器的开发者工具，再依次点击<code>应用程序</code>，<code>cookie</code>，找到<code>chatglm_refresh_token</code>，点击，全选复制下方<code>Cookie Value</code>里的内容，打开<code>setting</code>，找到<code>&quot;user_token&quot;</code>，把刚刚复制好的内容粘贴到后面的引号里。</p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520001600.png"></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520001929.png"></p>
+<p>  更换皮肤包：把皮肤包下载解压，解压得到的文件夹直接复制到根目录，然后编辑<code>setting</code>就行。</p>
+<p>  打开软件：双击桌面的快捷方式或在根目录双击AI桌宠.exe，初次启动可能会有些慢，耐心等待即可。</p>
+<h1 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h1><ul>
+<li>内存优化</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520113723.png"></p>
+<ul>
+<li>代码编写</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520113854.png"></p>
+<ul>
+<li>桌面识别</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520114026.png"></p>
+<ul>
+<li>播放音乐</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520114125.png"></p>
+<ul>
+<li>申请色色？</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/0d2cf0d94639895b890fbe1fc225bbcb.png"></p>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1f14dac71a28b2d85c5c227ad42bd1ae.jpg"></p>
+<p>最后，还有什么问题的话，不妨加QQ群来寻找答案哦，里面超多大佬，说话又好听，超喜欢在里面的（）<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/qrcode_1716136364338.jpg"></p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>原神</tag>
+        <tag>芙宁娜</tag>
+        <tag>AI桌宠</tag>
+        <tag>ChatGpt</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于github+jsdelivr实现免费图床</title>
+    <url>/posts/d21b/</url>
+    <content><![CDATA[<p>图床想必大家都不陌生了，无论是个人搭建博客或是其他站点、APP、小程序，还是企业级的应用，想要加速网站的访问，都离不开图床，但一款稳定好用的图床又往往要么是收费的，要么需要实名注册等各种流程，那有没有什么免费且方便的代替方案呢？</p>
+<p>答案是显而易见的，使用GitHub的仓库作为图床，再经由jsdelivr的免费cdn加速，一款稳定方便的图床就诞生了，下面开始本期教程。</p>
+<h1 id="新建GitHub仓库"><a href="#新建GitHub仓库" class="headerlink" title="新建GitHub仓库"></a>新建GitHub仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E4%BB%93%E5%BA%93.jpg"></p>
+<h1 id="生成一个token"><a href="#生成一个token" class="headerlink" title="生成一个token"></a>生成一个token</h1><ul>
+<li><p>点击右上角用户头像-&gt; 设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/token.jpg"></p>
+</li>
+<li><p>点击开发者设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/develop.jpg"></p>
+</li>
+<li><p>点击Personal acess tokens -&gt; Generate new token<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/newtoken.jpg"><br>  填写token描述，勾选repo即可，过期时间可以选择永不</p>
+</li>
+<li><p>获取token秘钥<br>  注意，该秘钥仅显示一次，建议保存到一个找得到的地方，或者云盘，后面还会用到。</p>
+</li>
+</ul>
+<h1 id="配置PicGo并使用jsdelivr的免费cdn加速"><a href="#配置PicGo并使用jsdelivr的免费cdn加速" class="headerlink" title="配置PicGo并使用jsdelivr的免费cdn加速"></a>配置PicGo并使用jsdelivr的免费cdn加速</h1><p><a href="https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6-x64.exe">下载PicGo</a>，安装好后开始对接图床</p>
+<ul>
+<li><p>设定仓库名：username&#x2F;repositoies(username为github用户名，repositoies为仓库名，比方说用户名zhangsan，仓库名为jsdelivr，就填写zhangsan&#x2F;jsdelivr)</p>
+</li>
+<li><p>设定分支名：main</p>
+</li>
+<li><p>设定token：刚刚复制的token</p>
+</li>
+<li><p>指定存储路径：填写打算存放图片的位置，比方说img&#x2F;，代表在该仓库下创建一个铭文img的文件夹，图片将保存在这个文件夹中。</p>
+</li>
+<li><p>设定自定义域名：它的的作用是，在图片上传后，PicGo 会按照自定义域名+上传的图片名的方式生成访问链接，放到粘贴板上，因为我们要使用 jsDelivr 加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E5%9B%BE%E5%BA%8A%E4%BB%93%E5%BA%93%E5%90%8D@%E5%88%86%E6%94%AF">https://cdn.jsdelivr.net/gh/用户名/图床仓库名@分支</a> #默认是main</p>
+</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/picgo.jpg"></p>
+<p>接下来就可以愉快的使用免费图床啦！</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>GitHub图床</tag>
+        <tag>jsdelivr CDN加速</tag>
+        <tag>免费图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>基于hexo和GitHub page搭建个人博客</title>
     <url>/posts/4883/</url>
     <content><![CDATA[<h3 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h3><p><img src="https://cloud.yuchu.me/f/JWcK/my_blog.png" alt="成品展示"></p>
@@ -469,48 +567,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>hexo</tag>
         <tag>github page</tag>
         <tag>个人博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于github+jsdelivr实现免费图床</title>
-    <url>/posts/d21b/</url>
-    <content><![CDATA[<p>图床想必大家都不陌生了，无论是个人搭建博客或是其他站点、APP、小程序，还是企业级的应用，想要加速网站的访问，都离不开图床，但一款稳定好用的图床又往往要么是收费的，要么需要实名注册等各种流程，那有没有什么免费且方便的代替方案呢？</p>
-<p>答案是显而易见的，使用GitHub的仓库作为图床，再经由jsdelivr的免费cdn加速，一款稳定方便的图床就诞生了，下面开始本期教程。</p>
-<h1 id="新建GitHub仓库"><a href="#新建GitHub仓库" class="headerlink" title="新建GitHub仓库"></a>新建GitHub仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E4%BB%93%E5%BA%93.jpg"></p>
-<h1 id="生成一个token"><a href="#生成一个token" class="headerlink" title="生成一个token"></a>生成一个token</h1><ul>
-<li><p>点击右上角用户头像-&gt; 设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/token.jpg"></p>
-</li>
-<li><p>点击开发者设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/develop.jpg"></p>
-</li>
-<li><p>点击Personal acess tokens -&gt; Generate new token<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/newtoken.jpg"><br>  填写token描述，勾选repo即可，过期时间可以选择永不</p>
-</li>
-<li><p>获取token秘钥<br>  注意，该秘钥仅显示一次，建议保存到一个找得到的地方，或者云盘，后面还会用到。</p>
-</li>
-</ul>
-<h1 id="配置PicGo并使用jsdelivr的免费cdn加速"><a href="#配置PicGo并使用jsdelivr的免费cdn加速" class="headerlink" title="配置PicGo并使用jsdelivr的免费cdn加速"></a>配置PicGo并使用jsdelivr的免费cdn加速</h1><p><a href="https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6-x64.exe">下载PicGo</a>，安装好后开始对接图床</p>
-<ul>
-<li><p>设定仓库名：username&#x2F;repositoies(username为github用户名，repositoies为仓库名，比方说用户名zhangsan，仓库名为jsdelivr，就填写zhangsan&#x2F;jsdelivr)</p>
-</li>
-<li><p>设定分支名：main</p>
-</li>
-<li><p>设定token：刚刚复制的token</p>
-</li>
-<li><p>指定存储路径：填写打算存放图片的位置，比方说img&#x2F;，代表在该仓库下创建一个铭文img的文件夹，图片将保存在这个文件夹中。</p>
-</li>
-<li><p>设定自定义域名：它的的作用是，在图片上传后，PicGo 会按照自定义域名+上传的图片名的方式生成访问链接，放到粘贴板上，因为我们要使用 jsDelivr 加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E5%9B%BE%E5%BA%8A%E4%BB%93%E5%BA%93%E5%90%8D@%E5%88%86%E6%94%AF">https://cdn.jsdelivr.net/gh/用户名/图床仓库名@分支</a> #默认是main</p>
-</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/picgo.jpg"></p>
-<p>接下来就可以愉快的使用免费图床啦！</p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>GitHub图床</tag>
-        <tag>jsdelivr CDN加速</tag>
-        <tag>免费图床</tag>
       </tags>
   </entry>
   <entry>
@@ -612,115 +668,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>alist</tag>
         <tag>raidrive</tag>
         <tag>webdav</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>用docker搭建cloudreve个人网盘系统</title>
-    <url>/posts/cf51/</url>
-    <content><![CDATA[<h2 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h2><p><img src="https://cloud.yuchu.me/f/x2ux/cloudreve.jpg"></p>
-<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
-<li>一台vps（若只是个人使用的话也可以是任意一台手机或电脑）</li>
-<li>安装docker和docker-compose</li>
-<li>一个域名（同第一条，仅个人使用可忽略，但你也不想每次登录都先输一大串IP地址吧）</li>
-</ul>
-<p> vps的话，国内推荐阿里云和腾讯云，都有学生优惠，能白嫖几个月，其他诸如雨云等没试过，不做推荐。国外有微软的azure，学生免费一年，亚马逊（容易被封且需要绑信用卡，有被反撸的可能），还有谷歌云，但也是需要信用卡，有被反撸的风险，digitalorcean通过GitHub学生包可以白嫖200美元额度，还有老牌付费vps厂家如vultr，新晋便宜vps商nackhard等，就不一一列举了。</p>
-<p> 域名注册国内可以用阿里腾讯，国外namesilo,name.com,cloudflare等都还不错，便宜的域名一年十块左右就能搞定了（tips：纯数字域名，尤其是6位及以上的，一般会比字母域名便宜很多）</p>
-<span id="more"></span>
-
-<h2 id="新机到手，更新环境"><a href="#新机到手，更新环境" class="headerlink" title="新机到手，更新环境"></a>新机到手，更新环境</h2><p><code>apt update -y  &amp;&amp; apt upgrade -y &amp;&amp; apt install -y curl wget sudo socat vim</code></p>
-<h2 id="安装docker和docker-compose"><a href="#安装docker和docker-compose" class="headerlink" title="安装docker和docker-compose"></a>安装docker和docker-compose</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | sh      # 下载最新的官方脚本</span><br><span class="line"></span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">chmod +x /usr/local/bin/docker-compose      #给予对应目录权限</span><br></pre></td></tr></table></figure>
-
-<h1 id="Cloudreve和离线下载构建"><a href="#Cloudreve和离线下载构建" class="headerlink" title="Cloudreve和离线下载构建"></a>Cloudreve和离线下载构建</h1><h2 id="创建目录，创建文件"><a href="#创建目录，创建文件" class="headerlink" title="创建目录，创建文件"></a>创建目录，创建文件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /home/ &amp;&amp; mkdir cloud &amp;&amp; cd cloud &amp;&amp; mkdir -vp cloudreve/&#123;uploads,avatar&#125; &amp;&amp; touch cloudreve/conf.ini &amp;&amp; touch cloudreve/cloudreve.db &amp;&amp; mkdir -p aria2/config &amp;&amp; mkdir -p data/aria2 &amp;&amp; chmod -R 777 data/aria2</span><br><span class="line"># cloud即根目录，aira2为离线下载工具，可按需求酌情考虑是否创建</span><br></pre></td></tr></table></figure>
-
-<h2 id="创建compose配置文件"><a href="#创建compose配置文件" class="headerlink" title="创建compose配置文件"></a>创建compose配置文件</h2><p><code>cd /home/cloud/ &amp;&amp; vim docker-compose.yml</code></p>
-<h2 id="在docker-compose中配置Cloudreve代码"><a href="#在docker-compose中配置Cloudreve代码" class="headerlink" title="在docker-compose中配置Cloudreve代码"></a>在docker-compose中配置Cloudreve代码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &quot;3.8&quot;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line"></span><br><span class="line">  cloudreve:</span><br><span class="line"></span><br><span class="line">    container_name: cloudreve</span><br><span class="line"></span><br><span class="line">    image: cloudreve/cloudreve:latest</span><br><span class="line"></span><br><span class="line">    restart: unless-stopped</span><br><span class="line"></span><br><span class="line">    ports:</span><br><span class="line"></span><br><span class="line">      - &quot;5212:5212&quot;</span><br><span class="line"></span><br><span class="line">    volumes:</span><br><span class="line"></span><br><span class="line">      - temp_data:/data</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/uploads:/cloudreve/uploads</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/conf.ini:/cloudreve/conf.ini</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/cloudreve.db:/cloudreve/cloudreve.db</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/avatar:/cloudreve/avatar</span><br><span class="line"></span><br><span class="line">    depends_on:</span><br><span class="line"></span><br><span class="line">      - aria2</span><br><span class="line"></span><br><span class="line">   aria2:</span><br><span class="line"></span><br><span class="line">    container_name: aria2</span><br><span class="line"></span><br><span class="line">    image: p3terx/aria2-pro</span><br><span class="line"></span><br><span class="line">    restart: unless-stopped</span><br><span class="line"></span><br><span class="line">    environment:</span><br><span class="line"></span><br><span class="line">      - RPC_SECRET= DOWNLOAD</span><br><span class="line"></span><br><span class="line">      - RPC_PORT=6800</span><br><span class="line"></span><br><span class="line">    volumes:</span><br><span class="line"></span><br><span class="line">      - ./aria2/config:/config</span><br><span class="line"></span><br><span class="line">      - temp_data:/data </span><br><span class="line"></span><br><span class="line">volumes:</span><br><span class="line"></span><br><span class="line">  temp_data:</span><br><span class="line"></span><br><span class="line">    driver: local</span><br><span class="line"></span><br><span class="line">    driver_opts:</span><br><span class="line"></span><br><span class="line">      type: none</span><br><span class="line"></span><br><span class="line">      device: $PWD/data</span><br><span class="line"></span><br><span class="line">      o: bind</span><br></pre></td></tr></table></figure>
-
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p><code>cd /home/cloud &amp;&amp; docker-compose up -d</code></p>
-<p>容器正常启动后就可以用服务器IP+端口号5212进入网盘设置界面了</p>
-<p><img src="https://cloud.yuchu.me/f/w0ty/cloudreve_login.jpg"></p>
-<h2 id="查询初始登录账号密码"><a href="#查询初始登录账号密码" class="headerlink" title="查询初始登录账号密码"></a>查询初始登录账号密码</h2><p><code>docker-compose logs cloudreve</code></p>
-<p>一般初始账号为<code>admin@cloudreve.org </code>，密码为<code>admin</code></p>
-<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><p>点击头像-管理面板，找到用户组&#x2F;用户,点右边的编辑，可以进行一些基础的配置，包括但不限于分配空间，更改账号密码等。<br><img src="https://cloud.yuchu.me/f/rRi2/cloudreve_edit.jpg"><br><img src="https://cloud.yuchu.me/f/vlsA/cloudreve_user.jpg"></p>
-<p>添加存储策略，有详细的文档，这里就不赘述了，个人推荐onedrive，主要是免费。当然如果你的vps空间足够或者不打算存太多东西的话，默认的本机存储也可以。</p>
-<h3 id="离线下载节点配置"><a href="#离线下载节点配置" class="headerlink" title="离线下载节点配置"></a>离线下载节点配置</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RPC 服务器地址 =&gt; http://aria2:6800</span><br><span class="line">RPC 授权令牌 =&gt; DOWNLOAD</span><br><span class="line">节点下载目录 =&gt; /data</span><br></pre></td></tr></table></figure>
-
-<h1 id="NGINX反向代理到域名"><a href="#NGINX反向代理到域名" class="headerlink" title="NGINX反向代理到域名"></a>NGINX反向代理到域名</h1><p>配置dns解析：<img src="https://cloud.yuchu.me/f/qjhX/dns.jpg"></p>
-<h2 id="创建nginx目录结构"><a href="#创建nginx目录结构" class="headerlink" title="创建nginx目录结构"></a>创建nginx目录结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /home/nginx</span><br><span class="line"></span><br><span class="line">touch /home/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line">mkdir -p /home/nginx/certs</span><br></pre></td></tr></table></figure>
-
-<h2 id="申请证书"><a href="#申请证书" class="headerlink" title="申请证书"></a>申请证书</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://get.acme.sh | sh</span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --register-account -m xxxx@gmail.com   #随便一个邮箱就行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --issue -d yourip.com --standalone     # yourip.com改为你的域名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="下载证书到本地"><a href="#下载证书到本地" class="headerlink" title="下载证书到本地"></a>下载证书到本地</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d yourip.com --key-file /home/nginx/certs/key.pem --fullchain-file /home/nginx/certs/cert.pem</span><br></pre></td></tr></table></figure>
-
-<h2 id="进入目录配置nginx"><a href="#进入目录配置nginx" class="headerlink" title="进入目录配置nginx"></a>进入目录配置nginx</h2><p><code>cd /home/nginx/ &amp;&amp; nano nginx.conf</code></p>
-<h2 id="反向代理配置，代理指定IP加端口"><a href="#反向代理配置，代理指定IP加端口" class="headerlink" title="反向代理配置，代理指定IP加端口"></a>反向代理配置，代理指定IP加端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">events &#123;</span><br><span class="line"></span><br><span class="line">    worker_connections  1024;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  client_max_body_size 1000m;  </span><br><span class="line"></span><br><span class="line">  #上传限制参数1G以内文件可上传</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 同理，替换为你的域名</span><br><span class="line"></span><br><span class="line">    return 301 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 替换域名</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:5212;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="下载部署容器"><a href="#下载部署容器" class="headerlink" title="下载部署容器"></a>下载部署容器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 -p 443:443 -v /home/nginx/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/certs:/etc/nginx/certs -v /home/nginx/html:/usr/share/nginx/html nginx:latest</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h2 id="查看运行状态"><a href="#查看运行状态" class="headerlink" title="查看运行状态"></a>查看运行状态</h2><p><code>docker ps -a</code><br><img src="https://cloud.yuchu.me/f/1lcq/mirror.jpg"><br>可以看到容器都是正常运行的</p>
-<p>之后就可以用域名访问你的cloudreve网盘了！</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>docker</tag>
-        <tag>个人网盘</tag>
-        <tag>cloudreve</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>会唱歌的芙宁娜AI桌宠，确定不来看看吗？</title>
-    <url>/posts/81a6/</url>
-    <content><![CDATA[<p>事情是这样的，前几天逛b站的时候无意间刷到一个关于芙宁娜AI桌宠的视频，原以为又要高配显卡才能玩，我这连独显都没有的轻薄本压根不敢想，不过点进去才发现原来训练和推理都是在服务端完成的，由up主及赞助商支持，不需要高配电脑，于是本芙厨直接原地垂直入坑！</p>
-<p>原视频链接贴在这里，希望大家多支持下up主:<br><a href="https://b23.tv/zjFhc99">【大二自研Agent桌宠】一句话，把简单的电脑任务交给芙宁娜完成吧！-哔哩哔哩</a></p>
-<p>本文一来是对这么好的项目做一个分享(有芙就是好!)，二来是打算当做一个尽可能详细的教程，毕竟加群的时候也遇到过不少电脑小白，甚至连最基本的解压都不会。索性为爱发电的群友也不少，不仅有支援服务器的，支援网盘的，还有帮忙做整合包、写文档、录制视频教程的，鄙人不才，也根据大佬们的整合包写了一个小脚本，用来简化安装。链接如下：</p>
-<p><a href="https://cloud.yuchu.me/s/DxiK">https://cloud.yuchu.me/s/DxiK</a></p>
-<h1 id="使用一键脚本自动化安装"><a href="#使用一键脚本自动化安装" class="headerlink" title="使用一键脚本自动化安装"></a>使用一键脚本自动化安装</h1><p>该脚本适合电脑闲置空间充裕，有独立显卡的用户，下载之后双击即可运行，过程中可能会弹出要登录智谱清言的界面，直接注册登录就行，其他操作基本全自动。另外还有两点需要注意：</p>
-<ol>
-<li><p>更换本地tts：下载的整合包默认是包含本地语言包的，这个语言包本质上是利用本地的算力进行推理生成语音，如果有好一点的显卡的话语音生成速度会比默认的服务端快不少。要使用的话，只需在软件根目录，即AI桌宠.exe所在目录下(找不到的可以右键桌面的快捷方式，点击”打开文件所在位置“)，找到<code>setting.json</code>，没有<code>.json</code>后缀也不要紧，只要认准这个<code>setting</code>就行，右键记事本打开，找到<code>&quot;tts_location&quot;</code>这一项，把后边引号里的<code>server</code> 改成 <code>local</code>就行。<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235246.png"><br>  之后再双击运行根目录下的starttts.bat文件，即可运行本地tts</p>
-</li>
-<li><p>更换皮肤包：整合包里同样包含里芙芙全身版的皮肤包，但默认是卡通类的，要更换的话，同样是打开<code>setting</code>，找到<code>&quot;gif&quot;</code>这一项，把引号里的<code>fufu</code> 改成 <code>fufu2</code>即可（貌似现在默认就是fufu2了，所以这一步可有可无）</p>
-</li>
-</ol>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235807.png"></p>
-<h1 id="手动安装"><a href="#手动安装" class="headerlink" title="手动安装"></a>手动安装</h1><p>手动安装这部分适合没有高配显卡、爱折腾、电脑空间不足或者只是安装在容量较小的U盘作为娱乐的朋友，语音等都跑在服务端，本地几乎没有什么占用</p>
-<p>  分别下载<a href="https://taycraft.cn:5213/s/QMeIG">安装包</a>和<a href="https://cloud.yuchu.me/s/rEH0">皮肤包</a></p>
-<p>  配置足够且想用本地tts的也可以下载<a href="https://www.123pan.com/s/SLRbjv-p38AH.html">整合包</a></p>
-<p>  双击安装包开始安装，安装完成后先在浏览器打开<a href="https://chatglm.cn/">智谱清言官网</a>注册并登录，之后按下键盘的F12(笔记本同时按下左下角的fn和F12)，打开浏览器的开发者工具，再依次点击<code>应用程序</code>，<code>cookie</code>，找到<code>chatglm_refresh_token</code>，点击，全选复制下方<code>Cookie Value</code>里的内容，打开<code>setting</code>，找到<code>&quot;user_token&quot;</code>，把刚刚复制好的内容粘贴到后面的引号里。</p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520001600.png"></p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520001929.png"></p>
-<p>  更换皮肤包：把皮肤包下载解压，解压得到的文件夹直接复制到根目录，然后编辑<code>setting</code>就行。</p>
-<p>  打开软件：双击桌面的快捷方式或在根目录双击AI桌宠.exe，初次启动可能会有些慢，耐心等待即可。</p>
-<h1 id="常用功能"><a href="#常用功能" class="headerlink" title="常用功能"></a>常用功能</h1><ul>
-<li>内存优化</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520113723.png"></p>
-<ul>
-<li>代码编写</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520113854.png"></p>
-<ul>
-<li>桌面识别</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520114026.png"></p>
-<ul>
-<li>播放音乐</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240520114125.png"></p>
-<ul>
-<li>申请色色？</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/0d2cf0d94639895b890fbe1fc225bbcb.png"></p>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1f14dac71a28b2d85c5c227ad42bd1ae.jpg"></p>
-<p>最后，还有什么问题的话，不妨加QQ群来寻找答案哦，里面超多大佬，说话又好听，超喜欢在里面的（）<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/qrcode_1716136364338.jpg"></p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>原神</tag>
-        <tag>芙宁娜</tag>
-        <tag>AI桌宠</tag>
-        <tag>ChatGpt</tag>
       </tags>
   </entry>
   <entry>
@@ -949,6 +896,59 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       <tags>
         <tag>python</tag>
         <tag>遗传算法</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用docker搭建cloudreve个人网盘系统</title>
+    <url>/posts/cf51/</url>
+    <content><![CDATA[<h2 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h2><p><img src="https://cloud.yuchu.me/f/x2ux/cloudreve.jpg"></p>
+<h2 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2><ul>
+<li>一台vps（若只是个人使用的话也可以是任意一台手机或电脑）</li>
+<li>安装docker和docker-compose</li>
+<li>一个域名（同第一条，仅个人使用可忽略，但你也不想每次登录都先输一大串IP地址吧）</li>
+</ul>
+<p> vps的话，国内推荐阿里云和腾讯云，都有学生优惠，能白嫖几个月，其他诸如雨云等没试过，不做推荐。国外有微软的azure，学生免费一年，亚马逊（容易被封且需要绑信用卡，有被反撸的可能），还有谷歌云，但也是需要信用卡，有被反撸的风险，digitalorcean通过GitHub学生包可以白嫖200美元额度，还有老牌付费vps厂家如vultr，新晋便宜vps商nackhard等，就不一一列举了。</p>
+<p> 域名注册国内可以用阿里腾讯，国外namesilo,name.com,cloudflare等都还不错，便宜的域名一年十块左右就能搞定了（tips：纯数字域名，尤其是6位及以上的，一般会比字母域名便宜很多）</p>
+<span id="more"></span>
+
+<h2 id="新机到手，更新环境"><a href="#新机到手，更新环境" class="headerlink" title="新机到手，更新环境"></a>新机到手，更新环境</h2><p><code>apt update -y  &amp;&amp; apt upgrade -y &amp;&amp; apt install -y curl wget sudo socat vim</code></p>
+<h2 id="安装docker和docker-compose"><a href="#安装docker和docker-compose" class="headerlink" title="安装docker和docker-compose"></a>安装docker和docker-compose</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -fsSL https://get.docker.com | sh      # 下载最新的官方脚本</span><br><span class="line"></span><br><span class="line">curl -L &quot;https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)&quot; -o /usr/local/bin/docker-compose</span><br><span class="line"></span><br><span class="line">chmod +x /usr/local/bin/docker-compose      #给予对应目录权限</span><br></pre></td></tr></table></figure>
+
+<h1 id="Cloudreve和离线下载构建"><a href="#Cloudreve和离线下载构建" class="headerlink" title="Cloudreve和离线下载构建"></a>Cloudreve和离线下载构建</h1><h2 id="创建目录，创建文件"><a href="#创建目录，创建文件" class="headerlink" title="创建目录，创建文件"></a>创建目录，创建文件</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /home/ &amp;&amp; mkdir cloud &amp;&amp; cd cloud &amp;&amp; mkdir -vp cloudreve/&#123;uploads,avatar&#125; &amp;&amp; touch cloudreve/conf.ini &amp;&amp; touch cloudreve/cloudreve.db &amp;&amp; mkdir -p aria2/config &amp;&amp; mkdir -p data/aria2 &amp;&amp; chmod -R 777 data/aria2</span><br><span class="line"># cloud即根目录，aira2为离线下载工具，可按需求酌情考虑是否创建</span><br></pre></td></tr></table></figure>
+
+<h2 id="创建compose配置文件"><a href="#创建compose配置文件" class="headerlink" title="创建compose配置文件"></a>创建compose配置文件</h2><p><code>cd /home/cloud/ &amp;&amp; vim docker-compose.yml</code></p>
+<h2 id="在docker-compose中配置Cloudreve代码"><a href="#在docker-compose中配置Cloudreve代码" class="headerlink" title="在docker-compose中配置Cloudreve代码"></a>在docker-compose中配置Cloudreve代码</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">version: &quot;3.8&quot;</span><br><span class="line"></span><br><span class="line">services:</span><br><span class="line"></span><br><span class="line">  cloudreve:</span><br><span class="line"></span><br><span class="line">    container_name: cloudreve</span><br><span class="line"></span><br><span class="line">    image: cloudreve/cloudreve:latest</span><br><span class="line"></span><br><span class="line">    restart: unless-stopped</span><br><span class="line"></span><br><span class="line">    ports:</span><br><span class="line"></span><br><span class="line">      - &quot;5212:5212&quot;</span><br><span class="line"></span><br><span class="line">    volumes:</span><br><span class="line"></span><br><span class="line">      - temp_data:/data</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/uploads:/cloudreve/uploads</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/conf.ini:/cloudreve/conf.ini</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/cloudreve.db:/cloudreve/cloudreve.db</span><br><span class="line"></span><br><span class="line">      - ./cloudreve/avatar:/cloudreve/avatar</span><br><span class="line"></span><br><span class="line">    depends_on:</span><br><span class="line"></span><br><span class="line">      - aria2</span><br><span class="line"></span><br><span class="line">   aria2:</span><br><span class="line"></span><br><span class="line">    container_name: aria2</span><br><span class="line"></span><br><span class="line">    image: p3terx/aria2-pro</span><br><span class="line"></span><br><span class="line">    restart: unless-stopped</span><br><span class="line"></span><br><span class="line">    environment:</span><br><span class="line"></span><br><span class="line">      - RPC_SECRET= DOWNLOAD</span><br><span class="line"></span><br><span class="line">      - RPC_PORT=6800</span><br><span class="line"></span><br><span class="line">    volumes:</span><br><span class="line"></span><br><span class="line">      - ./aria2/config:/config</span><br><span class="line"></span><br><span class="line">      - temp_data:/data </span><br><span class="line"></span><br><span class="line">volumes:</span><br><span class="line"></span><br><span class="line">  temp_data:</span><br><span class="line"></span><br><span class="line">    driver: local</span><br><span class="line"></span><br><span class="line">    driver_opts:</span><br><span class="line"></span><br><span class="line">      type: none</span><br><span class="line"></span><br><span class="line">      device: $PWD/data</span><br><span class="line"></span><br><span class="line">      o: bind</span><br></pre></td></tr></table></figure>
+
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><p><code>cd /home/cloud &amp;&amp; docker-compose up -d</code></p>
+<p>容器正常启动后就可以用服务器IP+端口号5212进入网盘设置界面了</p>
+<p><img src="https://cloud.yuchu.me/f/w0ty/cloudreve_login.jpg"></p>
+<h2 id="查询初始登录账号密码"><a href="#查询初始登录账号密码" class="headerlink" title="查询初始登录账号密码"></a>查询初始登录账号密码</h2><p><code>docker-compose logs cloudreve</code></p>
+<p>一般初始账号为<code>admin@cloudreve.org </code>，密码为<code>admin</code></p>
+<h2 id="基础配置"><a href="#基础配置" class="headerlink" title="基础配置"></a>基础配置</h2><p>点击头像-管理面板，找到用户组&#x2F;用户,点右边的编辑，可以进行一些基础的配置，包括但不限于分配空间，更改账号密码等。<br><img src="https://cloud.yuchu.me/f/rRi2/cloudreve_edit.jpg"><br><img src="https://cloud.yuchu.me/f/vlsA/cloudreve_user.jpg"></p>
+<p>添加存储策略，有详细的文档，这里就不赘述了，个人推荐onedrive，主要是免费。当然如果你的vps空间足够或者不打算存太多东西的话，默认的本机存储也可以。</p>
+<h3 id="离线下载节点配置"><a href="#离线下载节点配置" class="headerlink" title="离线下载节点配置"></a>离线下载节点配置</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">RPC 服务器地址 =&gt; http://aria2:6800</span><br><span class="line">RPC 授权令牌 =&gt; DOWNLOAD</span><br><span class="line">节点下载目录 =&gt; /data</span><br></pre></td></tr></table></figure>
+
+<h1 id="NGINX反向代理到域名"><a href="#NGINX反向代理到域名" class="headerlink" title="NGINX反向代理到域名"></a>NGINX反向代理到域名</h1><p>配置dns解析：<img src="https://cloud.yuchu.me/f/qjhX/dns.jpg"></p>
+<h2 id="创建nginx目录结构"><a href="#创建nginx目录结构" class="headerlink" title="创建nginx目录结构"></a>创建nginx目录结构</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /home/nginx</span><br><span class="line"></span><br><span class="line">touch /home/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line">mkdir -p /home/nginx/certs</span><br></pre></td></tr></table></figure>
+
+<h2 id="申请证书"><a href="#申请证书" class="headerlink" title="申请证书"></a>申请证书</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://get.acme.sh | sh</span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --register-account -m xxxx@gmail.com   #随便一个邮箱就行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --issue -d yourip.com --standalone     # yourip.com改为你的域名</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="下载证书到本地"><a href="#下载证书到本地" class="headerlink" title="下载证书到本地"></a>下载证书到本地</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d yourip.com --key-file /home/nginx/certs/key.pem --fullchain-file /home/nginx/certs/cert.pem</span><br></pre></td></tr></table></figure>
+
+<h2 id="进入目录配置nginx"><a href="#进入目录配置nginx" class="headerlink" title="进入目录配置nginx"></a>进入目录配置nginx</h2><p><code>cd /home/nginx/ &amp;&amp; nano nginx.conf</code></p>
+<h2 id="反向代理配置，代理指定IP加端口"><a href="#反向代理配置，代理指定IP加端口" class="headerlink" title="反向代理配置，代理指定IP加端口"></a>反向代理配置，代理指定IP加端口</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">events &#123;</span><br><span class="line"></span><br><span class="line">    worker_connections  1024;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  client_max_body_size 1000m;  </span><br><span class="line"></span><br><span class="line">  #上传限制参数1G以内文件可上传</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 同理，替换为你的域名</span><br><span class="line"></span><br><span class="line">    return 301 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 替换域名</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:5212;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="下载部署容器"><a href="#下载部署容器" class="headerlink" title="下载部署容器"></a>下载部署容器</h2><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 -p 443:443 -v /home/nginx/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/certs:/etc/nginx/certs -v /home/nginx/html:/usr/share/nginx/html nginx:latest</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h2 id="查看运行状态"><a href="#查看运行状态" class="headerlink" title="查看运行状态"></a>查看运行状态</h2><p><code>docker ps -a</code><br><img src="https://cloud.yuchu.me/f/1lcq/mirror.jpg"><br>可以看到容器都是正常运行的</p>
+<p>之后就可以用域名访问你的cloudreve网盘了！</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>docker</tag>
+        <tag>个人网盘</tag>
+        <tag>cloudreve</tag>
       </tags>
   </entry>
 </search>

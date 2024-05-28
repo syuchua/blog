@@ -285,20 +285,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到我的博客</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
-
-<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
-<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
-</ul>
-<p>感谢您的访问，希望您喜欢我的博客！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>winget的基础配置与使用</title>
     <url>/posts/8eff/</url>
     <content><![CDATA[<h1 id="1-什么是winget"><a href="#1-什么是winget" class="headerlink" title="1.什么是winget"></a>1.什么是winget</h1><p>微软公司在 2020 年 5 月 Microsoft Build 开发者大会上发布了用于 Windows 系统的官方支持的软件包管理器 —— Windows 软件包管理器（Windows Package Manager），也就是 WinGet 软件包管理器。经过 3 年的发展，越来越多的软件厂商在这个平台上发布自家软件。WinGet 除了支持 exe、msi 等传统的 Win32 安装包格式外，还支持用于新版 Windows 的 msix&#x2F;msixbundle 格式所打包的软件。</p>
@@ -370,6 +356,20 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
+    <title>欢迎来到我的博客</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
+
+<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
+<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
+</ul>
+<p>感谢您的访问，希望您喜欢我的博客！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>不是，钉钉什么时候这么强了？</title>
     <url>/posts/588e/</url>
     <content><![CDATA[<p>最近一段时间对AI大模型以及各种衍生的生产力工具比较感兴趣，就特别希望有一个all-in-one的产品出现，虽说网上也能各种导航站，但一来信息更新不一定及时，二来还经常有各种广告，且站长们有时候更换域名都不通知一下的，导致过期的域名往往被一些不合法的小网站注册。另外一点是现在国产软件大都臃肿，各种弹窗广告催你贷款，下载某某软件不说，你美团往软件里塞个原神是什么原神，不是，真有人在美团玩原神吗？</p>
@@ -413,6 +413,7 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
 <p>原视频链接贴在这里，希望大家多支持下up主:<br><a href="https://b23.tv/zjFhc99">【大二自研Agent桌宠】一句话，把简单的电脑任务交给芙宁娜完成吧！-哔哩哔哩</a></p>
 <p>本文一来是对这么好的项目做一个分享(有芙就是好!)，二来是打算当做一个尽可能详细的教程，毕竟加群的时候也遇到过不少电脑小白，甚至连最基本的解压都不会。索性为爱发电的群友也不少，不仅有支援服务器的，支援网盘的，还有帮忙做整合包、写文档、录制视频教程的，鄙人不才，也根据大佬们的整合包写了一个小脚本，用来简化安装。链接如下：</p>
 <p><a href="https://cloud.yuchu.me/s/DxiK">https://cloud.yuchu.me/s/DxiK</a></p>
+<h1 id="5月28日更新："><a href="#5月28日更新：" class="headerlink" title="5月28日更新："></a>5月28日更新：</h1><p>  当前最新版为1.6.5版本，而一键脚本和手动安装包都为1.6.4，新版本不再需要运行设置token.1.exe了，且响应更快，要更新的话先运行一键更新.exe，更新完成之后会出现一个一键更新1.6.4可用.exe，再双金运行它，就可升级到1.6.5版本。</p>
 <h1 id="使用一键脚本自动化安装"><a href="#使用一键脚本自动化安装" class="headerlink" title="使用一键脚本自动化安装"></a>使用一键脚本自动化安装</h1><p>该脚本适合电脑闲置空间充裕，有独立显卡的用户，下载之后双击即可运行，过程中可能会弹出要登录智谱清言的界面，直接注册登录就行，其他操作基本全自动。另外还有两点需要注意：</p>
 <ol>
 <li><p>更换本地tts：下载的整合包默认是包含本地语言包的，这个语言包本质上是利用本地的算力进行推理生成语音，如果有好一点的显卡的话语音生成速度会比默认的服务端快不少。要使用的话，只需在软件根目录，即AI桌宠.exe所在目录下(找不到的可以右键桌面的快捷方式，点击”打开文件所在位置“)，找到<code>setting.json</code>，没有<code>.json</code>后缀也不要紧，只要认准这个<code>setting</code>就行，右键记事本打开，找到<code>&quot;tts_location&quot;</code>这一项，把后边引号里的<code>server</code> 改成 <code>local</code>就行。<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240519235246.png"><br>  之后再双击运行根目录下的starttts.bat文件，即可运行本地tts</p>
@@ -460,48 +461,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>芙宁娜</tag>
         <tag>AI桌宠</tag>
         <tag>ChatGpt</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于github+jsdelivr实现免费图床</title>
-    <url>/posts/d21b/</url>
-    <content><![CDATA[<p>图床想必大家都不陌生了，无论是个人搭建博客或是其他站点、APP、小程序，还是企业级的应用，想要加速网站的访问，都离不开图床，但一款稳定好用的图床又往往要么是收费的，要么需要实名注册等各种流程，那有没有什么免费且方便的代替方案呢？</p>
-<p>答案是显而易见的，使用GitHub的仓库作为图床，再经由jsdelivr的免费cdn加速，一款稳定方便的图床就诞生了，下面开始本期教程。</p>
-<h1 id="新建GitHub仓库"><a href="#新建GitHub仓库" class="headerlink" title="新建GitHub仓库"></a>新建GitHub仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E4%BB%93%E5%BA%93.jpg"></p>
-<h1 id="生成一个token"><a href="#生成一个token" class="headerlink" title="生成一个token"></a>生成一个token</h1><ul>
-<li><p>点击右上角用户头像-&gt; 设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/token.jpg"></p>
-</li>
-<li><p>点击开发者设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/develop.jpg"></p>
-</li>
-<li><p>点击Personal acess tokens -&gt; Generate new token<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/newtoken.jpg"><br>  填写token描述，勾选repo即可，过期时间可以选择永不</p>
-</li>
-<li><p>获取token秘钥<br>  注意，该秘钥仅显示一次，建议保存到一个找得到的地方，或者云盘，后面还会用到。</p>
-</li>
-</ul>
-<h1 id="配置PicGo并使用jsdelivr的免费cdn加速"><a href="#配置PicGo并使用jsdelivr的免费cdn加速" class="headerlink" title="配置PicGo并使用jsdelivr的免费cdn加速"></a>配置PicGo并使用jsdelivr的免费cdn加速</h1><p><a href="https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6-x64.exe">下载PicGo</a>，安装好后开始对接图床</p>
-<ul>
-<li><p>设定仓库名：username&#x2F;repositoies(username为github用户名，repositoies为仓库名，比方说用户名zhangsan，仓库名为jsdelivr，就填写zhangsan&#x2F;jsdelivr)</p>
-</li>
-<li><p>设定分支名：main</p>
-</li>
-<li><p>设定token：刚刚复制的token</p>
-</li>
-<li><p>指定存储路径：填写打算存放图片的位置，比方说img&#x2F;，代表在该仓库下创建一个铭文img的文件夹，图片将保存在这个文件夹中。</p>
-</li>
-<li><p>设定自定义域名：它的的作用是，在图片上传后，PicGo 会按照自定义域名+上传的图片名的方式生成访问链接，放到粘贴板上，因为我们要使用 jsDelivr 加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E5%9B%BE%E5%BA%8A%E4%BB%93%E5%BA%93%E5%90%8D@%E5%88%86%E6%94%AF">https://cdn.jsdelivr.net/gh/用户名/图床仓库名@分支</a> #默认是main</p>
-</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/picgo.jpg"></p>
-<p>接下来就可以愉快的使用免费图床啦！</p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>GitHub图床</tag>
-        <tag>jsdelivr CDN加速</tag>
-        <tag>免费图床</tag>
       </tags>
   </entry>
   <entry>
@@ -567,6 +526,48 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>hexo</tag>
         <tag>github page</tag>
         <tag>个人博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于github+jsdelivr实现免费图床</title>
+    <url>/posts/d21b/</url>
+    <content><![CDATA[<p>图床想必大家都不陌生了，无论是个人搭建博客或是其他站点、APP、小程序，还是企业级的应用，想要加速网站的访问，都离不开图床，但一款稳定好用的图床又往往要么是收费的，要么需要实名注册等各种流程，那有没有什么免费且方便的代替方案呢？</p>
+<p>答案是显而易见的，使用GitHub的仓库作为图床，再经由jsdelivr的免费cdn加速，一款稳定方便的图床就诞生了，下面开始本期教程。</p>
+<h1 id="新建GitHub仓库"><a href="#新建GitHub仓库" class="headerlink" title="新建GitHub仓库"></a>新建GitHub仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E4%BB%93%E5%BA%93.jpg"></p>
+<h1 id="生成一个token"><a href="#生成一个token" class="headerlink" title="生成一个token"></a>生成一个token</h1><ul>
+<li><p>点击右上角用户头像-&gt; 设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/token.jpg"></p>
+</li>
+<li><p>点击开发者设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/develop.jpg"></p>
+</li>
+<li><p>点击Personal acess tokens -&gt; Generate new token<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/newtoken.jpg"><br>  填写token描述，勾选repo即可，过期时间可以选择永不</p>
+</li>
+<li><p>获取token秘钥<br>  注意，该秘钥仅显示一次，建议保存到一个找得到的地方，或者云盘，后面还会用到。</p>
+</li>
+</ul>
+<h1 id="配置PicGo并使用jsdelivr的免费cdn加速"><a href="#配置PicGo并使用jsdelivr的免费cdn加速" class="headerlink" title="配置PicGo并使用jsdelivr的免费cdn加速"></a>配置PicGo并使用jsdelivr的免费cdn加速</h1><p><a href="https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6-x64.exe">下载PicGo</a>，安装好后开始对接图床</p>
+<ul>
+<li><p>设定仓库名：username&#x2F;repositoies(username为github用户名，repositoies为仓库名，比方说用户名zhangsan，仓库名为jsdelivr，就填写zhangsan&#x2F;jsdelivr)</p>
+</li>
+<li><p>设定分支名：main</p>
+</li>
+<li><p>设定token：刚刚复制的token</p>
+</li>
+<li><p>指定存储路径：填写打算存放图片的位置，比方说img&#x2F;，代表在该仓库下创建一个铭文img的文件夹，图片将保存在这个文件夹中。</p>
+</li>
+<li><p>设定自定义域名：它的的作用是，在图片上传后，PicGo 会按照自定义域名+上传的图片名的方式生成访问链接，放到粘贴板上，因为我们要使用 jsDelivr 加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E5%9B%BE%E5%BA%8A%E4%BB%93%E5%BA%93%E5%90%8D@%E5%88%86%E6%94%AF">https://cdn.jsdelivr.net/gh/用户名/图床仓库名@分支</a> #默认是main</p>
+</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/picgo.jpg"></p>
+<p>接下来就可以愉快的使用免费图床啦！</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>GitHub图床</tag>
+        <tag>jsdelivr CDN加速</tag>
+        <tag>免费图床</tag>
       </tags>
   </entry>
   <entry>

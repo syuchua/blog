@@ -470,6 +470,13 @@
 
   
   <url>
+    <loc>https://blog.yuchu.me/tags/chatgpt%E9%95%9C%E5%83%8F%E7%AB%99/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.yuchu.me/tags/vscode/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -478,13 +485,6 @@
   
   <url>
     <loc>https://blog.yuchu.me/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/chatgpt%E9%95%9C%E5%83%8F%E7%AB%99/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -582,6 +582,20 @@
   </url>
   
   <url>
+    <loc>https://blog.yuchu.me/tags/winget/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/windows%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.yuchu.me/tags/jupyter/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -617,42 +631,28 @@
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/winget/</loc>
+    <loc>https://blog.yuchu.me/tags/gcp/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/windows%E5%AE%9E%E7%94%A8%E5%B7%A5%E5%85%B7/</loc>
+    <loc>https://blog.yuchu.me/tags/Google-Cloud-Platform/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/%E9%92%89%E9%92%89/</loc>
+    <loc>https://blog.yuchu.me/tags/Claude/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/all-in-one%E5%B7%A5%E5%85%B7/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/%E9%80%9A%E4%B9%89%E5%8D%83%E9%97%AE/</loc>
+    <loc>https://blog.yuchu.me/tags/%E4%B8%AD%E8%BD%ACapi/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -687,49 +687,28 @@
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/gcp/</loc>
+    <loc>https://blog.yuchu.me/tags/%E9%92%89%E9%92%89/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/Google-Cloud-Platform/</loc>
+    <loc>https://blog.yuchu.me/tags/%E7%94%9F%E4%BA%A7%E5%8A%9B%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/Claude/</loc>
+    <loc>https://blog.yuchu.me/tags/all-in-one%E5%B7%A5%E5%85%B7/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/%E4%B8%AD%E8%BD%ACapi/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/GitHub%E5%9B%BE%E5%BA%8A/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/jsdelivr-CDN%E5%8A%A0%E9%80%9F/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</loc>
+    <loc>https://blog.yuchu.me/tags/%E9%80%9A%E4%B9%89%E5%8D%83%E9%97%AE/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -751,6 +730,27 @@
   
   <url>
     <loc>https://blog.yuchu.me/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/GitHub%E5%9B%BE%E5%BA%8A/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/jsdelivr-CDN%E5%8A%A0%E9%80%9F/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -827,27 +827,6 @@
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/Nginx/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/POST/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/Web/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.yuchu.me/tags/gpt4o/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -863,6 +842,27 @@
   
   <url>
     <loc>https://blog.yuchu.me/tags/VecMul-Chat/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/Nginx/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/POST/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/Web/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

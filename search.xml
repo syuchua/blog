@@ -1,6 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>3分钟搭建一个ChatGPT镜像站，非api，支持官网账号登录</title>
+    <url>/posts/b2f3/</url>
+    <content><![CDATA[<p>本篇基于github上的开源项目<a href="https://github.com/xyhelper/chatgpt-mirror-server">https://github.com/xyhelper/chatgpt-mirror-server</a>旨在通过简单的操作搭建一个ChatGPT的个人镜像，绕过cloudflare，提升访问速度，且没有烦人的机器人验证步骤，可本地搭建，也可部署在服务器上，通过登录官网账号的方式，非api模式，提高回答准确性。同时，基于共享账号的普遍存在，可以实现成本远低于api模式的GPT4和GPTs使用。</p>
+<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><ul>
+<li>一台至少 2 核 2G 内存的服务器,推荐使用香港、新加坡、日本地区的服务器,可以 兼顾国内访问。(本地搭建的话可忽略)</li>
+<li>安装了 docker 和 docker-compose</li>
+<li>安装了 git</li>
+<li>有官网直登账号(不支持谷歌、微软、苹果等第三方登陆账号)</li>
+<li>一个域名（用于反代，可忽略）</li>
+</ul>
+<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>打开服务器，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update -y &amp;&amp; apt upgrade -y &amp;&amp; apt install -y vim wget curl   #出现报错可能是权限问题，用`sudo su`提权至root用户</span><br></pre></td></tr></table></figure>
+<h1 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h1><p>直接下载执行官方的一键部署脚本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -sSfL https://raw.githubusercontent.com/xyhelper/chatgpt-mirror-server-deploy/master/quick-install.sh | bash</span><br></pre></td></tr></table></figure>
+
+<h1 id="手动部署"><a href="#手动部署" class="headerlink" title="手动部署"></a>手动部署</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone --depth=1 https://github.com/xyhelper/chatgpt-mirror-server-deploy.git chatgpt-mirror                 # 克隆项目地址</span><br><span class="line">cd chatgpt-mirror              #进入根目录</span><br><span class="line">./deploy.sh                    #启动部署脚本，等待拉取docker镜像</span><br></pre></td></tr></table></figure>
+
+<h1 id="进入管理后台进行基础配置"><a href="#进入管理后台进行基础配置" class="headerlink" title="进入管理后台进行基础配置"></a>进入管理后台进行基础配置</h1><p>访问<code>http://服务器ip地址:8200/xyhelper</code></p>
+<p>默认用户名<code>admin</code>，密码<code>123456</code><br><img src="https://cloud.yuchu.me/f/8QCY/chat-mirror.jpg"></p>
+<p>进入后台左边点击工作台-账号管理，添加自己的ChatGPT官网账号勾选启用（plus用户切记勾选plus），再进入用户管理，添加一个用户，过期日期和user-token都可以自定义，保存。复制user-token，返回首页，粘贴。</p>
+<h3 id="一个小细节"><a href="#一个小细节" class="headerlink" title="一个小细节"></a>一个小细节</h3><p>如果你是plus用户，或者使用的是共享账号，想把这个镜像站分享给其他人，又想省去每次都输入token的麻烦，不妨自定义ygusertoken，比方说我设置的是<code>1145141919810hhhhaaa</code>，然后把这个链接：<code>http://yourip:8200/login_token?access_token=1145141919810hhhhaaa</code>分享出去，这样就·不用·每次都登录了。</p>
+<h1 id="配置nginx反代"><a href="#配置nginx反代" class="headerlink" title="配置nginx反代"></a>配置nginx反代</h1><p>新建nginx配置目录：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /home/nginx</span><br><span class="line"></span><br><span class="line">touch /home/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line">mkdir -p /home/nginx/certs</span><br></pre></td></tr></table></figure>
+
+<p>申请证书</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://get.acme.sh | sh</span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --register-account -m xxxx@gmail.com   #随便一个邮箱就行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --issue -d yourip.com --standalone     # yourip.com改为你的域名</span><br></pre></td></tr></table></figure>
+
+<p>下载证书到本地</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d yourip.com --key-file /home/nginx/certs/key.pem --fullchain-file /home/nginx/certs/cert.pem</span><br></pre></td></tr></table></figure>
+<p>填写nginx配置文件<br><code>cd /home/nginx/ &amp;&amp; vim nginx.conf</code></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">events &#123;</span><br><span class="line"></span><br><span class="line">    worker_connections  1024;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  client_max_body_size 1000m;  </span><br><span class="line"></span><br><span class="line">  #上传限制参数1G以内文件可上传</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 同理，替换为你的域名</span><br><span class="line"></span><br><span class="line">    return 301 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 替换域名</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:8200;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>拉取部署nginx容器</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 -p 443:443 -v /home/nginx/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/certs:/etc/nginx/certs -v /home/nginx/html:/usr/share/nginx/html nginx:latest</span><br></pre></td></tr></table></figure>
+
+<p>之后就可以用域名访问啦！</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>chatgpt镜像站</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VSCode常用快捷键及插件</title>
     <url>/posts/f82e/</url>
     <content><![CDATA[<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
@@ -84,51 +129,6 @@
       <tags>
         <tag>#vscode</tag>
         <tag>#快捷键</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>3分钟搭建一个ChatGPT镜像站，非api，支持官网账号登录</title>
-    <url>/posts/b2f3/</url>
-    <content><![CDATA[<p>本篇基于github上的开源项目<a href="https://github.com/xyhelper/chatgpt-mirror-server">https://github.com/xyhelper/chatgpt-mirror-server</a>旨在通过简单的操作搭建一个ChatGPT的个人镜像，绕过cloudflare，提升访问速度，且没有烦人的机器人验证步骤，可本地搭建，也可部署在服务器上，通过登录官网账号的方式，非api模式，提高回答准确性。同时，基于共享账号的普遍存在，可以实现成本远低于api模式的GPT4和GPTs使用。</p>
-<h1 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h1><ul>
-<li>一台至少 2 核 2G 内存的服务器,推荐使用香港、新加坡、日本地区的服务器,可以 兼顾国内访问。(本地搭建的话可忽略)</li>
-<li>安装了 docker 和 docker-compose</li>
-<li>安装了 git</li>
-<li>有官网直登账号(不支持谷歌、微软、苹果等第三方登陆账号)</li>
-<li>一个域名（用于反代，可忽略）</li>
-</ul>
-<h1 id="准备工作"><a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h1><p>打开服务器，输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">apt update -y &amp;&amp; apt upgrade -y &amp;&amp; apt install -y vim wget curl   #出现报错可能是权限问题，用`sudo su`提权至root用户</span><br></pre></td></tr></table></figure>
-<h1 id="自动部署"><a href="#自动部署" class="headerlink" title="自动部署"></a>自动部署</h1><p>直接下载执行官方的一键部署脚本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl -sSfL https://raw.githubusercontent.com/xyhelper/chatgpt-mirror-server-deploy/master/quick-install.sh | bash</span><br></pre></td></tr></table></figure>
-
-<h1 id="手动部署"><a href="#手动部署" class="headerlink" title="手动部署"></a>手动部署</h1><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone --depth=1 https://github.com/xyhelper/chatgpt-mirror-server-deploy.git chatgpt-mirror                 # 克隆项目地址</span><br><span class="line">cd chatgpt-mirror              #进入根目录</span><br><span class="line">./deploy.sh                    #启动部署脚本，等待拉取docker镜像</span><br></pre></td></tr></table></figure>
-
-<h1 id="进入管理后台进行基础配置"><a href="#进入管理后台进行基础配置" class="headerlink" title="进入管理后台进行基础配置"></a>进入管理后台进行基础配置</h1><p>访问<code>http://服务器ip地址:8200/xyhelper</code></p>
-<p>默认用户名<code>admin</code>，密码<code>123456</code><br><img src="https://cloud.yuchu.me/f/8QCY/chat-mirror.jpg"></p>
-<p>进入后台左边点击工作台-账号管理，添加自己的ChatGPT官网账号勾选启用（plus用户切记勾选plus），再进入用户管理，添加一个用户，过期日期和user-token都可以自定义，保存。复制user-token，返回首页，粘贴。</p>
-<h3 id="一个小细节"><a href="#一个小细节" class="headerlink" title="一个小细节"></a>一个小细节</h3><p>如果你是plus用户，或者使用的是共享账号，想把这个镜像站分享给其他人，又想省去每次都输入token的麻烦，不妨自定义ygusertoken，比方说我设置的是<code>1145141919810hhhhaaa</code>，然后把这个链接：<code>http://yourip:8200/login_token?access_token=1145141919810hhhhaaa</code>分享出去，这样就·不用·每次都登录了。</p>
-<h1 id="配置nginx反代"><a href="#配置nginx反代" class="headerlink" title="配置nginx反代"></a>配置nginx反代</h1><p>新建nginx配置目录：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mkdir -p /home/nginx</span><br><span class="line"></span><br><span class="line">touch /home/nginx/nginx.conf</span><br><span class="line"></span><br><span class="line">mkdir -p /home/nginx/certs</span><br></pre></td></tr></table></figure>
-
-<p>申请证书</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">curl https://get.acme.sh | sh</span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --register-account -m xxxx@gmail.com   #随便一个邮箱就行</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">~/.acme.sh/acme.sh --issue -d yourip.com --standalone     # yourip.com改为你的域名</span><br></pre></td></tr></table></figure>
-
-<p>下载证书到本地</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">~/.acme.sh/acme.sh --installcert -d yourip.com --key-file /home/nginx/certs/key.pem --fullchain-file /home/nginx/certs/cert.pem</span><br></pre></td></tr></table></figure>
-<p>填写nginx配置文件<br><code>cd /home/nginx/ &amp;&amp; vim nginx.conf</code></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">events &#123;</span><br><span class="line"></span><br><span class="line">    worker_connections  1024;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">http &#123;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  client_max_body_size 1000m;  </span><br><span class="line"></span><br><span class="line">  #上传限制参数1G以内文件可上传</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 同理，替换为你的域名</span><br><span class="line"></span><br><span class="line">    return 301 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 替换域名</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:8200;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>拉取部署nginx容器</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">docker run -d --name nginx -p 80:80 -p 443:443 -v /home/nginx/nginx.conf:/etc/nginx/nginx.conf -v /home/nginx/certs:/etc/nginx/certs -v /home/nginx/html:/usr/share/nginx/html nginx:latest</span><br></pre></td></tr></table></figure>
-
-<p>之后就可以用域名访问啦！</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>chatgpt镜像站</tag>
       </tags>
   </entry>
   <entry>
@@ -240,49 +240,18 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>termux折腾日记之安装jupyter、numpy、pandas和matplotlib</title>
-    <url>/posts/baa2/</url>
-    <content><![CDATA[<p>前几天因为课程需要折腾了一下遗传算法，因为担心老师课上提问，带电脑又不方便，变突发奇想程序能不能在手机上运行，毕竟手机上也是有终端环境——termux的。但是termux毕竟只是终端，无法生成函数图像。你说x11？算了吧，还不如直接上电脑呢。</p>
-<p>于是想到了jupyter——一款支持图像输出的在线强大工具，只需要浏览器就能运行。话不多说，直接上手安装:<br><code>pip install jupyter</code><br>毫无疑问报错了，报的错还看不懂，说是缺了依赖，那我用pkg安装依赖呢？还报错，一会儿说是这个依赖还需要某某依赖，一会又是早轮子报错……没办法，上网找教程吧。</p>
-<p>现实是，网上安装jupyter的教程是不少，可大都是PC端的，termux少得可怜，即便有，也大都是三四年前的，不同的人甚至有不同的解决办法，可这些方法都试过一遍后，也都无一例外的失败了。但功夫不负有心人，最后还是在CSDN上找到一篇接近成功的方法，这里贴出原文链接，以供参考:<br><a href="http://t.csdnimg.cn/r7K6y">http://t.csdnimg.cn/r7K6y</a></p>
-<p>但这篇博客终究还是有一些瑕疵，索性问题都不是很大，只是一些版本兼容性问题，比方说在安装numpy，matplotlib，pandas，jupyter等的时候因为不同的版本之间不一定兼容，动不动会出现一大堆的报错，解决方法也简单，就是把pip换成pkg安装，因为pip安装往往需要经过编译，而编译又需要某些特定的工具和库，大都是termux环境中没有的，pkg安装则是直接安装pkg中预编译好的二进制文件，早已跳过了通过工具链编译这一步。举个简单的例子，比方说我要安装numpy和pandas，就不必使用</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy pandas</span><br></pre></td></tr></table></figure>
+    <title>欢迎来到我的博客</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
 
-<p>或者</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MATHLIB=&quot;m&quot; pip install pandas</span><br><span class="line">MATHLIB=&quot;m&quot; pip install numpy</span><br></pre></td></tr></table></figure>
-
-<p>而是换成</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y python-numpy python-pandas</span><br></pre></td></tr></table></figure>
-
-<p>包括在安装jupyter时经常编译出错的pyzmq，也可以这样安装，后面跟上<code>==25.1.1</code>指的是版本，因为pkg和pip总是默认安装最新的，但测试发现目前最新的26.0.2版本(2024年4月底)有兼容问题，遂换成25.1.1版本</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y libzmq libcrypt pkg-config  # 先安装一些必要的依赖库</span><br><span class="line"></span><br><span class="line"># 再通过pkg安装pyzmq</span><br><span class="line"></span><br><span class="line">pkg install -y python-pyzmq==25.1.1</span><br><span class="line"></span><br><span class="line"># 或者</span><br><span class="line">pip install pyzmq==25.1.1</span><br></pre></td></tr></table></figure>
-
-<p>安装jupyter中还有一个经常出现的依赖报错是maturin，这是一个rust里的文件，同样是因为一些版本兼容问题，在Python3.11的环境下是无法正常编译安装的，这个时候就只能先安装rust环境，再用cargo安装了:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install rust  #安装rust</span><br><span class="line">pkg install binutils-is-llvm</span><br><span class="line">cargo install maturin</span><br><span class="line">pkg install -y libzmq libcrypt pkg-config</span><br><span class="line">pip install clang fftw make freetype # 一些编译有关依赖</span><br><span class="line">pip install ipython  # jupyter依赖ipython</span><br></pre></td></tr></table></figure>
-
-<p>之后再安装jupyter应该就不会报错了</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install jupyter</span><br></pre></td></tr></table></figure>
-
-<p>安装matplotlib的过程也是常常因为一些依赖报错，但比起jupyter还是简单不少的</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y libjpeg-turbo libtiff</span><br><span class="line">pkg install python-pillow</span><br><span class="line">pkg install -y libpng</span><br><span class="line">pkg install matplotlib</span><br></pre></td></tr></table></figure>
-
-<p>总的来说，在termux里折腾jupyter说难不难，说简单也不简单吧，毕竟也是花了我几个小时的时间，最后，我把上面的过程都写成了一个脚本，方便大家自动化安装，地址如下:<br><a href="https://github.com/syuchua/termux-jupyter">https://github.com/syuchua/termux-jupyter</a></p>
-<p>如果是直接使用的话可以使用wget下载到本地:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/syuchua/termux-jupyter/master/install.sh -O install.sh</span><br><span class="line">chmod +x install.sh</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/termux-jupyter.jpg"></p>
-<p>最后，如果觉得本教程或者这个脚本还可以的话，麻烦给我一个star，谢谢！</p>
+<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
+<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
+</ul>
+<p>感谢您的访问，希望您喜欢我的博客！</p>
 ]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>Termux</tag>
-        <tag>jupyter</tag>
-        <tag>numpy</tag>
-        <tag>python</tag>
-        <tag>pandas</tag>
-        <tag>matplotlib</tag>
-      </tags>
   </entry>
   <entry>
     <title>winget的基础配置与使用</title>
@@ -356,54 +325,65 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到我的博客</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
+    <title>termux折腾日记之安装jupyter、numpy、pandas和matplotlib</title>
+    <url>/posts/baa2/</url>
+    <content><![CDATA[<p>前几天因为课程需要折腾了一下遗传算法，因为担心老师课上提问，带电脑又不方便，变突发奇想程序能不能在手机上运行，毕竟手机上也是有终端环境——termux的。但是termux毕竟只是终端，无法生成函数图像。你说x11？算了吧，还不如直接上电脑呢。</p>
+<p>于是想到了jupyter——一款支持图像输出的在线强大工具，只需要浏览器就能运行。话不多说，直接上手安装:<br><code>pip install jupyter</code><br>毫无疑问报错了，报的错还看不懂，说是缺了依赖，那我用pkg安装依赖呢？还报错，一会儿说是这个依赖还需要某某依赖，一会又是早轮子报错……没办法，上网找教程吧。</p>
+<p>现实是，网上安装jupyter的教程是不少，可大都是PC端的，termux少得可怜，即便有，也大都是三四年前的，不同的人甚至有不同的解决办法，可这些方法都试过一遍后，也都无一例外的失败了。但功夫不负有心人，最后还是在CSDN上找到一篇接近成功的方法，这里贴出原文链接，以供参考:<br><a href="http://t.csdnimg.cn/r7K6y">http://t.csdnimg.cn/r7K6y</a></p>
+<p>但这篇博客终究还是有一些瑕疵，索性问题都不是很大，只是一些版本兼容性问题，比方说在安装numpy，matplotlib，pandas，jupyter等的时候因为不同的版本之间不一定兼容，动不动会出现一大堆的报错，解决方法也简单，就是把pip换成pkg安装，因为pip安装往往需要经过编译，而编译又需要某些特定的工具和库，大都是termux环境中没有的，pkg安装则是直接安装pkg中预编译好的二进制文件，早已跳过了通过工具链编译这一步。举个简单的例子，比方说我要安装numpy和pandas，就不必使用</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install numpy pandas</span><br></pre></td></tr></table></figure>
 
-<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
-<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
-</ul>
-<p>感谢您的访问，希望您喜欢我的博客！</p>
-]]></content>
-  </entry>
-  <entry>
-    <title>不是，钉钉什么时候这么强了？</title>
-    <url>/posts/588e/</url>
-    <content><![CDATA[<p>最近一段时间对AI大模型以及各种衍生的生产力工具比较感兴趣，就特别希望有一个all-in-one的产品出现，虽说网上也能各种导航站，但一来信息更新不一定及时，二来还经常有各种广告，且站长们有时候更换域名都不通知一下的，导致过期的域名往往被一些不合法的小网站注册。另外一点是现在国产软件大都臃肿，各种弹窗广告催你贷款，下载某某软件不说，你美团往软件里塞个原神是什么原神，不是，真有人在美团玩原神吗？</p>
-<p>话说回来，现在其实我是比较抗拒在手机上下载一款新软件的，毕竟存储真不太够用了。其他一下纯工具类软件，比方说<code>一个木函</code>之类的，下载似乎也没多大必要，因为实现的都是一些小众的功能，很久才能用上一次，何况大部分还都能被小程序代替。<br>相反，要是一款本来就是为工作而生，没有那么多花里胡哨的功能和广告的应用，以不大的内存增长为代价，可以实现继承各种有助于提高生产力的功能，那就再好不过了。</p>
-<p>说来也巧，最近刚好在捣鼓阿里开源的Qwen1.5大模型，想办法让它跑在本地而非云端，进而拿自己的数据集和知识库进行训练，但效果并不是太好。突然想起来，大概是去年十月份左右吧，阿里曾说自家的通义千问将会接入钉钉，当时也没太在意，一晃都半年多了。何况这半年来我也几乎没怎么使用过它。于是，昨天试着久违的更新了一下钉钉，发现真的多了不少让人眼前一亮的新特性，一起来看看吧。</p>
-<h1 id="新增钉钉个人版"><a href="#新增钉钉个人版" class="headerlink" title="新增钉钉个人版"></a>新增钉钉个人版</h1><p>进入钉钉，点击左上角头像<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076875_origin_IMG_20240421_123639.jpg"></p>
-<p>点击钉钉个人版</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076880_origin_IMG_20240421_124548.jpg"></p>
-<p>首先映入眼帘的就是这一列AI助理了，都接入了通义千问的大模型，不光文字交流，还能生成图片和视频，感觉还是挺实用的</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076884_origin_IMG_20240421_124703.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076891_origin_Screenshot_2024-04-21-21-04-51-29_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076892_origin_Screenshot_2024-04-21-21-04-57-45_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076893_origin_Screenshot_2024-04-21-21-05-05-04_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076894_origin_Screenshot_2024-04-21-21-05-15-21_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076895_origin_Screenshot_2024-04-21-21-05-21-96_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076896_origin_Screenshot_2024-04-21-21-05-31-10_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076897_origin_Screenshot_2024-04-21-21-05-47-40_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p>左边<code>云盘</code>对接的是你的阿里云盘</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076881_origin_IMG_20240421_124602.jpg"></p>
-<p><code>空间</code>这里可以放一下笔记之类的，也可以自己编辑，实测，支持html和markdown语法，感觉有点类似于国外的Notion，Obsidian，Typora，国内的语雀，思源笔记等。</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076882_origin_IMG_20240421_124629.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076879_origin_Screenshot_2024-04-21-12-40-00-40_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<p><code>发现</code>这里有一些有用的小程序</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076890_origin_Screenshot_2024-04-21-20-56-30-96_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1><p>具体好不好用另说，毕竟我也还没怎么体验，但作为一个ALL-in-One的生产力工具，我还是很喜欢的。</p>
+<p>或者</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">MATHLIB=&quot;m&quot; pip install pandas</span><br><span class="line">MATHLIB=&quot;m&quot; pip install numpy</span><br></pre></td></tr></table></figure>
+
+<p>而是换成</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y python-numpy python-pandas</span><br></pre></td></tr></table></figure>
+
+<p>包括在安装jupyter时经常编译出错的pyzmq，也可以这样安装，后面跟上<code>==25.1.1</code>指的是版本，因为pkg和pip总是默认安装最新的，但测试发现目前最新的26.0.2版本(2024年4月底)有兼容问题，遂换成25.1.1版本</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y libzmq libcrypt pkg-config  # 先安装一些必要的依赖库</span><br><span class="line"></span><br><span class="line"># 再通过pkg安装pyzmq</span><br><span class="line"></span><br><span class="line">pkg install -y python-pyzmq==25.1.1</span><br><span class="line"></span><br><span class="line"># 或者</span><br><span class="line">pip install pyzmq==25.1.1</span><br></pre></td></tr></table></figure>
+
+<p>安装jupyter中还有一个经常出现的依赖报错是maturin，这是一个rust里的文件，同样是因为一些版本兼容问题，在Python3.11的环境下是无法正常编译安装的，这个时候就只能先安装rust环境，再用cargo安装了:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install rust  #安装rust</span><br><span class="line">pkg install binutils-is-llvm</span><br><span class="line">cargo install maturin</span><br><span class="line">pkg install -y libzmq libcrypt pkg-config</span><br><span class="line">pip install clang fftw make freetype # 一些编译有关依赖</span><br><span class="line">pip install ipython  # jupyter依赖ipython</span><br></pre></td></tr></table></figure>
+
+<p>之后再安装jupyter应该就不会报错了</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pip install jupyter</span><br></pre></td></tr></table></figure>
+
+<p>安装matplotlib的过程也是常常因为一些依赖报错，但比起jupyter还是简单不少的</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">pkg install -y libjpeg-turbo libtiff</span><br><span class="line">pkg install python-pillow</span><br><span class="line">pkg install -y libpng</span><br><span class="line">pkg install matplotlib</span><br></pre></td></tr></table></figure>
+
+<p>总的来说，在termux里折腾jupyter说难不难，说简单也不简单吧，毕竟也是花了我几个小时的时间，最后，我把上面的过程都写成了一个脚本，方便大家自动化安装，地址如下:<br><a href="https://github.com/syuchua/termux-jupyter">https://github.com/syuchua/termux-jupyter</a></p>
+<p>如果是直接使用的话可以使用wget下载到本地:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">wget https://raw.githubusercontent.com/syuchua/termux-jupyter/master/install.sh -O install.sh</span><br><span class="line">chmod +x install.sh</span><br><span class="line">./install.sh</span><br></pre></td></tr></table></figure>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/termux-jupyter.jpg"></p>
+<p>最后，如果觉得本教程或者这个脚本还可以的话，麻烦给我一个star，谢谢！</p>
 ]]></content>
       <categories>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>钉钉</tag>
-        <tag>生产力工具</tag>
-        <tag>all-in-one工具</tag>
-        <tag>通义千问</tag>
+        <tag>Termux</tag>
+        <tag>jupyter</tag>
+        <tag>numpy</tag>
+        <tag>python</tag>
+        <tag>pandas</tag>
+        <tag>matplotlib</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>基于gcp的VertexAI搭建一个简单的claude中转api服务</title>
+    <url>/posts/9758/</url>
+    <content><![CDATA[<p>最近写一个QQ机器人的后端项目，用于对接AI大模型以及一些图片、语音接口，难免要跟各类大模型的api打交道，听说claude更适合角色扮演，而且新出的Claude3.5-sonnet能力甚至超越了GPT-4o,遂一直想要体验一下，但没有国外的实体手机号，所以没有机会。机缘巧合下得知gcp的VertexAI可以白嫖最新的Gemini和Claude，立马来了兴趣，研究后却发现是通过sdk的方式调用的，没有api，但这不是什么大问题，能用就行，实在不行自己写一个本地api服务不就行了吗，说干就干，直接放上仓库地址，如果能帮到您的话不妨给个star鼓励一下：</p>
+<p><a href="https://github.com/syuchua/gcp_claude_transfer">https://github.com/syuchua/gcp_claude_transfer</a></p>
+<p>配置1说明都在readme里了，如果有什么不明白的话，欢迎提issue。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>gcp</tag>
+        <tag>Google Cloud Platform</tag>
+        <tag>Claude</tag>
+        <tag>中转api</tag>
       </tags>
   </entry>
   <entry>
@@ -464,62 +444,40 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>基于gcp的VertexAI搭建一个简单的claude中转api服务</title>
-    <url>/posts/9758/</url>
-    <content><![CDATA[<p>最近写一个QQ机器人的后端项目，用于对接AI大模型以及一些图片、语音接口，难免要跟各类大模型的api打交道，听说claude更适合角色扮演，而且新出的Claude3.5-sonnet能力甚至超越了GPT-4o,遂一直想要体验一下，但没有国外的实体手机号，所以没有机会。机缘巧合下得知gcp的VertexAI可以白嫖最新的Gemini和Claude，立马来了兴趣，研究后却发现是通过sdk的方式调用的，没有api，但这不是什么大问题，能用就行，实在不行自己写一个本地api服务不就行了吗，说干就干，直接放上仓库地址，如果能帮到您的话不妨给个star鼓励一下：</p>
-<p><a href="https://github.com/syuchua/gcp_claude_transfer">https://github.com/syuchua/gcp_claude_transfer</a></p>
-<p>配置1说明都在readme里了，如果有什么不明白的话，欢迎提issue。</p>
+    <title>不是，钉钉什么时候这么强了？</title>
+    <url>/posts/588e/</url>
+    <content><![CDATA[<p>最近一段时间对AI大模型以及各种衍生的生产力工具比较感兴趣，就特别希望有一个all-in-one的产品出现，虽说网上也能各种导航站，但一来信息更新不一定及时，二来还经常有各种广告，且站长们有时候更换域名都不通知一下的，导致过期的域名往往被一些不合法的小网站注册。另外一点是现在国产软件大都臃肿，各种弹窗广告催你贷款，下载某某软件不说，你美团往软件里塞个原神是什么原神，不是，真有人在美团玩原神吗？</p>
+<p>话说回来，现在其实我是比较抗拒在手机上下载一款新软件的，毕竟存储真不太够用了。其他一下纯工具类软件，比方说<code>一个木函</code>之类的，下载似乎也没多大必要，因为实现的都是一些小众的功能，很久才能用上一次，何况大部分还都能被小程序代替。<br>相反，要是一款本来就是为工作而生，没有那么多花里胡哨的功能和广告的应用，以不大的内存增长为代价，可以实现继承各种有助于提高生产力的功能，那就再好不过了。</p>
+<p>说来也巧，最近刚好在捣鼓阿里开源的Qwen1.5大模型，想办法让它跑在本地而非云端，进而拿自己的数据集和知识库进行训练，但效果并不是太好。突然想起来，大概是去年十月份左右吧，阿里曾说自家的通义千问将会接入钉钉，当时也没太在意，一晃都半年多了。何况这半年来我也几乎没怎么使用过它。于是，昨天试着久违的更新了一下钉钉，发现真的多了不少让人眼前一亮的新特性，一起来看看吧。</p>
+<h1 id="新增钉钉个人版"><a href="#新增钉钉个人版" class="headerlink" title="新增钉钉个人版"></a>新增钉钉个人版</h1><p>进入钉钉，点击左上角头像<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076875_origin_IMG_20240421_123639.jpg"></p>
+<p>点击钉钉个人版</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076880_origin_IMG_20240421_124548.jpg"></p>
+<p>首先映入眼帘的就是这一列AI助理了，都接入了通义千问的大模型，不光文字交流，还能生成图片和视频，感觉还是挺实用的</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076884_origin_IMG_20240421_124703.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076891_origin_Screenshot_2024-04-21-21-04-51-29_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076892_origin_Screenshot_2024-04-21-21-04-57-45_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076893_origin_Screenshot_2024-04-21-21-05-05-04_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076894_origin_Screenshot_2024-04-21-21-05-15-21_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076895_origin_Screenshot_2024-04-21-21-05-21-96_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076896_origin_Screenshot_2024-04-21-21-05-31-10_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076897_origin_Screenshot_2024-04-21-21-05-47-40_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p>左边<code>云盘</code>对接的是你的阿里云盘</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076881_origin_IMG_20240421_124602.jpg"></p>
+<p><code>空间</code>这里可以放一下笔记之类的，也可以自己编辑，实测，支持html和markdown语法，感觉有点类似于国外的Notion，Obsidian，Typora，国内的语雀，思源笔记等。</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076882_origin_IMG_20240421_124629.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076879_origin_Screenshot_2024-04-21-12-40-00-40_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<p><code>发现</code>这里有一些有用的小程序</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/1000076890_origin_Screenshot_2024-04-21-20-56-30-96_6483dd1576f1330fe7c408604fe48ee1.jpg"></p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1><p>具体好不好用另说，毕竟我也还没怎么体验，但作为一个ALL-in-One的生产力工具，我还是很喜欢的。</p>
 ]]></content>
       <categories>
         <category>blog</category>
       </categories>
       <tags>
-        <tag>gcp</tag>
-        <tag>Google Cloud Platform</tag>
-        <tag>Claude</tag>
-        <tag>中转api</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>基于github+jsdelivr实现免费图床</title>
-    <url>/posts/d21b/</url>
-    <content><![CDATA[<p>图床想必大家都不陌生了，无论是个人搭建博客或是其他站点、APP、小程序，还是企业级的应用，想要加速网站的访问，都离不开图床，但一款稳定好用的图床又往往要么是收费的，要么需要实名注册等各种流程，那有没有什么免费且方便的代替方案呢？</p>
-<p>答案是显而易见的，使用GitHub的仓库作为图床，再经由jsdelivr的免费cdn加速，一款稳定方便的图床就诞生了，下面开始本期教程。</p>
-<h1 id="新建GitHub仓库"><a href="#新建GitHub仓库" class="headerlink" title="新建GitHub仓库"></a>新建GitHub仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg"></p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E4%BB%93%E5%BA%93.jpg"></p>
-<h1 id="生成一个token"><a href="#生成一个token" class="headerlink" title="生成一个token"></a>生成一个token</h1><ul>
-<li><p>点击右上角用户头像-&gt; 设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/token.jpg"></p>
-</li>
-<li><p>点击开发者设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/develop.jpg"></p>
-</li>
-<li><p>点击Personal acess tokens -&gt; Generate new token<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/newtoken.jpg"><br>  填写token描述，勾选repo即可，过期时间可以选择永不</p>
-</li>
-<li><p>获取token秘钥<br>  注意，该秘钥仅显示一次，建议保存到一个找得到的地方，或者云盘，后面还会用到。</p>
-</li>
-</ul>
-<h1 id="配置PicGo并使用jsdelivr的免费cdn加速"><a href="#配置PicGo并使用jsdelivr的免费cdn加速" class="headerlink" title="配置PicGo并使用jsdelivr的免费cdn加速"></a>配置PicGo并使用jsdelivr的免费cdn加速</h1><p><a href="https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6-x64.exe">下载PicGo</a>，安装好后开始对接图床</p>
-<ul>
-<li><p>设定仓库名：username&#x2F;repositoies(username为github用户名，repositoies为仓库名，比方说用户名zhangsan，仓库名为jsdelivr，就填写zhangsan&#x2F;jsdelivr)</p>
-</li>
-<li><p>设定分支名：main</p>
-</li>
-<li><p>设定token：刚刚复制的token</p>
-</li>
-<li><p>指定存储路径：填写打算存放图片的位置，比方说img&#x2F;，代表在该仓库下创建一个铭文img的文件夹，图片将保存在这个文件夹中。</p>
-</li>
-<li><p>设定自定义域名：它的的作用是，在图片上传后，PicGo 会按照自定义域名+上传的图片名的方式生成访问链接，放到粘贴板上，因为我们要使用 jsDelivr 加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E5%9B%BE%E5%BA%8A%E4%BB%93%E5%BA%93%E5%90%8D@%E5%88%86%E6%94%AF">https://cdn.jsdelivr.net/gh/用户名/图床仓库名@分支</a> #默认是main</p>
-</li>
-</ul>
-<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/picgo.jpg"></p>
-<p>接下来就可以愉快的使用免费图床啦！</p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>GitHub图床</tag>
-        <tag>jsdelivr CDN加速</tag>
-        <tag>免费图床</tag>
+        <tag>钉钉</tag>
+        <tag>生产力工具</tag>
+        <tag>all-in-one工具</tag>
+        <tag>通义千问</tag>
       </tags>
   </entry>
   <entry>
@@ -588,6 +546,48 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
+    <title>基于github+jsdelivr实现免费图床</title>
+    <url>/posts/d21b/</url>
+    <content><![CDATA[<p>图床想必大家都不陌生了，无论是个人搭建博客或是其他站点、APP、小程序，还是企业级的应用，想要加速网站的访问，都离不开图床，但一款稳定好用的图床又往往要么是收费的，要么需要实名注册等各种流程，那有没有什么免费且方便的代替方案呢？</p>
+<p>答案是显而易见的，使用GitHub的仓库作为图床，再经由jsdelivr的免费cdn加速，一款稳定方便的图床就诞生了，下面开始本期教程。</p>
+<h1 id="新建GitHub仓库"><a href="#新建GitHub仓库" class="headerlink" title="新建GitHub仓库"></a>新建GitHub仓库</h1><p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E6%96%B0%E5%BB%BA%E4%BB%93%E5%BA%93.jpg"></p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/%E4%BB%93%E5%BA%93.jpg"></p>
+<h1 id="生成一个token"><a href="#生成一个token" class="headerlink" title="生成一个token"></a>生成一个token</h1><ul>
+<li><p>点击右上角用户头像-&gt; 设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/token.jpg"></p>
+</li>
+<li><p>点击开发者设置<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/develop.jpg"></p>
+</li>
+<li><p>点击Personal acess tokens -&gt; Generate new token<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/newtoken.jpg"><br>  填写token描述，勾选repo即可，过期时间可以选择永不</p>
+</li>
+<li><p>获取token秘钥<br>  注意，该秘钥仅显示一次，建议保存到一个找得到的地方，或者云盘，后面还会用到。</p>
+</li>
+</ul>
+<h1 id="配置PicGo并使用jsdelivr的免费cdn加速"><a href="#配置PicGo并使用jsdelivr的免费cdn加速" class="headerlink" title="配置PicGo并使用jsdelivr的免费cdn加速"></a>配置PicGo并使用jsdelivr的免费cdn加速</h1><p><a href="https://picgo-release.molunerfinn.com/2.4.0-beta.6/PicGo-Setup-2.4.0-beta.6-x64.exe">下载PicGo</a>，安装好后开始对接图床</p>
+<ul>
+<li><p>设定仓库名：username&#x2F;repositoies(username为github用户名，repositoies为仓库名，比方说用户名zhangsan，仓库名为jsdelivr，就填写zhangsan&#x2F;jsdelivr)</p>
+</li>
+<li><p>设定分支名：main</p>
+</li>
+<li><p>设定token：刚刚复制的token</p>
+</li>
+<li><p>指定存储路径：填写打算存放图片的位置，比方说img&#x2F;，代表在该仓库下创建一个铭文img的文件夹，图片将保存在这个文件夹中。</p>
+</li>
+<li><p>设定自定义域名：它的的作用是，在图片上传后，PicGo 会按照自定义域名+上传的图片名的方式生成访问链接，放到粘贴板上，因为我们要使用 jsDelivr 加速访问，所以可以设置为<a href="https://cdn.jsdelivr.net/gh/%E7%94%A8%E6%88%B7%E5%90%8D/%E5%9B%BE%E5%BA%8A%E4%BB%93%E5%BA%93%E5%90%8D@%E5%88%86%E6%94%AF">https://cdn.jsdelivr.net/gh/用户名/图床仓库名@分支</a> #默认是main</p>
+</li>
+</ul>
+<p>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/picgo.jpg"></p>
+<p>接下来就可以愉快的使用免费图床啦！</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>GitHub图床</tag>
+        <tag>jsdelivr CDN加速</tag>
+        <tag>免费图床</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>教你搭建一个自己的芙宁娜QQ机器人，支持AI聊天、语音、绘画和发送涩图及翻唱</title>
     <url>/posts/742b/</url>
     <content><![CDATA[<p>今天来分享一个我自己写的芙宁娜QQ机器人后端，拥有的能力包括但不限于AI聊天、绘画、发送涩图、AI语音、翻唱歌曲等，还兼具上下文功能，支持自定义system_prompt，适配http和反向ws连接。先来一波展示：</p>
@@ -645,6 +645,8 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
 <li><code>cha_name</code>：语音接口指定角色<br>dialogues.json里主要是配置一些固定回答，一般没什么用，除非有什么恶趣味<br>model.json里主要是非gpt的其他模型的配置，如果填了，会覆盖config.json里GPT的配置需要为OneAPI格式，<code>model</code>里填写的模型名需要现在<code>aviliable_models</code>里填上。<code>vision</code>代表是否支持识图，如果你的模型可以识图就填true(如果使用gpt系列模型，gpt4系列默认允许识图)</li>
 </ul>
 <h3 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h3><p>【芙宁娜QQ机器人搭建教程】 <a href="https://www.bilibili.com/video/BV1BBYcekEUs/?share_source=copy_web&vd_source=6f08734cb3a294b6a1e634a3e5b481ca">https://www.bilibili.com/video/BV1BBYcekEUs/?share_source=copy_web&amp;vd_source=6f08734cb3a294b6a1e634a3e5b481ca</a></p>
+<iframe src="//player.bilibili.com/player.html?bvid=BV1BBYcekEUs&p=1&poster=1&danmaku=0&autoplay=0" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 <h3 id="获取bing的cookie用于非gpt系列的AI绘图"><a href="#获取bing的cookie用于非gpt系列的AI绘图" class="headerlink" title="获取bing的cookie用于非gpt系列的AI绘图"></a>获取bing的cookie用于非gpt系列的AI绘图</h3><p><a href="https://cloud.yuchu.me/f/qxjsX/2024-08-05%2021-41-49.mp4">如果视频无法渲染可以点击链接下载</a><br><video src="https://cloud.yuchu.me/f/qxjsX/2024-08-05%2021-41-49.mp4"></video></p>
 <h3 id="项目开源仓库"><a href="#项目开源仓库" class="headerlink" title="项目开源仓库"></a>项目开源仓库</h3><p><a href="https://github.com/syuchua/MY_QBOT">syuchua&#x2F;MY_QBOT: 一个简单的QQ机器人后端框架 (github.com)</a></p>
 <h3 id="一些跟芙芙聊天的日常"><a href="#一些跟芙芙聊天的日常" class="headerlink" title="一些跟芙芙聊天的日常"></a>一些跟芙芙聊天的日常</h3><p>【谁家傻芙芙连9.8和9.11哪个大都分不清】 <a href="https://www.bilibili.com/video/BV1TivWeFEot/?share_source=copy_web&vd_source=6f08734cb3a294b6a1e634a3e5b481ca">https://www.bilibili.com/video/BV1TivWeFEot/?share_source=copy_web&amp;vd_source=6f08734cb3a294b6a1e634a3e5b481ca</a></p>
@@ -814,27 +816,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>解决POST请求被Nginx转换成GET的问题</title>
-    <url>/posts/1b48/</url>
-    <content><![CDATA[<p>前几天把自己的一个项目扔到了服务器上，用nginx+域名反代了一下ip+端口，测试却发现请求失败，日志里的报错信息显示不支持的请求类型</p>
-<h4 id="waht"><a href="#waht" class="headerlink" title="waht?"></a>waht?</h4><p>明明本地跑的好好的啊，一番排查之后才找到问题，我这个项目实际上是一个api接口，只接受POST请求，但nginx的配置文件里有一个return 301步骤把http请求都转发给了https，转发之后，POST请求就变成了GET，查了一些资料，发现原来只要把return301 改成307就好了</p>
-<p>比方说我原本的nginx.conf是这样的：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;        </span><br><span class="line"></span><br><span class="line">    return 301 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         </span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:11451;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>只需要改成：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 同理，替换为你的域名</span><br><span class="line"></span><br><span class="line">    return 307 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 替换域名</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:5212;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-<p>就可以了。</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>Nginx</tag>
-        <tag>POST</tag>
-        <tag>Web</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>通过油猴插件无限白嫖VecMulChat的gpt4o，claude3.5s等最新大模型</title>
     <url>/posts/77e9/</url>
     <content><![CDATA[<p>今天在<code>Linuxdo</code>闲逛时发现<a href="https://linux.do/t/topic/162476">一篇帖子</a>，说是使用某个网站+油猴脚本可以实现<code>GPT4o</code>和<code>claude3.5sonnet</code>等一众最新先进大模型的无限制白嫖（暂时），如果不依赖脚本，仅正常登录使用，每天也能进行50次的对话，本着好东西应该分享的原则，水一篇博客，帮大家也用上**:laughing:**</p>
@@ -854,6 +835,27 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>gpt4o</tag>
         <tag>claude3.5sonnet</tag>
         <tag>VecMul Chat</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>解决POST请求被Nginx转换成GET的问题</title>
+    <url>/posts/1b48/</url>
+    <content><![CDATA[<p>前几天把自己的一个项目扔到了服务器上，用nginx+域名反代了一下ip+端口，测试却发现请求失败，日志里的报错信息显示不支持的请求类型</p>
+<h4 id="waht"><a href="#waht" class="headerlink" title="waht?"></a>waht?</h4><p>明明本地跑的好好的啊，一番排查之后才找到问题，我这个项目实际上是一个api接口，只接受POST请求，但nginx的配置文件里有一个return 301步骤把http请求都转发给了https，转发之后，POST请求就变成了GET，查了一些资料，发现原来只要把return301 改成307就好了</p>
+<p>比方说我原本的nginx.conf是这样的：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;        </span><br><span class="line"></span><br><span class="line">    return 301 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         </span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:11451;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>只需要改成：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">server &#123;</span><br><span class="line"></span><br><span class="line">    listen 80;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 同理，替换为你的域名</span><br><span class="line"></span><br><span class="line">    return 307 https://$host$request_uri;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  server &#123;</span><br><span class="line"></span><br><span class="line">    listen 443 ssl http2;</span><br><span class="line"></span><br><span class="line">    server_name yourip.com;         # 替换域名</span><br><span class="line"></span><br><span class="line">    ssl_certificate /etc/nginx/certs/cert.pem;</span><br><span class="line"></span><br><span class="line">    ssl_certificate_key /etc/nginx/certs/key.pem;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line"></span><br><span class="line">      proxy_pass http://127.0.0.1:5212;</span><br><span class="line"></span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line"></span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+<p>就可以了。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>Nginx</tag>
+        <tag>POST</tag>
+        <tag>Web</tag>
       </tags>
   </entry>
   <entry>

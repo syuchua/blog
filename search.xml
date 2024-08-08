@@ -46,6 +46,60 @@
       </tags>
   </entry>
   <entry>
+    <title>oh-my-posh:基于WindowsTerminal的powershell美化教程</title>
+    <url>/posts/6611/</url>
+    <content><![CDATA[<p>今天来更一篇关于Windows终端美化的教程，先放个成品：</p>
+<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/terminal.jpg"></p>
+<p>实现的效果主要有终端半透明、亚克力材质、背景图片以及终端主题。</p>
+<h1 id="安装PowerShell-7"><a href="#安装PowerShell-7" class="headerlink" title="安装PowerShell 7"></a>安装PowerShell 7</h1><p>相比于 Windows 默认提供的 Powershell，Powershell 7 拥有以下几个优势：</p>
+<ol>
+<li>支持跨平台使用，增强了其灵活性和适用范围。</li>
+<li>提供了更优越的性能表现。</li>
+<li>处于持续更新状态，保证了功能的不断完善和安全性的提升。</li>
+<li>简而言之，Powershell 7 是 Powershell 的升级版。</li>
+</ol>
+<p>  官网地址：</p>
+<pre><code>PowerShell 文档 - PowerShell
+</code></pre>
+<p>  Github 地址：</p>
+<pre><code>https://github.com/PowerShell/PowerShell
+</code></pre>
+<p>  下载地址：</p>
+<pre><code>https://github.com/PowerShell/PowerShell/releases/
+https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell-on-windows
+</code></pre>
+<p>  选择合适自己的安装即可。</p>
+<h1 id="安装Windows-Terminal"><a href="#安装Windows-Terminal" class="headerlink" title="安装Windows Terminal"></a>安装Windows Terminal</h1><p>直接去微软商店下载即可：<a href="https://apps.microsoft.com/detail/9n0dx20hk701?hl=zh=CN&gl=CN">https://apps.microsoft.com/detail/9n0dx20hk701?hl=zh=CN&amp;gl=CN</a></p>
+<h1 id="安装winget"><a href="#安装winget" class="headerlink" title="安装winget"></a>安装winget</h1><p>一般在Windows10 高于 1709 (Build 16299) 的版本和 Windows11上以及预装了winget，可以通过在命令行输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">winget --version</span><br></pre></td></tr></table></figure>
+<p>确认，如果没有的话可以在微软商店安装：<a href="https://apps.microsoft.com/detail/9nblggh4nns1?hl=zh-CN&gl=CN">https://apps.microsoft.com/detail/9nblggh4nns1?hl=zh-CN&amp;gl=CN</a></p>
+<h1 id="修改透明度、亚克力材质和背景图片"><a href="#修改透明度、亚克力材质和背景图片" class="headerlink" title="修改透明度、亚克力材质和背景图片"></a>修改透明度、亚克力材质和背景图片</h1><p>旧版的Windows Terminal需要修改json的配置文件，但新版可以直接在设置界面可视化开启<br>点击设置-外观<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/terminal_set.png"></p>
+<p>默认值-外观-背景图像路径，可以自定义图片作为终端背景，再往下拉一点，设置图像不透明度，个人喜欢色调偏暗的，就设定为20%了。<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240507223022.png"></p>
+<p>再往下拉一点，就是设定终端界面的不透明度和亚克力材质了。<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240507223442.png"></p>
+<p>如果想要差异化的，还可以单独设定不同终端的外观。<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240507223621.png"></p>
+<h1 id="安装oh-my-posh"><a href="#安装oh-my-posh" class="headerlink" title="安装oh-my-posh"></a>安装oh-my-posh</h1><p>直接winget就可以安装</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">winget search oh-my-posh</span><br></pre></td></tr></table></figure>
+
+<p>如果出现两个结果，一个msstore的一个winget的，随便选一个就行。</p>
+<h2 id="设置oh-my-posh主题"><a href="#设置oh-my-posh主题" class="headerlink" title="设置oh-my-posh主题"></a>设置oh-my-posh主题</h2><p>在PowerShell中输入 </p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">code $profile    # 没有vscode的话也可以输入notepad $profile 使用记事本打开</span><br></pre></td></tr></table></figure>
+
+<p>在打开的文件中输入这行命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">oh-my-posh init pwsh --config $env:POSH_THEMES_PATH\peru.omp.json | Invoke-Expression</span><br></pre></td></tr></table></figure>
+
+<p>其中的peru.omp.json即主题配置，可以自行修改，前往<code>C:\Users\&lt;用户名&gt;\AppData\Local\Programs\oh-my-posh\themes</code>目录下即可查看不同配置，可以依次试用，选一个你喜欢的。</p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>oh-my-posh</tag>
+        <tag>Windows Terminal</tag>
+        <tag>powershell</tag>
+        <tag>终端美化</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>VSCode常用快捷键及插件</title>
     <url>/posts/f82e/</url>
     <content><![CDATA[<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
@@ -129,60 +183,6 @@
       <tags>
         <tag>#vscode</tag>
         <tag>#快捷键</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>oh-my-posh:基于WindowsTerminal的powershell美化教程</title>
-    <url>/posts/6611/</url>
-    <content><![CDATA[<p>今天来更一篇关于Windows终端美化的教程，先放个成品：</p>
-<p><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/terminal.jpg"></p>
-<p>实现的效果主要有终端半透明、亚克力材质、背景图片以及终端主题。</p>
-<h1 id="安装PowerShell-7"><a href="#安装PowerShell-7" class="headerlink" title="安装PowerShell 7"></a>安装PowerShell 7</h1><p>相比于 Windows 默认提供的 Powershell，Powershell 7 拥有以下几个优势：</p>
-<ol>
-<li>支持跨平台使用，增强了其灵活性和适用范围。</li>
-<li>提供了更优越的性能表现。</li>
-<li>处于持续更新状态，保证了功能的不断完善和安全性的提升。</li>
-<li>简而言之，Powershell 7 是 Powershell 的升级版。</li>
-</ol>
-<p>  官网地址：</p>
-<pre><code>PowerShell 文档 - PowerShell
-</code></pre>
-<p>  Github 地址：</p>
-<pre><code>https://github.com/PowerShell/PowerShell
-</code></pre>
-<p>  下载地址：</p>
-<pre><code>https://github.com/PowerShell/PowerShell/releases/
-https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powershell-on-windows
-</code></pre>
-<p>  选择合适自己的安装即可。</p>
-<h1 id="安装Windows-Terminal"><a href="#安装Windows-Terminal" class="headerlink" title="安装Windows Terminal"></a>安装Windows Terminal</h1><p>直接去微软商店下载即可：<a href="https://apps.microsoft.com/detail/9n0dx20hk701?hl=zh=CN&gl=CN">https://apps.microsoft.com/detail/9n0dx20hk701?hl=zh=CN&amp;gl=CN</a></p>
-<h1 id="安装winget"><a href="#安装winget" class="headerlink" title="安装winget"></a>安装winget</h1><p>一般在Windows10 高于 1709 (Build 16299) 的版本和 Windows11上以及预装了winget，可以通过在命令行输入</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">winget --version</span><br></pre></td></tr></table></figure>
-<p>确认，如果没有的话可以在微软商店安装：<a href="https://apps.microsoft.com/detail/9nblggh4nns1?hl=zh-CN&gl=CN">https://apps.microsoft.com/detail/9nblggh4nns1?hl=zh-CN&amp;gl=CN</a></p>
-<h1 id="修改透明度、亚克力材质和背景图片"><a href="#修改透明度、亚克力材质和背景图片" class="headerlink" title="修改透明度、亚克力材质和背景图片"></a>修改透明度、亚克力材质和背景图片</h1><p>旧版的Windows Terminal需要修改json的配置文件，但新版可以直接在设置界面可视化开启<br>点击设置-外观<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/terminal_set.png"></p>
-<p>默认值-外观-背景图像路径，可以自定义图片作为终端背景，再往下拉一点，设置图像不透明度，个人喜欢色调偏暗的，就设定为20%了。<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240507223022.png"></p>
-<p>再往下拉一点，就是设定终端界面的不透明度和亚克力材质了。<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240507223442.png"></p>
-<p>如果想要差异化的，还可以单独设定不同终端的外观。<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240507223621.png"></p>
-<h1 id="安装oh-my-posh"><a href="#安装oh-my-posh" class="headerlink" title="安装oh-my-posh"></a>安装oh-my-posh</h1><p>直接winget就可以安装</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">winget search oh-my-posh</span><br></pre></td></tr></table></figure>
-
-<p>如果出现两个结果，一个msstore的一个winget的，随便选一个就行。</p>
-<h2 id="设置oh-my-posh主题"><a href="#设置oh-my-posh主题" class="headerlink" title="设置oh-my-posh主题"></a>设置oh-my-posh主题</h2><p>在PowerShell中输入 </p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">code $profile    # 没有vscode的话也可以输入notepad $profile 使用记事本打开</span><br></pre></td></tr></table></figure>
-
-<p>在打开的文件中输入这行命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">oh-my-posh init pwsh --config $env:POSH_THEMES_PATH\peru.omp.json | Invoke-Expression</span><br></pre></td></tr></table></figure>
-
-<p>其中的peru.omp.json即主题配置，可以自行修改，前往<code>C:\Users\&lt;用户名&gt;\AppData\Local\Programs\oh-my-posh\themes</code>目录下即可查看不同配置，可以依次试用，选一个你喜欢的。</p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>oh-my-posh</tag>
-        <tag>Windows Terminal</tag>
-        <tag>powershell</tag>
-        <tag>终端美化</tag>
       </tags>
   </entry>
   <entry>
@@ -592,16 +592,13 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
     <url>/posts/742b/</url>
     <content><![CDATA[<p>今天来分享一个我自己写的芙宁娜QQ机器人后端，拥有的能力包括但不限于AI聊天、绘画、发送涩图、AI语音、翻唱歌曲等，还兼具上下文功能，支持自定义system_prompt，适配http和反向ws连接。先来一波展示：</p>
 <h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><ul>
-<li>直接对话即可<br>  <img src="upload://k7db9cW7TkBP9CpgdSLMJF0bFzm.png"><ul>
-<li>发送<code>发一张</code>，<code>来一张</code>+关键词即可自定义发送涩图，比方说<code>发一张卡芙卡</code></li>
-</ul>
-<h3 id="不放完整图片了，防止被夹-话说被举报是这个原因吗）"><a href="#不放完整图片了，防止被夹-话说被举报是这个原因吗）" class="headerlink" title="不放完整图片了，防止被夹(话说被举报是这个原因吗）"></a>不放完整图片了，防止被夹(话说被举报是这个原因吗）</h3><p>  <img src="upload://6bA4B06G8ztgKR0tIT2vu2XBAxG.png"></p>
-<ul>
-<li>发送<code>来份涩图</code>，<code>来份色图</code>，<code>再来一张</code> 即可发送随机涩图<br><img src="upload://yPtpx4Ku8AkAIdD1jpmLBsOEjDN.png"></li>
-<li>发送<code>画一张</code>，<code>生成一张</code> 即可发送AI绘画（如果config.json里有GPT有关的配置，则关键词会调用dalle进行绘画，除dalle外，还支持白嫖bing的AI绘画，需提前将cookie的值填入cookies.json中，只有一个账号的cookie就按字典格式填一个，多个的话可以放进列表里）<br><img src="upload://neuW5lBMeIMqZHsGHPP9s91njgD.png"></li>
-<li>发送<code>语音说</code>，&#96;&#96;语音回复<code> +</code>要用语音说的话<code>让机器人发送语音，或者再提示词里提示机器人通过把</code>#voice&#96;标签放在回复的开头，实现更生动地语音回复。<br><img src="upload://rSWTSFh3b9Frbt9BLsFk8dDZETD.png"></li>
-<li>发送<code>点歌</code>+歌曲名进行点歌，支持模糊匹配。<br><img src="upload://2aL5GpOzIFoUMQmZEt805T0tNgr.png"></li>
-<li>R-18?<br>该接口的涩图数量足有十几万，其中r18占27.8%，建议公共场合尽量设置为0，2的话，还是不要太相信自己的运气了(问就是惨痛的教训)<br><img src="upload://bZIYYlm9WhfBD42hzBoqzzeGMuo.png"></li>
+<li>直接对话即可<br>  <img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240616001408.png"><ul>
+<li>发送<code>发一张</code>，<code>来一张</code>+关键词即可自定义发送涩图，比方说<code>发一张卡芙卡</code><br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240616001141.png"></li>
+<li>发送<code>来份涩图</code>，<code>来份色图</code>，<code>再来一张</code> 即可发送随机涩图<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240616001208.png"></li>
+<li>发送<code>画一张</code>，<code>生成一张</code> 即可发送AI绘画（如果config.json里有GPT有关的配置，则关键词会调用dalle进行绘画，除dalle外，还支持白嫖bing的AI绘画，需提前将cookie的值填入cookies.json中，只有一个账号的cookie就按字典格式填一个，多个的话可以放进列表里）<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240616001253.png"></li>
+<li>发送<code>语音说</code>，&#96;&#96;语音回复<code> +</code>要用语音说的话<code>让机器人发送语音，或者再提示词里提示机器人通过把</code>#voice&#96;标签放在回复的开头，实现更生动地语音回复。<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240720233521.png"></li>
+<li>发送<code>点歌</code>+歌曲名进行点歌，支持模糊匹配。<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240805154117.png"></li>
+<li>R-18?<br>该接口的涩图数量足有十几万，其中r18占27.8%，建议公共场合尽量设置为0，2的话，还是不要太相信自己的运气了(问就是惨痛的教训)<br><img src="https://cdn.jsdelivr.net/gh/mazhijia/jsdeliver@main/img/20240616002550.png"></li>
 </ul>
 </li>
 </ul>
@@ -720,50 +717,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>用alist+raidrive将网盘空间挂载到本地</title>
-    <url>/posts/48fd/</url>
-    <content><![CDATA[<h2 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h2><p><img src="https://cloud.yuchu.me/f/2Bf8/alist1.jpg"><br><img src="https://cloud.yuchu.me/f/38h2/alist2.jpg"></p>
-<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>通过alist挂载网盘，然后用RaiDrive的webdav功能将网盘内容映射到本地，可以直接对网盘内容进行增删改查，实现近似本地词牌的功能。</p>
-<h2 id="alist下载安装"><a href="#alist下载安装" class="headerlink" title="alist下载安装"></a>alist下载安装</h2><ol>
-<li><a href="https://github.com/alist-org/alist/releases/download/v3.32.0/alist-windows-amd64.zip">alist官方下载</a><br>GitHub访问较慢的也可以从该链接下载:</li>
-</ol>
-<p><a href="https://cloud.yuchu.me/s/jRfM">alist下载</a></p>
-<ol start="2">
-<li>将下载的压缩包解压到指定的目录下</li>
-<li>此目录下运行cmd，输入 <code>.\alist.exe server</code>开始安装程序</li>
-<li>当看到输出<code>start server@0.0.0.0:5244</code>且后续无报错时，说明安装完成。初始会指定alist用户名为admin，并随机一个密码，该密码会在安装时展示，也可以使用<code>.\alist.exe admin</code>查询</li>
-<li>安装成功后，浏览器打开 <code>127.0.0.1:5244</code>即可访问alist管理界面。输入刚刚的用户名和密码，点击<code>管理</code>，可以进入管理界面修改用户名和密码。</li>
-<li>关闭该进程可以在cmd界面按下<code>Crtl+C</code>，之后重新启动以及更改密码可以在根目录使用如下命令<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alist start</span><br><span class="line">alist admin set your_passwd   #your_passwd改为你要更改的密码</span><br></pre></td></tr></table></figure></li>
-</ol>
-<h2 id="alist挂载网盘"><a href="#alist挂载网盘" class="headerlink" title="alist挂载网盘"></a>alist挂载网盘</h2><p><em>点击管理界面的存储-添加-驱动，即可添加指定网盘，目前已支持几十种</em><br>这部分内容在alist的官方文档里已经足够详细，这里以阿里云盘为例，其他的不再赘述，附上官方文档链接，供大家参考<br><a href="https://alist.nn.ci/zh/guide/drivers/">alist官方文档&#x2F;添加存储</a></p>
-<p> <strong>驱动</strong> 选择<code>阿里云盘open</code></p>
-<p><strong>挂载路径</strong> 可自定义，比方说<code>/aliyun</code></p>
-<p><strong>获取刷新令牌</strong><br>刷新令牌 根据文档里的说明进行获取，访问下面地址，按下面图片操作</p>
-<p><a href="https://alist.nn.ci/tool/aliyundrive/request">地址</a><br><img src="https://cloud.yuchu.me/f/5Ds6/alist_aliyun.png"></p>
-<p>复制 token，回到到刷新令牌处粘贴，点击保存</p>
-<p><img src="https://cloud.yuchu.me/f/65ty/alist-aliyun.png"></p>
-<h2 id="配置alist开机自启"><a href="#配置alist开机自启" class="headerlink" title="配置alist开机自启"></a>配置alist开机自启</h2><p>在alist根目录中新建文版文档，填入以下内容:</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set ws = CreateObject(&quot;Wscript.Shell&quot;)</span><br><span class="line">ws.run &quot;alist.exe server&quot;,vbhide</span><br></pre></td></tr></table></figure>
-<p>保存，更改后缀名为vbs，右键-创建快捷方式，将快捷方式移动到开机自启的目录<code>C：\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</code>下。该目录可以使用<code>Crtl+R</code>，输入<code>shell:Common Startup</code>回车后打开。</p>
-<h2 id="raidrive安装与配置"><a href="#raidrive安装与配置" class="headerlink" title="raidrive安装与配置"></a>raidrive安装与配置</h2><p>直接访问官网下载对应版本，<br><a href="https://app.raidrive.com/download/raidrive/release/RaiDrive_2023.9.90_x64.msi">raidrive官网下载</a></p>
-<p>之后一步步安装即可</p>
-<h3 id="网盘映射"><a href="#网盘映射" class="headerlink" title="网盘映射"></a>网盘映射</h3><p>raidrive界面-添加-NAS-WebDAV</p>
-<p><strong>虚拟驱动器</strong> 第一行选择喜欢的盘符字母，默认为Z</p>
-<p><strong>地址</strong> 取消勾选 ，第一行第一格IP输入 127.0.0.1(或localhost) 第二格端口输入 5244</p>
-<p>第二行输入<code>/dav</code>即可，这样alist挂载的所有网盘都会被映射到本地，也可以跟上特定后缀，比方说你的阿里云盘被挂载在alist的<code>/aliyun</code>目录下，那第二行就可以改成<code>/dav/aliyun</code>，这样，就只有阿里云盘被映射到本地了</p>
-<p>第三行输入账户密码，点击连接即可。<br><img src="https://cloud.yuchu.me/f/74uZ/raidrive.png"></p>
-<p>最后如果是这样的就代表没问题了，可以打开<code>我的电脑</code>查看是否有一个绿色的webdav出现。<br><img src="https://cloud.yuchu.me/f/4Oil/raidrive.jpg"></p>
-<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>alist</tag>
-        <tag>raidrive</tag>
-        <tag>webdav</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>用docker搭建cloudreve个人网盘系统</title>
     <url>/posts/cf51/</url>
     <content><![CDATA[<h2 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h2><p><img src="https://cloud.yuchu.me/f/x2ux/cloudreve.jpg"></p>
@@ -814,6 +767,50 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>docker</tag>
         <tag>个人网盘</tag>
         <tag>cloudreve</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>用alist+raidrive将网盘空间挂载到本地</title>
+    <url>/posts/48fd/</url>
+    <content><![CDATA[<h2 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h2><p><img src="https://cloud.yuchu.me/f/2Bf8/alist1.jpg"><br><img src="https://cloud.yuchu.me/f/38h2/alist2.jpg"></p>
+<h3 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h3><p>通过alist挂载网盘，然后用RaiDrive的webdav功能将网盘内容映射到本地，可以直接对网盘内容进行增删改查，实现近似本地词牌的功能。</p>
+<h2 id="alist下载安装"><a href="#alist下载安装" class="headerlink" title="alist下载安装"></a>alist下载安装</h2><ol>
+<li><a href="https://github.com/alist-org/alist/releases/download/v3.32.0/alist-windows-amd64.zip">alist官方下载</a><br>GitHub访问较慢的也可以从该链接下载:</li>
+</ol>
+<p><a href="https://cloud.yuchu.me/s/jRfM">alist下载</a></p>
+<ol start="2">
+<li>将下载的压缩包解压到指定的目录下</li>
+<li>此目录下运行cmd，输入 <code>.\alist.exe server</code>开始安装程序</li>
+<li>当看到输出<code>start server@0.0.0.0:5244</code>且后续无报错时，说明安装完成。初始会指定alist用户名为admin，并随机一个密码，该密码会在安装时展示，也可以使用<code>.\alist.exe admin</code>查询</li>
+<li>安装成功后，浏览器打开 <code>127.0.0.1:5244</code>即可访问alist管理界面。输入刚刚的用户名和密码，点击<code>管理</code>，可以进入管理界面修改用户名和密码。</li>
+<li>关闭该进程可以在cmd界面按下<code>Crtl+C</code>，之后重新启动以及更改密码可以在根目录使用如下命令<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">alist start</span><br><span class="line">alist admin set your_passwd   #your_passwd改为你要更改的密码</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="alist挂载网盘"><a href="#alist挂载网盘" class="headerlink" title="alist挂载网盘"></a>alist挂载网盘</h2><p><em>点击管理界面的存储-添加-驱动，即可添加指定网盘，目前已支持几十种</em><br>这部分内容在alist的官方文档里已经足够详细，这里以阿里云盘为例，其他的不再赘述，附上官方文档链接，供大家参考<br><a href="https://alist.nn.ci/zh/guide/drivers/">alist官方文档&#x2F;添加存储</a></p>
+<p> <strong>驱动</strong> 选择<code>阿里云盘open</code></p>
+<p><strong>挂载路径</strong> 可自定义，比方说<code>/aliyun</code></p>
+<p><strong>获取刷新令牌</strong><br>刷新令牌 根据文档里的说明进行获取，访问下面地址，按下面图片操作</p>
+<p><a href="https://alist.nn.ci/tool/aliyundrive/request">地址</a><br><img src="https://cloud.yuchu.me/f/5Ds6/alist_aliyun.png"></p>
+<p>复制 token，回到到刷新令牌处粘贴，点击保存</p>
+<p><img src="https://cloud.yuchu.me/f/65ty/alist-aliyun.png"></p>
+<h2 id="配置alist开机自启"><a href="#配置alist开机自启" class="headerlink" title="配置alist开机自启"></a>配置alist开机自启</h2><p>在alist根目录中新建文版文档，填入以下内容:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">Set ws = CreateObject(&quot;Wscript.Shell&quot;)</span><br><span class="line">ws.run &quot;alist.exe server&quot;,vbhide</span><br></pre></td></tr></table></figure>
+<p>保存，更改后缀名为vbs，右键-创建快捷方式，将快捷方式移动到开机自启的目录<code>C：\ProgramData\Microsoft\Windows\Start Menu\Programs\StartUp</code>下。该目录可以使用<code>Crtl+R</code>，输入<code>shell:Common Startup</code>回车后打开。</p>
+<h2 id="raidrive安装与配置"><a href="#raidrive安装与配置" class="headerlink" title="raidrive安装与配置"></a>raidrive安装与配置</h2><p>直接访问官网下载对应版本，<br><a href="https://app.raidrive.com/download/raidrive/release/RaiDrive_2023.9.90_x64.msi">raidrive官网下载</a></p>
+<p>之后一步步安装即可</p>
+<h3 id="网盘映射"><a href="#网盘映射" class="headerlink" title="网盘映射"></a>网盘映射</h3><p>raidrive界面-添加-NAS-WebDAV</p>
+<p><strong>虚拟驱动器</strong> 第一行选择喜欢的盘符字母，默认为Z</p>
+<p><strong>地址</strong> 取消勾选 ，第一行第一格IP输入 127.0.0.1(或localhost) 第二格端口输入 5244</p>
+<p>第二行输入<code>/dav</code>即可，这样alist挂载的所有网盘都会被映射到本地，也可以跟上特定后缀，比方说你的阿里云盘被挂载在alist的<code>/aliyun</code>目录下，那第二行就可以改成<code>/dav/aliyun</code>，这样，就只有阿里云盘被映射到本地了</p>
+<p>第三行输入账户密码，点击连接即可。<br><img src="https://cloud.yuchu.me/f/74uZ/raidrive.png"></p>
+<p>最后如果是这样的就代表没问题了，可以打开<code>我的电脑</code>查看是否有一个绿色的webdav出现。<br><img src="https://cloud.yuchu.me/f/4Oil/raidrive.jpg"></p>
+<h1 id="END"><a href="#END" class="headerlink" title="END"></a>END</h1>]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>alist</tag>
+        <tag>raidrive</tag>
+        <tag>webdav</tag>
       </tags>
   </entry>
   <entry>

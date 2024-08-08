@@ -477,20 +477,6 @@
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/vscode/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.yuchu.me/tags/oh-my-posh/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -513,6 +499,20 @@
   
   <url>
     <loc>https://blog.yuchu.me/tags/%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/vscode/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -785,27 +785,6 @@
   </url>
   
   <url>
-    <loc>https://blog.yuchu.me/tags/alist/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/raidrive/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/webdav/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>https://blog.yuchu.me/tags/docker/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -821,6 +800,27 @@
   
   <url>
     <loc>https://blog.yuchu.me/tags/cloudreve/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/alist/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/raidrive/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/webdav/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

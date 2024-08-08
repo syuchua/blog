@@ -1,6 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>VSCode常用快捷键及插件</title>
+    <url>/posts/f82e/</url>
+    <content><![CDATA[<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
+<li><p>单行注释：<code>[ctrl+k,ctrl+c] 或 ctrl+/</code></p>
+</li>
+<li><p> 取消单行注释：<code>[ctrl+k,ctrl+u] (按下ctrl不放，再按k + u)</code></p>
+</li>
+<li><p>多行注释：<code>[alt+shift+A]</code></p>
+</li>
+<li><p> 多行注释：<code>/**</code></p>
+</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="移动行"><a href="#移动行" class="headerlink" title="移动行"></a>移动行</h2><p><code>alt+up/down</code></p>
+<h2 id="显示-隐藏左侧目录栏"><a href="#显示-隐藏左侧目录栏" class="headerlink" title="显示&#x2F;隐藏左侧目录栏"></a>显示&#x2F;隐藏左侧目录栏</h2><p><code>Ctrl+b</code></p>
+<h2 id="复制当前行"><a href="#复制当前行" class="headerlink" title="复制当前行"></a>复制当前行</h2><p><code>shift + alt +up/down</code></p>
+<h2 id="删除当前行"><a href="#删除当前行" class="headerlink" title="删除当前行"></a>删除当前行</h2><p><code>shift + ctrl + k</code></p>
+<h2 id="控制台终端显示与隐藏"><a href="#控制台终端显示与隐藏" class="headerlink" title="控制台终端显示与隐藏"></a>控制台终端显示与隐藏</h2><p><code>Ctrl + ~</code></p>
+<h2 id="查找文件-安装vs-code-插件地址"><a href="#查找文件-安装vs-code-插件地址" class="headerlink" title="查找文件&#x2F;安装vs code 插件地址"></a>查找文件&#x2F;安装vs code 插件地址</h2><p><code>Ctrl + p</code></p>
+<h2 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h2><p><code>shift + alt + f</code></p>
+<h2 id="新建窗口"><a href="#新建窗口" class="headerlink" title="新建窗口"></a>新建窗口</h2><p><code>ctrl + shift + n</code></p>
+<h2 id="行增加缩进"><a href="#行增加缩进" class="headerlink" title="行增加缩进"></a>行增加缩进</h2><p><code>Ctrl + [</code></p>
+<h2 id="行减少缩进"><a href="#行减少缩进" class="headerlink" title="行减少缩进"></a>行减少缩进</h2><p><code>Ctrl + ]</code></p>
+<h2 id="裁剪尾随空格"><a href="#裁剪尾随空格" class="headerlink" title="裁剪尾随空格"></a>裁剪尾随空格</h2><p><code>Ctrl + shift + x</code></p>
+<h2 id="字体放大-缩小"><a href="#字体放大-缩小" class="headerlink" title="字体放大(缩小)"></a>字体放大(缩小)</h2><p><code>Ctrl + (或-)</code></p>
+<h2 id="拆分编辑器"><a href="#拆分编辑器" class="headerlink" title="拆分编辑器"></a>拆分编辑器</h2><p><code>Ctrl +1/2/3</code></p>
+<h2 id="切换窗口"><a href="#切换窗口" class="headerlink" title="切换窗口"></a>切换窗口</h2><p><code>ctrl + shift + left/right</code></p>
+<h2 id="关闭编辑器窗口"><a href="#关闭编辑器窗口" class="headerlink" title="关闭编辑器窗口"></a>关闭编辑器窗口</h2><p><code>Ctrl + w</code></p>
+<h2 id="关闭所有窗口"><a href="#关闭所有窗口" class="headerlink" title="关闭所有窗口"></a>关闭所有窗口</h2><p><code>Ctrl + k + w</code></p>
+<h2 id="切换全屏"><a href="#切换全屏" class="headerlink" title="切换全屏"></a>切换全屏</h2><p><code>f11</code></p>
+<h2 id="自动换行"><a href="#自动换行" class="headerlink" title="自动换行"></a>自动换行</h2><p><code>alt + z</code></p>
+<h2 id="显示Git"><a href="#显示Git" class="headerlink" title="显示Git"></a>显示Git</h2><p><code>Ctrl + shift + g</code></p>
+<h2 id="全局查找文件"><a href="#全局查找文件" class="headerlink" title="全局查找文件"></a>全局查找文件</h2><p><code>Ctrl + shift + f</code></p>
+<h2 id="显示相关插件的命令-如：git-log"><a href="#显示相关插件的命令-如：git-log" class="headerlink" title="显示相关插件的命令(如：git log)"></a>显示相关插件的命令(如：git log)</h2><p><code>Ctrl + shift + p</code></p>
+<h2 id="选中文字"><a href="#选中文字" class="headerlink" title="选中文字"></a>选中文字</h2><p><code>shift + left / right / up / down</code></p>
+<h2 id="折叠代码"><a href="#折叠代码" class="headerlink" title="折叠代码"></a>折叠代码</h2><p><code>ctrl + k + 0-9 (0是完全折叠)</code></p>
+<h2 id="展开代码"><a href="#展开代码" class="headerlink" title="展开代码"></a>展开代码</h2><p><code>ctrl + k + j (完全展开代码)</code></p>
+<h2 id="删除行"><a href="#删除行" class="headerlink" title="删除行"></a>删除行</h2><p><code>Ctrl + shift + k</code></p>
+<h2 id="快速切换主题"><a href="#快速切换主题" class="headerlink" title="快速切换主题"></a>快速切换主题</h2><p><code>Ctrl + k/Ctrl + t</code></p>
+<h2 id="快速回到顶部-底部"><a href="#快速回到顶部-底部" class="headerlink" title="快速回到顶部&#x2F;底部"></a>快速回到顶部&#x2F;底部</h2><p><code>Ctrl + home/end</code></p>
+<h2 id="格式化选定代码"><a href="#格式化选定代码" class="headerlink" title="格式化选定代码"></a>格式化选定代码</h2><p><code>Ctrl + k/f</code></p>
+<h2 id="选中代码"><a href="#选中代码" class="headerlink" title="选中代码"></a>选中代码</h2><p><code>shift + 鼠标左键</code></p>
+<h2 id="多行同时添加内容（光标）"><a href="#多行同时添加内容（光标）" class="headerlink" title="多行同时添加内容（光标）"></a>多行同时添加内容（光标）</h2><p><code>ctrl + alt + up/down</code></p>
+<h2 id="全局替换"><a href="#全局替换" class="headerlink" title="全局替换"></a>全局替换</h2><p><code>ctrl + shift + h</code></p>
+<h2 id="当前文件替换"><a href="#当前文件替换" class="headerlink" title="当前文件替换"></a>当前文件替换</h2><p><code>Ctrl + h</code></p>
+<h2 id="打开最近打开的文件"><a href="#打开最近打开的文件" class="headerlink" title="打开最近打开的文件"></a>打开最近打开的文件</h2><p><code>Ctrl + r</code></p>
+<h2 id="打开新的命令窗"><a href="#打开新的命令窗" class="headerlink" title="打开新的命令窗"></a>打开新的命令窗</h2><p><code>ctrl + shift + c</code></p>
+<h1 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h1><h3 id="1、Auto-Rename-Tag"><a href="#1、Auto-Rename-Tag" class="headerlink" title="1、Auto Rename Tag"></a>1、Auto Rename Tag</h3><p>修改html标签，自动帮你完成尾部闭合标签的同步修改，和webstorm一样。</p>
+<h3 id="2、Auto-Close-Tag"><a href="#2、Auto-Close-Tag" class="headerlink" title="2、Auto Close Tag"></a>2、Auto Close Tag</h3><p>自动闭合HTML标签</p>
+<h3 id="4、Beautiful"><a href="#4、Beautiful" class="headerlink" title="4、Beautiful"></a>4、Beautiful</h3><p>格式化代码的工具</p>
+<h3 id="5、Dash-Dash"><a href="#5、Dash-Dash" class="headerlink" title="5、Dash Dash"></a>5、Dash Dash</h3><p>是MacOS的API文档浏览器和代码段管理器</p>
+<h3 id="6、Ejs-Snippets-ejs"><a href="#6、Ejs-Snippets-ejs" class="headerlink" title="6、Ejs Snippets ejs"></a>6、Ejs Snippets ejs</h3><p>代码提示</p>
+<h3 id="7、ESLint"><a href="#7、ESLint" class="headerlink" title="7、ESLint"></a>7、ESLint</h3><p>检查javascript语法错误与提示</p>
+<h3 id="8、File-Navigator"><a href="#8、File-Navigator" class="headerlink" title="8、File Navigator"></a>8、File Navigator</h3><p>快速查找文件</p>
+<h3 id="9、Git-History-git-log"><a href="#9、Git-History-git-log" class="headerlink" title="9、Git History(git log)"></a>9、Git History(git log)</h3><p>查看git log</p>
+<h3 id="10、Gulp-Snippets"><a href="#10、Gulp-Snippets" class="headerlink" title="10、Gulp Snippets"></a>10、Gulp Snippets</h3><p>写gulp时用到，gulp语法提示。</p>
+<h3 id="11、HTML-CSS-Support"><a href="#11、HTML-CSS-Support" class="headerlink" title="11、HTML CSS Support"></a>11、HTML CSS Support</h3><p>在HTML标签上写class智能提示当前项目所支持的样式</p>
+<h3 id="12、HTML-Snippets"><a href="#12、HTML-Snippets" class="headerlink" title="12、HTML Snippets"></a>12、HTML Snippets</h3><p>超级好用且初级的H5代码片段以及提示</p>
+<h3 id="13、Debug-for-Chrome"><a href="#13、Debug-for-Chrome" class="headerlink" title="13、Debug for Chrome"></a>13、Debug for Chrome</h3><p>让vs code映射chrome的debug功能，静态页面都可以用vscode来打断点调试、配饰稍微复杂一点</p>
+<h3 id="14、Document-this"><a href="#14、Document-this" class="headerlink" title="14、Document this"></a>14、Document this</h3><p>Js的注释模板</p>
+<h3 id="15、jQuery-Code-Snippets"><a href="#15、jQuery-Code-Snippets" class="headerlink" title="15、jQuery Code Snippets"></a>15、jQuery Code Snippets</h3><p>jquery提示工具</p>
+<h3 id="16、Html2jade"><a href="#16、Html2jade" class="headerlink" title="16、Html2jade"></a>16、Html2jade</h3><p>html模板转pug模板</p>
+<h3 id="17、JS-CSS-HTML"><a href="#17、JS-CSS-HTML" class="headerlink" title="17、JS-CSS-HTML"></a>17、JS-CSS-HTML</h3><p>Formatter 格式化</p>
+<h3 id="18、Npm-intellisense"><a href="#18、Npm-intellisense" class="headerlink" title="18、Npm intellisense"></a>18、Npm intellisense</h3><p>require 时的包提示工具</p>
+<h3 id="19、Open-in-browser"><a href="#19、Open-in-browser" class="headerlink" title="19、Open in browser"></a>19、Open in browser</h3><p>打开默认浏览器</p>
+<h3 id="20、One-Dark-Theme"><a href="#20、One-Dark-Theme" class="headerlink" title="20、One Dark Theme"></a>20、One Dark Theme</h3><p>一个vs code的主题</p>
+<h3 id="21、Path-Intellisense"><a href="#21、Path-Intellisense" class="headerlink" title="21、Path Intellisense"></a>21、Path Intellisense</h3><p>自动路径补全、默认不带这个功能</p>
+<h3 id="22、Project-Manager"><a href="#22、Project-Manager" class="headerlink" title="22、Project Manager"></a>22、Project Manager</h3><p>多个项目之间快速切换的工具</p>
+<h3 id="23、Typings-auto-installer"><a href="#23、Typings-auto-installer" class="headerlink" title="23、Typings auto installer"></a>23、Typings auto installer</h3><p>安装vscode 的代码提示依赖库，基于typtings的</p>
+<h3 id="24、View-In-Browser"><a href="#24、View-In-Browser" class="headerlink" title="24、View In Browser"></a>24、View In Browser</h3><p>默认浏览器查看HTML文件（快捷键Ctrl+F1可以修改）</p>
+<h3 id="25、Vscode-icons"><a href="#25、Vscode-icons" class="headerlink" title="25、Vscode-icons"></a>25、Vscode-icons</h3><p>让vscode资源目录加上图标、必备</p>
+<h3 id="26、VueHelper"><a href="#26、VueHelper" class="headerlink" title="26、VueHelper"></a>26、VueHelper</h3><p>Vue2代码段（包括Vue2 api、vue-router2、vuex2）</p>
+<h3 id="27、Vue-2-Snippets"><a href="#27、Vue-2-Snippets" class="headerlink" title="27、Vue 2 Snippets"></a>27、Vue 2 Snippets</h3><p>vue必备vue代码提示</p>
+<h3 id="28、Vue-color"><a href="#28、Vue-color" class="headerlink" title="28、Vue-color"></a>28、Vue-color</h3><p>vue语法高亮主题</p>
+<h3 id="29、Auto-Open-Markdown-Preview"><a href="#29、Auto-Open-Markdown-Preview" class="headerlink" title="29、Auto-Open Markdown Preview"></a>29、Auto-Open Markdown Preview</h3><p>markdown文件自动开启预览</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>#vscode</tag>
+        <tag>#快捷键</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>3分钟搭建一个ChatGPT镜像站，非api，支持官网账号登录</title>
     <url>/posts/b2f3/</url>
     <content><![CDATA[<p>本篇基于github上的开源项目<a href="https://github.com/xyhelper/chatgpt-mirror-server">https://github.com/xyhelper/chatgpt-mirror-server</a>旨在通过简单的操作搭建一个ChatGPT的个人镜像，绕过cloudflare，提升访问速度，且没有烦人的机器人验证步骤，可本地搭建，也可部署在服务器上，通过登录官网账号的方式，非api模式，提高回答准确性。同时，基于共享账号的普遍存在，可以实现成本远低于api模式的GPT4和GPTs使用。</p>
@@ -97,92 +183,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>Windows Terminal</tag>
         <tag>powershell</tag>
         <tag>终端美化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>VSCode常用快捷键及插件</title>
-    <url>/posts/f82e/</url>
-    <content><![CDATA[<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><h2 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h2><ul>
-<li><p>单行注释：<code>[ctrl+k,ctrl+c] 或 ctrl+/</code></p>
-</li>
-<li><p> 取消单行注释：<code>[ctrl+k,ctrl+u] (按下ctrl不放，再按k + u)</code></p>
-</li>
-<li><p>多行注释：<code>[alt+shift+A]</code></p>
-</li>
-<li><p> 多行注释：<code>/**</code></p>
-</li>
-</ul>
-<span id="more"></span>
-
-<h2 id="移动行"><a href="#移动行" class="headerlink" title="移动行"></a>移动行</h2><p><code>alt+up/down</code></p>
-<h2 id="显示-隐藏左侧目录栏"><a href="#显示-隐藏左侧目录栏" class="headerlink" title="显示&#x2F;隐藏左侧目录栏"></a>显示&#x2F;隐藏左侧目录栏</h2><p><code>Ctrl+b</code></p>
-<h2 id="复制当前行"><a href="#复制当前行" class="headerlink" title="复制当前行"></a>复制当前行</h2><p><code>shift + alt +up/down</code></p>
-<h2 id="删除当前行"><a href="#删除当前行" class="headerlink" title="删除当前行"></a>删除当前行</h2><p><code>shift + ctrl + k</code></p>
-<h2 id="控制台终端显示与隐藏"><a href="#控制台终端显示与隐藏" class="headerlink" title="控制台终端显示与隐藏"></a>控制台终端显示与隐藏</h2><p><code>Ctrl + ~</code></p>
-<h2 id="查找文件-安装vs-code-插件地址"><a href="#查找文件-安装vs-code-插件地址" class="headerlink" title="查找文件&#x2F;安装vs code 插件地址"></a>查找文件&#x2F;安装vs code 插件地址</h2><p><code>Ctrl + p</code></p>
-<h2 id="代码格式化"><a href="#代码格式化" class="headerlink" title="代码格式化"></a>代码格式化</h2><p><code>shift + alt + f</code></p>
-<h2 id="新建窗口"><a href="#新建窗口" class="headerlink" title="新建窗口"></a>新建窗口</h2><p><code>ctrl + shift + n</code></p>
-<h2 id="行增加缩进"><a href="#行增加缩进" class="headerlink" title="行增加缩进"></a>行增加缩进</h2><p><code>Ctrl + [</code></p>
-<h2 id="行减少缩进"><a href="#行减少缩进" class="headerlink" title="行减少缩进"></a>行减少缩进</h2><p><code>Ctrl + ]</code></p>
-<h2 id="裁剪尾随空格"><a href="#裁剪尾随空格" class="headerlink" title="裁剪尾随空格"></a>裁剪尾随空格</h2><p><code>Ctrl + shift + x</code></p>
-<h2 id="字体放大-缩小"><a href="#字体放大-缩小" class="headerlink" title="字体放大(缩小)"></a>字体放大(缩小)</h2><p><code>Ctrl + (或-)</code></p>
-<h2 id="拆分编辑器"><a href="#拆分编辑器" class="headerlink" title="拆分编辑器"></a>拆分编辑器</h2><p><code>Ctrl +1/2/3</code></p>
-<h2 id="切换窗口"><a href="#切换窗口" class="headerlink" title="切换窗口"></a>切换窗口</h2><p><code>ctrl + shift + left/right</code></p>
-<h2 id="关闭编辑器窗口"><a href="#关闭编辑器窗口" class="headerlink" title="关闭编辑器窗口"></a>关闭编辑器窗口</h2><p><code>Ctrl + w</code></p>
-<h2 id="关闭所有窗口"><a href="#关闭所有窗口" class="headerlink" title="关闭所有窗口"></a>关闭所有窗口</h2><p><code>Ctrl + k + w</code></p>
-<h2 id="切换全屏"><a href="#切换全屏" class="headerlink" title="切换全屏"></a>切换全屏</h2><p><code>f11</code></p>
-<h2 id="自动换行"><a href="#自动换行" class="headerlink" title="自动换行"></a>自动换行</h2><p><code>alt + z</code></p>
-<h2 id="显示Git"><a href="#显示Git" class="headerlink" title="显示Git"></a>显示Git</h2><p><code>Ctrl + shift + g</code></p>
-<h2 id="全局查找文件"><a href="#全局查找文件" class="headerlink" title="全局查找文件"></a>全局查找文件</h2><p><code>Ctrl + shift + f</code></p>
-<h2 id="显示相关插件的命令-如：git-log"><a href="#显示相关插件的命令-如：git-log" class="headerlink" title="显示相关插件的命令(如：git log)"></a>显示相关插件的命令(如：git log)</h2><p><code>Ctrl + shift + p</code></p>
-<h2 id="选中文字"><a href="#选中文字" class="headerlink" title="选中文字"></a>选中文字</h2><p><code>shift + left / right / up / down</code></p>
-<h2 id="折叠代码"><a href="#折叠代码" class="headerlink" title="折叠代码"></a>折叠代码</h2><p><code>ctrl + k + 0-9 (0是完全折叠)</code></p>
-<h2 id="展开代码"><a href="#展开代码" class="headerlink" title="展开代码"></a>展开代码</h2><p><code>ctrl + k + j (完全展开代码)</code></p>
-<h2 id="删除行"><a href="#删除行" class="headerlink" title="删除行"></a>删除行</h2><p><code>Ctrl + shift + k</code></p>
-<h2 id="快速切换主题"><a href="#快速切换主题" class="headerlink" title="快速切换主题"></a>快速切换主题</h2><p><code>Ctrl + k/Ctrl + t</code></p>
-<h2 id="快速回到顶部-底部"><a href="#快速回到顶部-底部" class="headerlink" title="快速回到顶部&#x2F;底部"></a>快速回到顶部&#x2F;底部</h2><p><code>Ctrl + home/end</code></p>
-<h2 id="格式化选定代码"><a href="#格式化选定代码" class="headerlink" title="格式化选定代码"></a>格式化选定代码</h2><p><code>Ctrl + k/f</code></p>
-<h2 id="选中代码"><a href="#选中代码" class="headerlink" title="选中代码"></a>选中代码</h2><p><code>shift + 鼠标左键</code></p>
-<h2 id="多行同时添加内容（光标）"><a href="#多行同时添加内容（光标）" class="headerlink" title="多行同时添加内容（光标）"></a>多行同时添加内容（光标）</h2><p><code>ctrl + alt + up/down</code></p>
-<h2 id="全局替换"><a href="#全局替换" class="headerlink" title="全局替换"></a>全局替换</h2><p><code>ctrl + shift + h</code></p>
-<h2 id="当前文件替换"><a href="#当前文件替换" class="headerlink" title="当前文件替换"></a>当前文件替换</h2><p><code>Ctrl + h</code></p>
-<h2 id="打开最近打开的文件"><a href="#打开最近打开的文件" class="headerlink" title="打开最近打开的文件"></a>打开最近打开的文件</h2><p><code>Ctrl + r</code></p>
-<h2 id="打开新的命令窗"><a href="#打开新的命令窗" class="headerlink" title="打开新的命令窗"></a>打开新的命令窗</h2><p><code>ctrl + shift + c</code></p>
-<h1 id="常用插件"><a href="#常用插件" class="headerlink" title="常用插件"></a>常用插件</h1><h3 id="1、Auto-Rename-Tag"><a href="#1、Auto-Rename-Tag" class="headerlink" title="1、Auto Rename Tag"></a>1、Auto Rename Tag</h3><p>修改html标签，自动帮你完成尾部闭合标签的同步修改，和webstorm一样。</p>
-<h3 id="2、Auto-Close-Tag"><a href="#2、Auto-Close-Tag" class="headerlink" title="2、Auto Close Tag"></a>2、Auto Close Tag</h3><p>自动闭合HTML标签</p>
-<h3 id="4、Beautiful"><a href="#4、Beautiful" class="headerlink" title="4、Beautiful"></a>4、Beautiful</h3><p>格式化代码的工具</p>
-<h3 id="5、Dash-Dash"><a href="#5、Dash-Dash" class="headerlink" title="5、Dash Dash"></a>5、Dash Dash</h3><p>是MacOS的API文档浏览器和代码段管理器</p>
-<h3 id="6、Ejs-Snippets-ejs"><a href="#6、Ejs-Snippets-ejs" class="headerlink" title="6、Ejs Snippets ejs"></a>6、Ejs Snippets ejs</h3><p>代码提示</p>
-<h3 id="7、ESLint"><a href="#7、ESLint" class="headerlink" title="7、ESLint"></a>7、ESLint</h3><p>检查javascript语法错误与提示</p>
-<h3 id="8、File-Navigator"><a href="#8、File-Navigator" class="headerlink" title="8、File Navigator"></a>8、File Navigator</h3><p>快速查找文件</p>
-<h3 id="9、Git-History-git-log"><a href="#9、Git-History-git-log" class="headerlink" title="9、Git History(git log)"></a>9、Git History(git log)</h3><p>查看git log</p>
-<h3 id="10、Gulp-Snippets"><a href="#10、Gulp-Snippets" class="headerlink" title="10、Gulp Snippets"></a>10、Gulp Snippets</h3><p>写gulp时用到，gulp语法提示。</p>
-<h3 id="11、HTML-CSS-Support"><a href="#11、HTML-CSS-Support" class="headerlink" title="11、HTML CSS Support"></a>11、HTML CSS Support</h3><p>在HTML标签上写class智能提示当前项目所支持的样式</p>
-<h3 id="12、HTML-Snippets"><a href="#12、HTML-Snippets" class="headerlink" title="12、HTML Snippets"></a>12、HTML Snippets</h3><p>超级好用且初级的H5代码片段以及提示</p>
-<h3 id="13、Debug-for-Chrome"><a href="#13、Debug-for-Chrome" class="headerlink" title="13、Debug for Chrome"></a>13、Debug for Chrome</h3><p>让vs code映射chrome的debug功能，静态页面都可以用vscode来打断点调试、配饰稍微复杂一点</p>
-<h3 id="14、Document-this"><a href="#14、Document-this" class="headerlink" title="14、Document this"></a>14、Document this</h3><p>Js的注释模板</p>
-<h3 id="15、jQuery-Code-Snippets"><a href="#15、jQuery-Code-Snippets" class="headerlink" title="15、jQuery Code Snippets"></a>15、jQuery Code Snippets</h3><p>jquery提示工具</p>
-<h3 id="16、Html2jade"><a href="#16、Html2jade" class="headerlink" title="16、Html2jade"></a>16、Html2jade</h3><p>html模板转pug模板</p>
-<h3 id="17、JS-CSS-HTML"><a href="#17、JS-CSS-HTML" class="headerlink" title="17、JS-CSS-HTML"></a>17、JS-CSS-HTML</h3><p>Formatter 格式化</p>
-<h3 id="18、Npm-intellisense"><a href="#18、Npm-intellisense" class="headerlink" title="18、Npm intellisense"></a>18、Npm intellisense</h3><p>require 时的包提示工具</p>
-<h3 id="19、Open-in-browser"><a href="#19、Open-in-browser" class="headerlink" title="19、Open in browser"></a>19、Open in browser</h3><p>打开默认浏览器</p>
-<h3 id="20、One-Dark-Theme"><a href="#20、One-Dark-Theme" class="headerlink" title="20、One Dark Theme"></a>20、One Dark Theme</h3><p>一个vs code的主题</p>
-<h3 id="21、Path-Intellisense"><a href="#21、Path-Intellisense" class="headerlink" title="21、Path Intellisense"></a>21、Path Intellisense</h3><p>自动路径补全、默认不带这个功能</p>
-<h3 id="22、Project-Manager"><a href="#22、Project-Manager" class="headerlink" title="22、Project Manager"></a>22、Project Manager</h3><p>多个项目之间快速切换的工具</p>
-<h3 id="23、Typings-auto-installer"><a href="#23、Typings-auto-installer" class="headerlink" title="23、Typings auto installer"></a>23、Typings auto installer</h3><p>安装vscode 的代码提示依赖库，基于typtings的</p>
-<h3 id="24、View-In-Browser"><a href="#24、View-In-Browser" class="headerlink" title="24、View In Browser"></a>24、View In Browser</h3><p>默认浏览器查看HTML文件（快捷键Ctrl+F1可以修改）</p>
-<h3 id="25、Vscode-icons"><a href="#25、Vscode-icons" class="headerlink" title="25、Vscode-icons"></a>25、Vscode-icons</h3><p>让vscode资源目录加上图标、必备</p>
-<h3 id="26、VueHelper"><a href="#26、VueHelper" class="headerlink" title="26、VueHelper"></a>26、VueHelper</h3><p>Vue2代码段（包括Vue2 api、vue-router2、vuex2）</p>
-<h3 id="27、Vue-2-Snippets"><a href="#27、Vue-2-Snippets" class="headerlink" title="27、Vue 2 Snippets"></a>27、Vue 2 Snippets</h3><p>vue必备vue代码提示</p>
-<h3 id="28、Vue-color"><a href="#28、Vue-color" class="headerlink" title="28、Vue-color"></a>28、Vue-color</h3><p>vue语法高亮主题</p>
-<h3 id="29、Auto-Open-Markdown-Preview"><a href="#29、Auto-Open-Markdown-Preview" class="headerlink" title="29、Auto-Open Markdown Preview"></a>29、Auto-Open Markdown Preview</h3><p>markdown文件自动开启预览</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>#vscode</tag>
-        <tag>#快捷键</tag>
       </tags>
   </entry>
   <entry>
@@ -285,20 +285,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>欢迎来到我的博客</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
-
-<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
-<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
-</ul>
-<p>感谢您的访问，希望您喜欢我的博客！</p>
-]]></content>
-  </entry>
-  <entry>
     <title>winget的基础配置与使用</title>
     <url>/posts/8eff/</url>
     <content><![CDATA[<h1 id="1-什么是winget"><a href="#1-什么是winget" class="headerlink" title="1.什么是winget"></a>1.什么是winget</h1><p>微软公司在 2020 年 5 月 Microsoft Build 开发者大会上发布了用于 Windows 系统的官方支持的软件包管理器 —— Windows 软件包管理器（Windows Package Manager），也就是 WinGet 软件包管理器。经过 3 年的发展，越来越多的软件厂商在这个平台上发布自家软件。WinGet 除了支持 exe、msi 等传统的 Win32 安装包格式外，还支持用于新版 Windows 的 msix&#x2F;msixbundle 格式所打包的软件。</p>
@@ -368,6 +354,20 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>winget</tag>
         <tag>windows实用工具</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>欢迎来到我的博客</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
+
+<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
+<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
+</ul>
+<p>感谢您的访问，希望您喜欢我的博客！</p>
+]]></content>
   </entry>
   <entry>
     <title>不是，钉钉什么时候这么强了？</title>

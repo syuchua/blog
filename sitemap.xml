@@ -470,6 +470,20 @@
 
   
   <url>
+    <loc>https://blog.yuchu.me/tags/vscode/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>https://blog.yuchu.me/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
+    <lastmod>2024-08-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>https://blog.yuchu.me/tags/chatgpt%E9%95%9C%E5%83%8F%E7%AB%99/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
@@ -499,20 +513,6 @@
   
   <url>
     <loc>https://blog.yuchu.me/tags/%E7%BB%88%E7%AB%AF%E7%BE%8E%E5%8C%96/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/vscode/</loc>
-    <lastmod>2024-08-08</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>https://blog.yuchu.me/tags/%E5%BF%AB%E6%8D%B7%E9%94%AE/</loc>
     <lastmod>2024-08-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

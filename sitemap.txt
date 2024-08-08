@@ -1,3 +1,4 @@
+https://blog.yuchu.me/posts/742b/
 https://blog.yuchu.me/posts/77e9/
 https://blog.yuchu.me/posts/1b48/
 https://blog.yuchu.me/posts/9758/
@@ -87,10 +88,13 @@ https://blog.yuchu.me/tags/%E4%B8%AD%E8%BD%ACapi/
 https://blog.yuchu.me/tags/GitHub%E5%9B%BE%E5%BA%8A/
 https://blog.yuchu.me/tags/jsdelivr-CDN%E5%8A%A0%E9%80%9F/
 https://blog.yuchu.me/tags/%E5%85%8D%E8%B4%B9%E5%9B%BE%E5%BA%8A/
-https://blog.yuchu.me/tags/markdown/
 https://blog.yuchu.me/tags/hexo/
 https://blog.yuchu.me/tags/github-page/
 https://blog.yuchu.me/tags/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/
+https://blog.yuchu.me/tags/QQ%E6%9C%BA%E5%99%A8%E4%BA%BA/
+https://blog.yuchu.me/tags/%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%A1%86%E6%9E%B6/
+https://blog.yuchu.me/tags/AI/
+https://blog.yuchu.me/tags/markdown/
 https://blog.yuchu.me/tags/alist/
 https://blog.yuchu.me/tags/raidrive/
 https://blog.yuchu.me/tags/webdav/

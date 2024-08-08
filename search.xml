@@ -285,6 +285,20 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
+    <title>欢迎来到我的博客</title>
+    <url>/posts/undefined/</url>
+    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
+<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
+
+<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
+<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
+<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
+<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
+</ul>
+<p>感谢您的访问，希望您喜欢我的博客！</p>
+]]></content>
+  </entry>
+  <entry>
     <title>winget的基础配置与使用</title>
     <url>/posts/8eff/</url>
     <content><![CDATA[<h1 id="1-什么是winget"><a href="#1-什么是winget" class="headerlink" title="1.什么是winget"></a>1.什么是winget</h1><p>微软公司在 2020 年 5 月 Microsoft Build 开发者大会上发布了用于 Windows 系统的官方支持的软件包管理器 —— Windows 软件包管理器（Windows Package Manager），也就是 WinGet 软件包管理器。经过 3 年的发展，越来越多的软件厂商在这个平台上发布自家软件。WinGet 除了支持 exe、msi 等传统的 Win32 安装包格式外，还支持用于新版 Windows 的 msix&#x2F;msixbundle 格式所打包的软件。</p>
@@ -354,20 +368,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>winget</tag>
         <tag>windows实用工具</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>欢迎来到我的博客</title>
-    <url>/posts/undefined/</url>
-    <content><![CDATA[<h1 id="欢迎来到我的博客"><a href="#欢迎来到我的博客" class="headerlink" title="欢迎来到我的博客"></a>欢迎来到我的博客</h1><p>欢迎来到我的个人博客！这里是我分享技术见解和生活点滴的地方。</p>
-<h2 id="关于我"><a href="#关于我" class="headerlink" title="关于我"></a>关于我</h2><span id="more"></span>
-
-<p>我是一名机器人工程专业的学生，热爱编程、诗词和游戏。这个博客是我的小天地，我在这里记录我的学习历程和生活经历。</p>
-<h2 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h2><ul>
-<li>邮箱：<a href="mailto:admin@yu-chu.tech">admin@yu-chu.tech</a></li>
-<li>GitHub：<a href="https://github.com/mazhijia">github.com&#x2F;mazhijia</a></li>
-</ul>
-<p>感谢您的访问，希望您喜欢我的博客！</p>
-]]></content>
   </entry>
   <entry>
     <title>不是，钉钉什么时候这么强了？</title>
@@ -523,63 +523,6 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
       </tags>
   </entry>
   <entry>
-    <title>极简markdown语法</title>
-    <url>/posts/f33f/</url>
-    <content><![CDATA[<h1 id="极简markdown语法"><a href="#极简markdown语法" class="headerlink" title="极简markdown语法"></a>极简markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>要创建标题，请在单词或短语前面添加井号 (#) 。# 的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (&lt;\h3&gt;) (例如：### My Header)</p>
-<h3 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h3><p>还可以在文本下方添加任意数量的 &#x3D;&#x3D; 号来标识一级标题，或者 – 号来标识二级标题。</p>
-<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>
-<span id="more"></span>
-
-<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(或使用HTML语法的<br>)。</p>
-<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>要加粗文本，请在单词或短语的前后各添加两个星号（**内容**）或下划线（__内容__）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（这**是内**容）。</p>
-<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>要用斜体显示文本，请在单词或短语前后添加一个星号（*内容*）或下划线（_内容_）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
-<h3 id="粗体-斜体"><a href="#粗体-斜体" class="headerlink" title="粗体&amp;斜体"></a>粗体&amp;斜体</h3><p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
-<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>要创建块引用，请在段落前添加一个 &gt; 符号</p>
-<h3 id="多个段落的块引用"><a href="#多个段落的块引用" class="headerlink" title="多个段落的块引用"></a>多个段落的块引用</h3><p>块引用可以包含多个段落。为段落之间的空白行添加一个 &gt; 符号。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 第一段</span><br><span class="line">&gt;</span><br><span class="line">&gt; 第二段</span><br></pre></td></tr></table></figure>
-
-<h3 id="嵌套块引用"><a href="#嵌套块引用" class="headerlink" title="嵌套块引用"></a>嵌套块引用</h3><p>块引用可以嵌套。在要嵌套的段落前添加一个 &gt;&gt; 符号</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 一层引用</span><br><span class="line">&gt;</span><br><span class="line">&gt;&gt; 二层引用</span><br></pre></td></tr></table></figure>
-<h2 id="带有其它元素的块引用"><a href="#带有其它元素的块引用" class="headerlink" title="带有其它元素的块引用"></a>带有其它元素的块引用</h2><p>块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; #### The quarterly results look great!</span><br><span class="line">&gt;</span><br><span class="line">&gt; - Revenue was off the chart.</span><br><span class="line">&gt; - Profits were higher than ever.</span><br><span class="line">&gt;</span><br><span class="line">&gt;  *Everything* is going according to **plan**.</span><br></pre></td></tr></table></figure>
-<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>有序列表<br>要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。数字不必按数学顺序排列，但是列表应当以数字 1 起始。</p>
-<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>无序列表<br>要创建无序列表，请在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+) 。缩进一个或多个列表项可创建嵌套列表</p>
-<h3 id="在列表中嵌套其他元素"><a href="#在列表中嵌套其他元素" class="headerlink" title="在列表中嵌套其他元素"></a>在列表中嵌套其他元素</h3><p>要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符。</p>
-<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>要添加表，请使用三个或多个连字符（—）创建每列的标题，并使用管道（|）分隔每列。您可以选择在表的任一端添加管道。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| Syntax      | Description |</span><br><span class="line">| ----------- | ----------- |</span><br><span class="line">| Header      | Title       |</span><br><span class="line">| Paragraph   | Text        |</span><br></pre></td></tr></table></figure>
-<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>您可以通过在标题行中的连字符的左侧，右侧或两侧添加冒号（:），将列中的文本对齐到左侧，右侧或中心</p>
-<h2 id="分隔线语法"><a href="#分隔线语法" class="headerlink" title="分隔线语法"></a>分隔线语法</h2><p>要创建分隔线，请在单独一行上使用三个或多个星号 (***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。</p>
-<h2 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a>链接语法</h2><p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
-<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></p>
-<p>对应的HTML代码：<code>&lt;a href=&quot;超链接地址&quot; title=&quot;超链接title&quot;&gt;超链接显示名&lt;/a&gt;</code></p>
-<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn)</code>。</p>
-<h3 id="给链接增加-Title"><a href="#给链接增加-Title" class="headerlink" title="给链接增加 Title"></a>给链接增加 Title</h3><p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
-<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)</code></p>
-<h3 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h3><p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="引用类型链接"><a href="#引用类型链接" class="headerlink" title="引用类型链接"></a>引用类型链接</h3><p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
-<h4 id="链接的第一部分格式"><a href="#链接的第一部分格式" class="headerlink" title="链接的第一部分格式"></a>链接的第一部分格式</h4><p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
-<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
-<p>以下示例格式对于链接的第一部分效果相同：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[hobbit-hole][1]</span><br><span class="line">[hobbit-hole] [1]</span><br></pre></td></tr></table></figure>
-<h4 id="链接的第二部分格式"><a href="#链接的第二部分格式" class="headerlink" title="链接的第二部分格式"></a>链接的第二部分格式</h4><p>引用类型链接的第二部分使用以下属性设置格式：</p>
-<p>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如[label]:）。<br>链接的URL，可以选择将其括在尖括号中。<br>链接的可选标题，可以将其括在双引号，单引号或括号中。<br>以下示例格式对于链接的第二部分效果相同：</p>
-<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
-<h2 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h2><p>要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
-<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 &quot;图片title&quot;)</code>。</p>
-<p>对应的HTML代码：<code>&lt;img src=&quot;图片链接&quot; alt=&quot;图片alt&quot; title=&quot;图片title&quot;&gt;</code></p>
-<h3 id="链接图片"><a href="#链接图片" class="headerlink" title="链接图片"></a>链接图片</h3><p>给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。</p>
-<h2 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h2><p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。</p>
-]]></content>
-      <categories>
-        <category>blog</category>
-      </categories>
-      <tags>
-        <tag>markdown</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>基于hexo和GitHub page搭建个人博客</title>
     <url>/posts/4883/</url>
     <content><![CDATA[<h3 id="成品展示"><a href="#成品展示" class="headerlink" title="成品展示"></a>成品展示</h3><p><img src="https://cloud.yuchu.me/f/JWcK/my_blog.png" alt="成品展示"></p>
@@ -642,6 +585,138 @@ https://learn.microsoft.com/zh-cn/powershell/scripting/install/installing-powers
         <tag>hexo</tag>
         <tag>github page</tag>
         <tag>个人博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>教你搭建一个自己的芙宁娜QQ机器人，支持AI聊天、语音、绘画和发送涩图及翻唱</title>
+    <url>/posts/742b/</url>
+    <content><![CDATA[<p>今天来分享一个我自己写的芙宁娜QQ机器人后端，拥有的能力包括但不限于AI聊天、绘画、发送涩图、AI语音、翻唱歌曲等，还兼具上下文功能，支持自定义system_prompt，适配http和反向ws连接。先来一波展示：</p>
+<h2 id="食用方法"><a href="#食用方法" class="headerlink" title="食用方法"></a>食用方法</h2><ul>
+<li>直接对话即可<br>  <img src="upload://k7db9cW7TkBP9CpgdSLMJF0bFzm.png"><ul>
+<li>发送<code>发一张</code>，<code>来一张</code>+关键词即可自定义发送涩图，比方说<code>发一张卡芙卡</code></li>
+</ul>
+<h3 id="不放完整图片了，防止被夹-话说被举报是这个原因吗）"><a href="#不放完整图片了，防止被夹-话说被举报是这个原因吗）" class="headerlink" title="不放完整图片了，防止被夹(话说被举报是这个原因吗）"></a>不放完整图片了，防止被夹(话说被举报是这个原因吗）</h3><p>  <img src="upload://6bA4B06G8ztgKR0tIT2vu2XBAxG.png"></p>
+<ul>
+<li>发送<code>来份涩图</code>，<code>来份色图</code>，<code>再来一张</code> 即可发送随机涩图<br><img src="upload://yPtpx4Ku8AkAIdD1jpmLBsOEjDN.png"></li>
+<li>发送<code>画一张</code>，<code>生成一张</code> 即可发送AI绘画（如果config.json里有GPT有关的配置，则关键词会调用dalle进行绘画，除dalle外，还支持白嫖bing的AI绘画，需提前将cookie的值填入cookies.json中，只有一个账号的cookie就按字典格式填一个，多个的话可以放进列表里）<br><img src="upload://neuW5lBMeIMqZHsGHPP9s91njgD.png"></li>
+<li>发送<code>语音说</code>，&#96;&#96;语音回复<code> +</code>要用语音说的话<code>让机器人发送语音，或者再提示词里提示机器人通过把</code>#voice&#96;标签放在回复的开头，实现更生动地语音回复。<br><img src="upload://rSWTSFh3b9Frbt9BLsFk8dDZETD.png"></li>
+<li>发送<code>点歌</code>+歌曲名进行点歌，支持模糊匹配。<br><img src="upload://2aL5GpOzIFoUMQmZEt805T0tNgr.png"></li>
+<li>R-18?<br>该接口的涩图数量足有十几万，其中r18占27.8%，建议公共场合尽量设置为0，2的话，还是不要太相信自己的运气了(问就是惨痛的教训)<br><img src="upload://bZIYYlm9WhfBD42hzBoqzzeGMuo.png"></li>
+</ul>
+</li>
+</ul>
+<h2 id="命令功能"><a href="#命令功能" class="headerlink" title="命令功能"></a>命令功能</h2><p>机器人支持以下命令：</p>
+<ul>
+<li><code>/help</code>：显示帮助信息。</li>
+<li><code>/reset</code>：重置当前会话。</li>
+<li><code>/character</code>：输出<code>config.json</code>中的<code>character</code>值，也即当前的人设。</li>
+<li><code>/history</code>: 输出之前的条消息记录，默认十条，也可以接空格+数字指定。</li>
+<li><code>/clear</code>:清除消息记录，默认十条，可接空格+数字指定。</li>
+<li><code>/music_list</code>: 获取歌曲列表</li>
+<li><code>/r18 [0, 1, 2]</code>切换涩图接口r18模式，0为关闭，1为开启，2随机</li>
+<li><code>/model [new_model]</code>切换模型，新模型需先在model.json中配置好</li>
+</ul>
+<p>语音功能需要本地搭建gpt-sovits，可以参考视频<a href="https://b23.tv/9dOdMo6">https://b23.tv/9dOdMo6</a></p>
+<p>这里放上本地搭建语音整合包<br><a href="https://cloud.yuchu.me/s/J2um">GPT-SoVITS-Inference</a></p>
+<h2 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h2><p>接下来是机器人项目的部署，对接QQ使用的是支持onebot协议的<a href="https://github.com/LLOneBot/LLOneBot">llonebot</a>，所以其他类似项目如<a href="https://github.com/LagrangeDev/Lagrange.Core">Lagrange</a>和<a href="https://github.com/NapNeko/NapCatQQ">NapCat</a>也是可以的，这里仅演示llonebot的配置，默认使用反向ws连接</p>
+<p><a href="https://cloud.yuchu.me/s/MAH0">包含NTQQ，llonebot插件，MongoDB安装包和项目源码的整合包</a>下载整合包并解压</p>
+<p>先双击<code>install_windows.exe</code>安装NTQQ，然后把llonebot.zip复制到NTQQ的插件目录下解压，重启QQ即可在设置里看到有关配置，然后就是填写反向ws监听地址</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ws://127.0.0.1:8011/ws</span><br></pre></td></tr></table></figure>
+
+<p>然后是双击MongoDB的安装文件，没什么好讲的，安装完成后进入bin目录，打开cmd，输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">mongod --dbpath D:\MongoDB\data --logpath D:\MongoDB\log\mongodb.log --logappend   #替换成你自己的对应目录</span><br></pre></td></tr></table></figure>
+
+<p>关闭终端，填写机器人项目的config，config.json里是基础配置</p>
+<ul>
+<li><code>openai_api_key</code>: 你的openai_api_key</li>
+<li><code>model</code>: 使用的模型，默认为gpt-3.5-turbo</li>
+<li><code>self_id</code>：机器人的QQ号。</li>
+<li><code>admin_id</code>：管理员的QQ号。</li>
+<li><code>block_id</code>: 要屏蔽的QQ号。</li>
+<li><code>nicknames</code>：机器人的昵称列表。</li>
+<li><code>system_message</code>：系统消息配置，最重要的是<code>character</code>，相当于机器人的人格。</li>
+<li><code>connection_type</code>: 连接类型，可选http或ws_reverse</li>
+<li><code>report_secret</code>: http事件上传密钥。仅使用http连接时需要填写，默认的123456也可以不管</li>
+<li><code>enable_time</code>: 设置定时开启时间</li>
+<li><code>disable_time</code>: 设置定时关闭时间</li>
+<li><code>proxy_api_base</code>: openai_api_key请求地址，默认为<a href="https://api.openai.com/v1">https://api.openai.com/v1</a></li>
+<li><code>system_message</code>：<code>character</code>里填写人设</li>
+<li><code>reply_probability</code>: 当收到的消息中没有nickname时的回复频率，1为每一条都回复，0为仅回复带有nickname的消息，默认0.5</li>
+<li><code>r18</code>: 0为关闭r18，1开启r18，2为随机发送(慎选)</li>
+<li><code>audio_save_path</code>: 语音文件保存位置</li>
+<li><code>voice_service_url</code>: 语音接口地址</li>
+<li><code>cha_name</code>：语音接口指定角色<br>dialogues.json里主要是配置一些固定回答，一般没什么用，除非有什么恶趣味<br>model.json里主要是非gpt的其他模型的配置，如果填了，会覆盖config.json里GPT的配置需要为OneAPI格式，<code>model</code>里填写的模型名需要现在<code>aviliable_models</code>里填上。<code>vision</code>代表是否支持识图，如果你的模型可以识图就填true(如果使用gpt系列模型，gpt4系列默认允许识图)</li>
+</ul>
+<h3 id="视频教程"><a href="#视频教程" class="headerlink" title="视频教程"></a>视频教程</h3><p>【芙宁娜QQ机器人搭建教程】 <a href="https://www.bilibili.com/video/BV1BBYcekEUs/?share_source=copy_web&vd_source=6f08734cb3a294b6a1e634a3e5b481ca">https://www.bilibili.com/video/BV1BBYcekEUs/?share_source=copy_web&amp;vd_source=6f08734cb3a294b6a1e634a3e5b481ca</a></p>
+<h3 id="获取bing的cookie用于非gpt系列的AI绘图"><a href="#获取bing的cookie用于非gpt系列的AI绘图" class="headerlink" title="获取bing的cookie用于非gpt系列的AI绘图"></a>获取bing的cookie用于非gpt系列的AI绘图</h3><p><a href="https://cloud.yuchu.me/f/qxjsX/2024-08-05%2021-41-49.mp4">如果视频无法渲染可以点击链接下载</a><br><video src="https://cloud.yuchu.me/f/qxjsX/2024-08-05%2021-41-49.mp4"></video></p>
+<h3 id="项目开源仓库"><a href="#项目开源仓库" class="headerlink" title="项目开源仓库"></a>项目开源仓库</h3><p><a href="https://github.com/syuchua/MY_QBOT">syuchua&#x2F;MY_QBOT: 一个简单的QQ机器人后端框架 (github.com)</a></p>
+<h3 id="一些跟芙芙聊天的日常"><a href="#一些跟芙芙聊天的日常" class="headerlink" title="一些跟芙芙聊天的日常"></a>一些跟芙芙聊天的日常</h3><p>【谁家傻芙芙连9.8和9.11哪个大都分不清】 <a href="https://www.bilibili.com/video/BV1TivWeFEot/?share_source=copy_web&vd_source=6f08734cb3a294b6a1e634a3e5b481ca">https://www.bilibili.com/video/BV1TivWeFEot/?share_source=copy_web&amp;vd_source=6f08734cb3a294b6a1e634a3e5b481ca</a></p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>芙宁娜</tag>
+        <tag>QQ机器人</tag>
+        <tag>机器人框架</tag>
+        <tag>AI</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>极简markdown语法</title>
+    <url>/posts/f33f/</url>
+    <content><![CDATA[<h1 id="极简markdown语法"><a href="#极简markdown语法" class="headerlink" title="极简markdown语法"></a>极简markdown语法</h1><h2 id="标题"><a href="#标题" class="headerlink" title="标题"></a>标题</h2><p>要创建标题，请在单词或短语前面添加井号 (#) 。# 的数量代表了标题的级别。例如，添加三个 # 表示创建一个三级标题 (&lt;\h3&gt;) (例如：### My Header)</p>
+<h3 id="可选"><a href="#可选" class="headerlink" title="可选"></a>可选</h3><p>还可以在文本下方添加任意数量的 &#x3D;&#x3D; 号来标识一级标题，或者 – 号来标识二级标题。</p>
+<h2 id="段落"><a href="#段落" class="headerlink" title="段落"></a>段落</h2><p>要创建段落，请使用空白行将一行或多行文本进行分隔。</p>
+<span id="more"></span>
+
+<h2 id="换行"><a href="#换行" class="headerlink" title="换行"></a>换行</h2><p>在一行的末尾添加两个或多个空格，然后按回车键,即可创建一个换行(或使用HTML语法的<br>)。</p>
+<h2 id="强调"><a href="#强调" class="headerlink" title="强调"></a>强调</h2><h3 id="粗体"><a href="#粗体" class="headerlink" title="粗体"></a>粗体</h3><p>要加粗文本，请在单词或短语的前后各添加两个星号（**内容**）或下划线（__内容__）。如需加粗一个单词或短语的中间部分用以表示强调的话，请在要加粗部分的两侧各添加两个星号（这**是内**容）。</p>
+<h3 id="斜体"><a href="#斜体" class="headerlink" title="斜体"></a>斜体</h3><p>要用斜体显示文本，请在单词或短语前后添加一个星号（*内容*）或下划线（_内容_）。要斜体突出单词的中间部分，请在字母前后各添加一个星号，中间不要带空格。</p>
+<h3 id="粗体-斜体"><a href="#粗体-斜体" class="headerlink" title="粗体&amp;斜体"></a>粗体&amp;斜体</h3><p>要同时用粗体和斜体突出显示文本，请在单词或短语的前后各添加三个星号或下划线。要加粗并用斜体显示单词或短语的中间部分，请在要突出显示的部分前后各添加三个星号，中间不要带空格。</p>
+<h2 id="引用"><a href="#引用" class="headerlink" title="引用"></a>引用</h2><p>要创建块引用，请在段落前添加一个 &gt; 符号</p>
+<h3 id="多个段落的块引用"><a href="#多个段落的块引用" class="headerlink" title="多个段落的块引用"></a>多个段落的块引用</h3><p>块引用可以包含多个段落。为段落之间的空白行添加一个 &gt; 符号。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 第一段</span><br><span class="line">&gt;</span><br><span class="line">&gt; 第二段</span><br></pre></td></tr></table></figure>
+
+<h3 id="嵌套块引用"><a href="#嵌套块引用" class="headerlink" title="嵌套块引用"></a>嵌套块引用</h3><p>块引用可以嵌套。在要嵌套的段落前添加一个 &gt;&gt; 符号</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; 一层引用</span><br><span class="line">&gt;</span><br><span class="line">&gt;&gt; 二层引用</span><br></pre></td></tr></table></figure>
+<h2 id="带有其它元素的块引用"><a href="#带有其它元素的块引用" class="headerlink" title="带有其它元素的块引用"></a>带有其它元素的块引用</h2><p>块引用可以包含其他 Markdown 格式的元素。并非所有元素都可以使用，你需要进行实验以查看哪些元素有效。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&gt; #### The quarterly results look great!</span><br><span class="line">&gt;</span><br><span class="line">&gt; - Revenue was off the chart.</span><br><span class="line">&gt; - Profits were higher than ever.</span><br><span class="line">&gt;</span><br><span class="line">&gt;  *Everything* is going according to **plan**.</span><br></pre></td></tr></table></figure>
+<h2 id="列表"><a href="#列表" class="headerlink" title="列表"></a>列表</h2><p>有序列表<br>要创建有序列表，请在每个列表项前添加数字并紧跟一个英文句点。数字不必按数学顺序排列，但是列表应当以数字 1 起始。</p>
+<h3 id="无序列表"><a href="#无序列表" class="headerlink" title="无序列表"></a>无序列表</h3><p>无序列表<br>要创建无序列表，请在每个列表项前面添加破折号 (-)、星号 (*) 或加号 (+) 。缩进一个或多个列表项可创建嵌套列表</p>
+<h3 id="在列表中嵌套其他元素"><a href="#在列表中嵌套其他元素" class="headerlink" title="在列表中嵌套其他元素"></a>在列表中嵌套其他元素</h3><p>要在保留列表连续性的同时在列表中添加另一种元素，请将该元素缩进四个空格或一个制表符。</p>
+<h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><p>要添加表，请使用三个或多个连字符（—）创建每列的标题，并使用管道（|）分隔每列。您可以选择在表的任一端添加管道。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">| Syntax      | Description |</span><br><span class="line">| ----------- | ----------- |</span><br><span class="line">| Header      | Title       |</span><br><span class="line">| Paragraph   | Text        |</span><br></pre></td></tr></table></figure>
+<h3 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h3><p>您可以通过在标题行中的连字符的左侧，右侧或两侧添加冒号（:），将列中的文本对齐到左侧，右侧或中心</p>
+<h2 id="分隔线语法"><a href="#分隔线语法" class="headerlink" title="分隔线语法"></a>分隔线语法</h2><p>要创建分隔线，请在单独一行上使用三个或多个星号 (***)、破折号 (—) 或下划线 (___) ，并且不能包含其他内容。</p>
+<h2 id="链接语法"><a href="#链接语法" class="headerlink" title="链接语法"></a>链接语法</h2><p>链接文本放在中括号内，链接地址放在后面的括号中，链接title可选。</p>
+<p>超链接Markdown语法代码：<code>[超链接显示名](超链接地址 &quot;超链接title&quot;)</code></p>
+<p>对应的HTML代码：<code>&lt;a href=&quot;超链接地址&quot; title=&quot;超链接title&quot;&gt;超链接显示名&lt;/a&gt;</code></p>
+<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn)</code>。</p>
+<h3 id="给链接增加-Title"><a href="#给链接增加-Title" class="headerlink" title="给链接增加 Title"></a>给链接增加 Title</h3><p>链接title是当鼠标悬停在链接上时会出现的文字，这个title是可选的，它放在圆括号中链接地址后面，跟链接地址之间以空格分隔。</p>
+<p>  这是一个链接 <code>[Markdown语法](https://markdown.com.cn &quot;最好的markdown教程&quot;)</code></p>
+<h3 id="网址和Email地址"><a href="#网址和Email地址" class="headerlink" title="网址和Email地址"></a>网址和Email地址</h3><p>使用尖括号可以很方便地把URL或者email地址变成可点击的链接。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;https://markdown.com.cn&gt;</span><br><span class="line">&lt;fake@example.com&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="引用类型链接"><a href="#引用类型链接" class="headerlink" title="引用类型链接"></a>引用类型链接</h3><p>引用样式链接是一种特殊的链接，它使URL在Markdown中更易于显示和阅读。参考样式链接分为两部分：与文本保持内联的部分以及存储在文件中其他位置的部分，以使文本易于阅读。</p>
+<h4 id="链接的第一部分格式"><a href="#链接的第一部分格式" class="headerlink" title="链接的第一部分格式"></a>链接的第一部分格式</h4><p>引用类型的链接的第一部分使用两组括号进行格式设置。第一组方括号包围应显示为链接的文本。第二组括号显示了一个标签，该标签用于指向您存储在文档其他位置的链接。</p>
+<p>尽管不是必需的，可以在第一组和第二组括号之间包含一个空格。第二组括号中的标签不区分大小写，可以包含字母，数字，空格或标点符号。</p>
+<p>以下示例格式对于链接的第一部分效果相同：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">[hobbit-hole][1]</span><br><span class="line">[hobbit-hole] [1]</span><br></pre></td></tr></table></figure>
+<h4 id="链接的第二部分格式"><a href="#链接的第二部分格式" class="headerlink" title="链接的第二部分格式"></a>链接的第二部分格式</h4><p>引用类型链接的第二部分使用以下属性设置格式：</p>
+<p>放在括号中的标签，其后紧跟一个冒号和至少一个空格（例如[label]:）。<br>链接的URL，可以选择将其括在尖括号中。<br>链接的可选标题，可以将其括在双引号，单引号或括号中。<br>以下示例格式对于链接的第二部分效果相同：</p>
+<p>可以将链接的第二部分放在Markdown文档中的任何位置。有些人将它们放在出现的段落之后，有些人则将它们放在文档的末尾（例如尾注或脚注）。</p>
+<h2 id="图片语法"><a href="#图片语法" class="headerlink" title="图片语法"></a>图片语法</h2><p>要添加图像，请使用感叹号 (!), 然后在方括号增加替代文本，图片链接放在圆括号里，括号里的链接后可以增加一个可选的图片标题文本。</p>
+<p>插入图片Markdown语法代码：<code>![图片alt](图片链接 &quot;图片title&quot;)</code>。</p>
+<p>对应的HTML代码：<code>&lt;img src=&quot;图片链接&quot; alt=&quot;图片alt&quot; title=&quot;图片title&quot;&gt;</code></p>
+<h3 id="链接图片"><a href="#链接图片" class="headerlink" title="链接图片"></a>链接图片</h3><p>给图片增加链接，请将图像的Markdown 括在方括号中，然后将链接添加在圆括号中。</p>
+<h2 id="转义字符语法"><a href="#转义字符语法" class="headerlink" title="转义字符语法"></a>转义字符语法</h2><p>要显示原本用于格式化 Markdown 文档的字符，请在字符前面添加反斜杠字符 \ 。</p>
+]]></content>
+      <categories>
+        <category>blog</category>
+      </categories>
+      <tags>
+        <tag>markdown</tag>
       </tags>
   </entry>
   <entry>
